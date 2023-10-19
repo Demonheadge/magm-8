@@ -20,7 +20,6 @@ const u16 gObjectEventPal_Null13[16] = {};
 const u16 gObjectEventPal_Null14[16] = {};
 const u16 gObjectEventPal_Null15[16] = {};
 const u16 gObjectEventPal_BrendanReflection[] = INCBIN_U16("graphics/object_events/palettes/brendan_reflection.gbapal");
-const u16 gObjectEventPal_BridgeReflection[] = INCBIN_U16("graphics/object_events/palettes/bridge_reflection.gbapal");
 const u32 gObjectEventPic_BrendanFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/brendan/field_move.4bpp");
 const u32 gObjectEventPic_BrendanSurfing[] = INCBIN_U32("graphics/object_events/pics/people/brendan/surfing.4bpp");
 const u32 gObjectEventPic_BrendanMachBike[] = INCBIN_U32("graphics/object_events/pics/people/brendan/mach_bike.4bpp");
@@ -383,8 +382,8 @@ const u16 gObjectEventPalette_Pokemon_Species_001[] = INCBIN_U16("graphics/objec
 const u32 gObjectEventPic_Pokemon_Species_002[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/duraludon.4bpp");
 const u16 gObjectEventPalette_Pokemon_Species_002[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/duraludon.gbapal");
 
-const u32 gObjectEventPic_Pokemon_Species_003[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/003.4bpp");
-const u16 gObjectEventPalette_Pokemon_Species_003[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/003.gbapal");
+const u32 gObjectEventPic_Pokemon_Species_003[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/grimmsnarl.4bpp");
+const u16 gObjectEventPalette_Pokemon_Species_003[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/grimmsnarl.gbapal");
 
 const u32 gObjectEventPic_Pokemon_Species_004[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/004.4bpp");
 const u16 gObjectEventPalette_Pokemon_Species_004[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/004.gbapal");
