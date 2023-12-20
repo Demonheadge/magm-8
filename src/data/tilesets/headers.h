@@ -1512,3 +1512,14 @@ const struct Tileset gTileset_RG_HallOfFame =
     .callback = NULL,
     .dontUsePal7 = TRUE,
 };
+
+const struct Tileset gTileset_Catas =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Catas,
+    .palettes = gTilesetPalettes_Catas,
+    .metatiles = gMetatiles_Catas,
+    .metatileAttributes = gMetatileAttributes_Catas,
+    .callback = NULL,
+};

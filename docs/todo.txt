@@ -1,0 +1,9 @@
+Title Screen
+Runemons
+Mapping
+Scripting
+Items
+Moves
+TMs
+Tutors
+Trainers

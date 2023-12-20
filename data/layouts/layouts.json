@@ -8388,6 +8388,18 @@
       "secondary_tileset": "gTileset_RG_MtEmber",
       "border_filepath": "data/layouts/RG_OneIsland_KindleRoad_EmberSpa/border.bin",
       "blockdata_filepath": "data/layouts/RG_OneIsland_KindleRoad_EmberSpa/map.bin"
+    },
+    {
+      "id": "LAYOUT_CATAS",
+      "name": "Catas_Layout",
+      "width": 50,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Catas",
+      "secondary_tileset": "gTileset_RG_CeruleanCave",
+      "border_filepath": "data/layouts/Catas/border.bin",
+      "blockdata_filepath": "data/layouts/Catas/map.bin"
     }
   ]
 }
