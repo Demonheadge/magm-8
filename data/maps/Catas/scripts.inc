@@ -4,7 +4,6 @@ Catas_MapScripts::
 
 Catas_OnTransition:
     goto_if_unset FLAG_CATAS_START, Catas_Start
-	setflag FLAG_CATAS_START
     end
 
 Catas_Start:
@@ -17,4 +16,5 @@ Catas_Start:
     setflag FLAG_SYS_POKEMON_GET
     setflag FLAG_SYS_POKEDEX_GET
     setflag FLAG_SYS_NATIONAL_DEX
+    setflag FLAG_CATAS_START
     end

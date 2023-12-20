@@ -1524,3 +1524,14 @@ const struct Tileset gTileset_Catas =
     .callback = NULL,
     .numTiles = NUM_TILES_IN_PRIMARY_FRLG,
 };
+
+const struct Tileset gTileset_CatasSecondary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CatasSecondary,
+    .palettes = gTilesetPalettes_CatasSecondary,
+    .metatiles = gMetatiles_CatasSecondary,
+    .metatileAttributes = gMetatileAttributes_CatasSecondary,
+    .callback = NULL,
+};

@@ -381,3 +381,6 @@ const u32 gMetatileAttributes_RG_HallOfFame[] = INCBIN_U32("data/tilesets/frlg/s
 
 const u16 gMetatiles_Catas[] = INCBIN_U16("data/tilesets/primary/catas/metatiles.bin");
 const u32 gMetatileAttributes_Catas[] = INCBIN_U32("data/tilesets/primary/catas/metatile_attributes.bin");
+
+const u16 gMetatiles_CatasSecondary[] = INCBIN_U16("data/tilesets/secondary/catas_secondary/metatiles.bin");
+const u32 gMetatileAttributes_CatasSecondary[] = INCBIN_U32("data/tilesets/secondary/catas_secondary/metatile_attributes.bin");
