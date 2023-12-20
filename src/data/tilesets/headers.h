@@ -1522,4 +1522,5 @@ const struct Tileset gTileset_Catas =
     .metatiles = gMetatiles_Catas,
     .metatileAttributes = gMetatileAttributes_Catas,
     .callback = NULL,
+    .numTiles = NUM_TILES_IN_PRIMARY_FRLG,
 };
