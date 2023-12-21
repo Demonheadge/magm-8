@@ -734,7 +734,8 @@
     "RG_FiveIsland_RocketWarehouse",
     "RG_SixIsland_PatternBush",
     "RG_SixIsland_AlteringCave",
-    "Catas"
+    "Catas",
+    "CrystalCave"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

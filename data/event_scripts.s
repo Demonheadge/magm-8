@@ -1454,3 +1454,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Catas/scripts.inc"
 	.include "data/maps/Catas/text.inc"
+
+	.include "data/maps/CrystalCave/scripts.inc"
+	.include "data/maps/CrystalCave/text.inc"

@@ -8400,6 +8400,18 @@
       "secondary_tileset": "gTileset_CatasSecondary",
       "border_filepath": "data/layouts/Catas/border.bin",
       "blockdata_filepath": "data/layouts/Catas/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRYSTAL_CAVE",
+      "name": "CrystalCave_Layout",
+      "width": 49,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Catas",
+      "secondary_tileset": "gTileset_CatasSecondary",
+      "border_filepath": "data/layouts/CrystalCave/border.bin",
+      "blockdata_filepath": "data/layouts/CrystalCave/map.bin"
     }
   ]
 }

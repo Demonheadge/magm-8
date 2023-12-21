@@ -668,6 +668,7 @@
 #define MAP_RG_SIX_ISLAND_PATTERN_BUSH             (109 | (27 << 8))
 #define MAP_RG_SIX_ISLAND_ALTERING_CAVE            (110 | (27 << 8))
 #define MAP_CATAS                                  (111 | (27 << 8))
+#define MAP_CRYSTAL_CAVE                           (112 | (27 << 8))
 
 // gMapGroup_IndoorRoute109
 #define MAP_ROUTE109_SEASHORE_HOUSE (0 | (28 << 8))
