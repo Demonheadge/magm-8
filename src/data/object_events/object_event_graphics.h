@@ -377,7 +377,7 @@ const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokem
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 
 //Pokemon overworlds
-const u32 gObjectEventPic_Pokemon_Species_001[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/001.4bpp");
+const u32 gObjectEventPic_Pokemon_Species_001[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/rillaboom.4bpp");
 const u16 gObjectEventPalette_Pokemon_Species_001[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/001.gbapal");
 
 const u32 gObjectEventPic_Pokemon_Species_002[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/002.4bpp");
