@@ -1534,4 +1534,5 @@ const struct Tileset gTileset_CatasSecondary =
     .metatiles = gMetatiles_CatasSecondary,
     .metatileAttributes = gMetatileAttributes_CatasSecondary,
     .callback = NULL,
+    .dontUsePal7 = TRUE,
 };
