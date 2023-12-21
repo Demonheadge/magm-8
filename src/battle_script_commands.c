@@ -62,6 +62,7 @@
 #include "battle_util.h"
 #include "constants/pokemon.h"
 #include "config/battle.h"
+#include "data/pokemon/item_drops.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -10472,16 +10473,18 @@ static void Cmd_various(void)
     }
     case VARIOUS_GIVE_DROPPED_ITEMS:
     {
-        u8 i;
-        u8 battlers[] = {GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), 
-                         GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)};
-        for (i = 0; i < 1 + IsDoubleBattle(); i++)
+        u32 j;
+        u32 rand = Random() % 100;
+        u32 percentTotal = 0;
+        u16 species = gBattleMons[gBattlerTarget].species;
+
+        for (j = 0; j < gItemDropSpecies[species].dropCount; j++)
         {
-            gLastUsedItem = gBattleResources->battleHistory->heldItems[battlers[i]];
-            gBattleResources->battleHistory->heldItems[battlers[i]] = ITEM_NONE;
-            if (gLastUsedItem && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_WALLY_TUTORIAL)))
-            {
-                if(AddBagItem(gLastUsedItem, 1))
+            u16 item = gItemDropSpecies[species].drops[j].item;
+            percentTotal += gItemDropSpecies[species].drops[j].dropChance;
+            CopyItemName(item, gStringVar1);
+            if ((rand >= percentTotal - gItemDropSpecies[species].drops[j].dropChance) && (rand < percentTotal)) {
+                if(AddBagItem(item, 1))
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
                 else
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;

@@ -127,7 +127,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(CRYSTAL_CAVE), MAP_NUM(CRYSTAL_CAVE), WARP_ID_NONE, 6, 37);
+    SetWarpDestination(MAP_GROUP(CRYSTAL_CAVE), MAP_NUM(CRYSTAL_CAVE), WARP_ID_NONE, 7, 37);
     WarpIntoMap();
 }
 

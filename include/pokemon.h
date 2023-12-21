@@ -403,6 +403,18 @@ struct SpeciesInfo /*0x8C*/
  /* 0x84 */ const struct FormChange *formChangeTable;
 };
 
+struct ItemDrops
+{
+    u16 item;
+    u8 dropChance;
+};
+
+struct ItemDropSpecies
+{
+    const struct ItemDrops *drops;
+    u8 dropCount;
+};
+
 struct BattleMove
 {
     u16 effect;
