@@ -12107,7 +12107,7 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_DOUBLADE"
+                "species": "SPECIES_LICKITUNG"
               },
               {
                 "min_level": 41,
@@ -12122,7 +12122,7 @@
               {
                 "min_level": 42,
                 "max_level": 44,
-                "species": "SPECIES_LICKITUNG"
+                "species": "SPECIES_RILLABOOM"
               },
               {
                 "min_level": 42,
@@ -12151,7 +12151,7 @@
           "map": "MAP_CRYSTAL_CAVE",
           "base_label": "gCrystalCave0",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 5,

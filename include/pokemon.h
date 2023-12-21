@@ -413,6 +413,8 @@ struct ItemDropSpecies
 {
     const struct ItemDrops *drops;
     u8 dropCount;
+    u8 numDropsLower;
+    u8 numDropsUpper;
 };
 
 struct BattleMove
