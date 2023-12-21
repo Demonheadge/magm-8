@@ -10470,38 +10470,62 @@ static void Cmd_various(void)
         CourtChangeSwapSideStatuses();
         break;
     }
-    case VARIOUS_SWAP_STATS:
+    case VARIOUS_GIVE_DROPPED_ITEMS:
+    {
+        u8 i;
+        u8 battlers[] = {GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), 
+                         GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)};
+        for (i = 0; i < 1 + IsDoubleBattle(); i++)
         {
-            VARIOUS_ARGS(u8 stat);
-
-            u8 stat = cmd->stat;
-            u16 temp;
-
-            switch (stat)
+            gLastUsedItem = gBattleResources->battleHistory->heldItems[battlers[i]];
+            gBattleResources->battleHistory->heldItems[battlers[i]] = ITEM_NONE;
+            if (gLastUsedItem && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_WALLY_TUTORIAL)))
             {
-            case STAT_HP:
-                SWAP(gBattleMons[gBattlerAttacker].hp, gBattleMons[gBattlerTarget].hp, temp);
-                break;
-            case STAT_ATK:
-                SWAP(gBattleMons[gBattlerAttacker].attack, gBattleMons[gBattlerTarget].attack, temp);
-                break;
-            case STAT_DEF:
-                SWAP(gBattleMons[gBattlerAttacker].defense, gBattleMons[gBattlerTarget].defense, temp);
-                break;
-            case STAT_SPEED:
-                SWAP(gBattleMons[gBattlerAttacker].speed, gBattleMons[gBattlerTarget].speed, temp);
-                break;
-            case STAT_SPATK:
-                SWAP(gBattleMons[gBattlerAttacker].spAttack, gBattleMons[gBattlerTarget].spAttack, temp);
-                break;
-            case STAT_SPDEF:
-                SWAP(gBattleMons[gBattlerAttacker].spDefense, gBattleMons[gBattlerTarget].spDefense, temp);
-                break;
+                if(AddBagItem(gLastUsedItem, 1))
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
+                else
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
+                if (IsDoubleBattle())
+                    BattleScriptPushCursor();
+                else
+                    BattleScriptPush(gBattlescriptCurrInstr + 3);
+                gBattlescriptCurrInstr = BattleScript_ItemDropped;
+                return;
             }
-            PREPARE_STAT_BUFFER(gBattleTextBuff1, stat);
-            gBattlescriptCurrInstr = cmd->nextInstr;
-            return;
         }
+        break;
+    }
+    case VARIOUS_SWAP_STATS:
+    {
+        VARIOUS_ARGS(u8 stat);
+        u8 stat = cmd->stat;
+        u16 temp;
+
+        switch (stat)
+        {
+        case STAT_HP:
+            SWAP(gBattleMons[gBattlerAttacker].hp, gBattleMons[gBattlerTarget].hp, temp);
+            break;
+        case STAT_ATK:
+            SWAP(gBattleMons[gBattlerAttacker].attack, gBattleMons[gBattlerTarget].attack, temp);
+            break;
+        case STAT_DEF:
+            SWAP(gBattleMons[gBattlerAttacker].defense, gBattleMons[gBattlerTarget].defense, temp);
+            break;
+        case STAT_SPEED:
+            SWAP(gBattleMons[gBattlerAttacker].speed, gBattleMons[gBattlerTarget].speed, temp);
+            break;
+        case STAT_SPATK:
+            SWAP(gBattleMons[gBattlerAttacker].spAttack, gBattleMons[gBattlerTarget].spAttack, temp);
+            break;
+        case STAT_SPDEF:
+            SWAP(gBattleMons[gBattlerAttacker].spDefense, gBattleMons[gBattlerTarget].spDefense, temp);
+            break;
+        }
+        PREPARE_STAT_BUFFER(gBattleTextBuff1, stat);
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
     case VARIOUS_TEATIME_TARGETS:
     {
         VARIOUS_ARGS(const u8 *jumpInstr);

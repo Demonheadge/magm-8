@@ -2406,4 +2406,8 @@
 	.macro flushtextbox
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
+    .endm
+
+	.macro givedroppeditems
+	various BS_FAINTED, VARIOUS_GIVE_DROPPED_ITEMS
 	.endm
