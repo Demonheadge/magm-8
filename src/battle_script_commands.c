@@ -10473,32 +10473,30 @@ static void Cmd_various(void)
     }
     case VARIOUS_GIVE_DROPPED_ITEMS:
     {
-        VARIOUS_ARGS();
         u32 i, j, k;
         s32 validMonsCount = CalculatePartyCount(gEnemyParty);
-
-        for (k = 0; k < validMonsCount; k++)
+        for (i = 0; i < validMonsCount; i++)
         {
-            u16 species = GetMonData(&gEnemyParty[k], MON_DATA_SPECIES);
-            u8 numDrops = (Random() % gItemDropSpecies[species].numDropsUpper) + gItemDropSpecies[species].numDropsLower;
-            for (i = 0; i < numDrops; i++)
+            u16 species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES);
+            u8 numDrops = (Random() % (gItemDropSpecies[species].numDropsUpper - gItemDropSpecies[species].numDropsLower + 1)) + gItemDropSpecies[species].numDropsLower;
+            for (j = 0; j < numDrops; j++)
             {
                 u32 rand = Random() % 100;
                 u32 percentTotal = 0;
-                for (j = 0; j < gItemDropSpecies[species].dropCount; j++)
+                for (k = 0; k < gItemDropSpecies[species].dropCount; k++)
                 {
-                    u16 item = gItemDropSpecies[species].drops[j].item;
+                    u16 item = gItemDropSpecies[species].drops[k].item;
                     if (item != ITEM_NONE)
                     {
-                        percentTotal += gItemDropSpecies[species].drops[j].dropChance;
-                        if ((rand >= percentTotal - gItemDropSpecies[species].drops[j].dropChance) && (rand < percentTotal)) {
+                        percentTotal += gItemDropSpecies[species].drops[k].dropChance;
+                        if ((rand >= percentTotal - gItemDropSpecies[species].drops[k].dropChance) && (rand < percentTotal)) {
                             StringCopy(gStringVar1, GetSpeciesName(species));
                             CopyItemName(item, gStringVar2);
                             if(AddBagItem(item, 1))
                                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
                             else
                                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
-                            BattleScriptPush(cmd->nextInstr);
+                            BattleScriptPush(gBattlescriptCurrInstr + 3);
                             gBattlescriptCurrInstr = BattleScript_ItemDropped;
                         }
                     }
