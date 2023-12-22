@@ -10473,6 +10473,7 @@ static void Cmd_various(void)
     }
     case VARIOUS_GIVE_DROPPED_ITEMS:
     {
+        VARIOUS_ARGS();
         u32 i, j, k;
         s32 validMonsCount = CalculatePartyCount(gEnemyParty);
 
@@ -10491,19 +10492,20 @@ static void Cmd_various(void)
                     {
                         percentTotal += gItemDropSpecies[species].drops[j].dropChance;
                         if ((rand >= percentTotal - gItemDropSpecies[species].drops[j].dropChance) && (rand < percentTotal)) {
-                            CopyItemName(item, gStringVar1);
+                            StringCopy(gStringVar1, GetSpeciesName(species));
+                            CopyItemName(item, gStringVar2);
                             if(AddBagItem(item, 1))
                                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
                             else
                                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
-                            BattleScriptPush(gBattlescriptCurrInstr + 3);
+                            BattleScriptPush(cmd->nextInstr);
                             gBattlescriptCurrInstr = BattleScript_ItemDropped;
                         }
                     }
                 }
             }
         }
-        break;
+        return;
     }
     case VARIOUS_SWAP_STATS:
     {
