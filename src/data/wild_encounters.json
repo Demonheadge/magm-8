@@ -12082,7 +12082,7 @@
           "map": "MAP_CATAS",
           "base_label": "gCatas0",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 7,
             "mons": [
               {
                 "min_level": 40,

@@ -10473,29 +10473,32 @@ static void Cmd_various(void)
     }
     case VARIOUS_GIVE_DROPPED_ITEMS:
     {
-        u32 i, j;
-        u16 species = gBattleMons[gBattlerTarget].species;
-        u8 numDrops = (Random() % gItemDropSpecies[species].numDropsUpper) + gItemDropSpecies[species].numDropsLower;
+        u32 i, j, k;
+        s32 validMonsCount = CalculatePartyCount(gEnemyParty);
 
-        for (i = 0; i < numDrops; i++)
+        for (k = 0; k < validMonsCount; k++)
         {
-            u32 rand = Random() % 100;
-            u32 percentTotal = 0;
-            for (j = 0; j < gItemDropSpecies[species].dropCount; j++)
+            u16 species = GetMonData(&gEnemyParty[k], MON_DATA_SPECIES);
+            u8 numDrops = (Random() % gItemDropSpecies[species].numDropsUpper) + gItemDropSpecies[species].numDropsLower;
+            for (i = 0; i < numDrops; i++)
             {
-                u16 item = gItemDropSpecies[species].drops[j].item;
-                if (item != ITEM_NONE)
+                u32 rand = Random() % 100;
+                u32 percentTotal = 0;
+                for (j = 0; j < gItemDropSpecies[species].dropCount; j++)
                 {
-                    percentTotal += gItemDropSpecies[species].drops[j].dropChance;
-                    CopyItemName(item, gStringVar1);
-                    if ((rand >= percentTotal - gItemDropSpecies[species].drops[j].dropChance) && (rand < percentTotal)) {
-                        if(AddBagItem(item, 1))
-                            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
-                        else
-                            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
-                        BattleScriptPush(gBattlescriptCurrInstr + 3);
-                        gBattlescriptCurrInstr = BattleScript_ItemDropped;
-                        if (i == numDrops - 1) return;
+                    u16 item = gItemDropSpecies[species].drops[j].item;
+                    if (item != ITEM_NONE)
+                    {
+                        percentTotal += gItemDropSpecies[species].drops[j].dropChance;
+                        if ((rand >= percentTotal - gItemDropSpecies[species].drops[j].dropChance) && (rand < percentTotal)) {
+                            CopyItemName(item, gStringVar1);
+                            if(AddBagItem(item, 1))
+                                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
+                            else
+                                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
+                            BattleScriptPush(gBattlescriptCurrInstr + 3);
+                            gBattlescriptCurrInstr = BattleScript_ItemDropped;
+                        }
                     }
                 }
             }
