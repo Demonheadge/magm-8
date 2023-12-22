@@ -10500,6 +10500,7 @@ static void Cmd_various(void)
                 }
             }
         }
+        break;
     }
     case VARIOUS_SWAP_STATS:
     {
