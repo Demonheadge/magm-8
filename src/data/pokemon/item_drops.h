@@ -18,13 +18,13 @@ const struct ItemDropSpecies gItemDropSpecies[] = {
     [SPECIES_TYRANITAR] = {
         .drops = sTyranitarDrops,
         .dropCount = 4,
-        .numDropsLower = 0,
+        .numDropsLower = 4,
         .numDropsUpper = 4,
     },
     [SPECIES_METAGROSS] = {
         .drops = sMetagrossDrops,
         .dropCount = 4,
-        .numDropsLower = 0,
+        .numDropsLower = 4,
         .numDropsUpper = 4,
     },
 };
