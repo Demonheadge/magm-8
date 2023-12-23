@@ -2,16 +2,34 @@
 # json file
 
 import json
+import textwrap
+
+wrapper = textwrap.TextWrapper(width=37)
 
 # Opening JSON file
 f = open('PokeScape.json')
+f2 = open('PokeScape_Dex.json')
+f3 = open('PokeScape_Evos.json')
 
 # returns JSON object as 
 # a dictionary
 data = json.load(f)
+data2 = json.load(f2)
+data3 = json.load(f3)
 
 Bloodveld_Mutated_Special_Form_Index = "399"
-Runemon_Indexes = [Bloodveld_Mutated_Special_Form_Index]
+Demon_Lesser_OSRS_Form = "697"
+Jelly_Normal_Form = "384"
+Abyssal_Minion_Form = "270"
+Giant_Rat_Crypt_Form = "59"
+Hellhound = "150"
+Bloodveld_Insatiable_Physical_Form = "396"
+Bloodveld_Insatiable_Special_Form = "397"
+Demon_Greater_OSRS_Form = "698"
+Abyssal_Demon_Form = "271"
+Basilisk_OSRS_Form = "754"
+Cockatrice = "254"
+Runemon_Indexes = [Bloodveld_Mutated_Special_Form_Index, Demon_Lesser_OSRS_Form, Jelly_Normal_Form, Abyssal_Minion_Form, Giant_Rat_Crypt_Form, Hellhound, Bloodveld_Insatiable_Physical_Form, Bloodveld_Insatiable_Special_Form, Demon_Greater_OSRS_Form, Abyssal_Demon_Form, Basilisk_OSRS_Form, Cockatrice]
 NAME = 0
 Type_1 = 1
 Type_2 = 2
@@ -48,6 +66,15 @@ Egg_Steps = 36
 FAMILY_LINE = 37
 INGAME_NAME = 38
 
+NAME_DEX = 0
+DEX_ENTRY_DEX = 1
+HEIGHT_DEX = 2
+WEIGHT_DEX = 3
+DEX_NUMBER_DEX = 4
+CATEGORY_DEX = 5
+COUNT_DEX = 6
+Creature_in_RuneScape_DEX = 7
+
 with open('output.txt', 'w') as w:
     for Runemon_Index in Runemon_Indexes:
         w.write('    [SPECIES_' + data[NAME][Runemon_Index].upper() + '] =\n')
@@ -57,7 +84,10 @@ with open('output.txt', 'w') as w:
         w.write('        .baseSpeed = ' + str(data[Speed][Runemon_Index]) + ',\n')
         w.write('        .baseSpAttack = ' + str(data[Special_Attack][Runemon_Index]) + ',\n')
         w.write('        .baseSpDefense = ' + str(data[Special_Defense][Runemon_Index]) + ',\n')
-        w.write('        .types = { TYPE_' + str(data[Type_1][Runemon_Index]) + ', TYPE_' + str(data[Type_2][Runemon_Index]) + ' },\n')
+        type2 = data[Type_2][Runemon_Index]
+        if type2 == "0":
+            type2 = data[Type_1][Runemon_Index]
+        w.write('        .types = { TYPE_' + str(data[Type_1][Runemon_Index]) + ', TYPE_' + str(type2) + ' },\n')
         w.write('        .catchRate = ' + str(data[Catch_Rate][Runemon_Index]) + ',\n')
         w.write('        .expYield = ' + str(data[Exp_Yield][Runemon_Index]) + ',\n')
         w.write('        .evYield_HP = ' + str(data[HP_EV_Yield][Runemon_Index]) + ',\n')
@@ -70,9 +100,35 @@ with open('output.txt', 'w') as w:
         w.write('        .eggCycles = ' + str(data[Egg_Cycles][Runemon_Index]) + ',\n')
         w.write('        .friendship = ' + str(data[Friendship][Runemon_Index]) + ',\n')
         w.write('        .growthRate = ' + str(data[Exp_Growth][Runemon_Index]).upper().replace(' ', '_') + ',\n')
-        w.write('        .eggGroups = { EGG_GROUP_' + str(data[Egg_Group_1][Runemon_Index]) + ', EGG_GROUP_' + str(data[Egg_Group_2][Runemon_Index]) + ' },\n')
+        eggGroup2 = data[Egg_Group_2][Runemon_Index]
+        if eggGroup2 == "0":
+            eggGroup2 = data[Egg_Group_1][Runemon_Index]
+        w.write('        .eggGroups = { EGG_GROUP_' + str(data[Egg_Group_1][Runemon_Index]) + ', EGG_GROUP_' + str(eggGroup2) + ' },\n')
         w.write('        .abilities = { ABILITY_' + str(data[Ability_1][Runemon_Index]) + ', ABILITY_' + str(data[Ability_2][Runemon_Index]) + ', ABILITY_' + str(data[Hidden_Ability][Runemon_Index]) + ' },\n')
         w.write('        .bodyColor = BODY_COLOR_BLACK,\n')
+        w.write('        .speciesName = _("' + data[NAME][Runemon_Index].replace('_', ' ') + '"),\n')
+        w.write('        .cryId = CRY_' + data[NAME][Runemon_Index].upper() + ',\n')
+        w.write('        .natDexNum = NATIONAL_DEX_' + data[NAME][Runemon_Index].upper() + ',\n')
+        w.write('        .categoryName = _("' + data2[CATEGORY_DEX][Runemon_Index] + '"),\n')
+        w.write('        .height = ' + str(data2[HEIGHT_DEX][Runemon_Index]) + ',\n')
+        w.write('        .weight = ' + str(data2[WEIGHT_DEX][Runemon_Index]) + ',\n')
+        description = wrapper.fill(text=data2[DEX_ENTRY_DEX][Runemon_Index])
+        w.write('        .description = COMPOUND_STRING(' + repr(description) + '),\n')
+        w.write('        .pokemonScale = 256,\n')
+        w.write('        .pokemonOffset = 0,\n')
+        w.write('        .trainerScale = 256,\n')
+        w.write('        .trainerOffset = 0,\n')
+        w.write('        FRONT_PIC(' + data[NAME][Runemon_Index] + ', 64, 64),\n')
+        w.write('        .frontPicYOffset = 0,\n')
+        w.write('        .frontAnimFrames = sAnims_None,\n')
+        w.write('        .enemyMonElevation = 0,\n')
+        w.write('        BACK_PIC(' + data[NAME][Runemon_Index] + ', 64, 64),\n')
+        w.write('        .backPicYOffset = 0,\n')
+        w.write('        .backAnimId = BACK_ANIM_NONE,\n')
+        w.write('        PALETTES(' + data[NAME][Runemon_Index] + '),\n')
+        w.write('        ICON(' + data[NAME][Runemon_Index] + ', 0),\n')
+        w.write('        LEARNSETS(' + data[NAME][Runemon_Index] + '),\n')
+        w.write('    },\n')
 
 # Closing file
 f.close()
