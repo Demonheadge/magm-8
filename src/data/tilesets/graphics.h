@@ -2894,3 +2894,22 @@ const u16 gTilesetPalettes_CatasSecondary[][16] =
 };
 
 const u32 gTilesetTiles_CatasSecondary[] = INCBIN_U32("data/tilesets/secondary/catas_secondary/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_KourendCatacombs[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kourend_catacombs/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_KourendCatacombs[] = INCBIN_U32("data/tilesets/secondary/kourend_catacombs/tiles.4bpp.lz");

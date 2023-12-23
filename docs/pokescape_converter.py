@@ -132,4 +132,6 @@ with open('output.txt', 'w') as w:
 
 # Closing file
 f.close()
+f2.close()
+f3.close()
 w.close()

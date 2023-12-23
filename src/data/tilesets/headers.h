@@ -1536,3 +1536,14 @@ const struct Tileset gTileset_CatasSecondary =
     .callback = NULL,
     .dontUsePal7 = TRUE,
 };
+
+const struct Tileset gTileset_KourendCatacombs =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_KourendCatacombs,
+    .palettes = gTilesetPalettes_KourendCatacombs,
+    .metatiles = gMetatiles_KourendCatacombs,
+    .metatileAttributes = gMetatileAttributes_KourendCatacombs,
+    .callback = NULL,
+};

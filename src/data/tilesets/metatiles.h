@@ -384,3 +384,6 @@ const u32 gMetatileAttributes_Catas[] = INCBIN_U32("data/tilesets/primary/catas/
 
 const u16 gMetatiles_CatasSecondary[] = INCBIN_U16("data/tilesets/secondary/catas_secondary/metatiles.bin");
 const u32 gMetatileAttributes_CatasSecondary[] = INCBIN_U32("data/tilesets/secondary/catas_secondary/metatile_attributes.bin");
+
+const u16 gMetatiles_KourendCatacombs[] = INCBIN_U16("data/tilesets/secondary/kourend_catacombs/metatiles.bin");
+const u32 gMetatileAttributes_KourendCatacombs[] = INCBIN_U32("data/tilesets/secondary/kourend_catacombs/metatile_attributes.bin");

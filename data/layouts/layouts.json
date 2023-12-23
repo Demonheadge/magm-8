@@ -8393,11 +8393,11 @@
       "id": "LAYOUT_CATAS",
       "name": "Catas_Layout",
       "width": 50,
-      "height": 50,
+      "height": 62,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Catas",
-      "secondary_tileset": "gTileset_CatasSecondary",
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
       "border_filepath": "data/layouts/Catas/border.bin",
       "blockdata_filepath": "data/layouts/Catas/map.bin"
     },
@@ -8409,7 +8409,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Catas",
-      "secondary_tileset": "gTileset_CatasSecondary",
+      "secondary_tileset": "gTileset_KourendCatacombs",
       "border_filepath": "data/layouts/CrystalCave/border.bin",
       "blockdata_filepath": "data/layouts/CrystalCave/map.bin"
     }
