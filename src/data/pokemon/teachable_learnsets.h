@@ -39118,3 +39118,47 @@ static const u16 sOgerponTeachableLearnset[] = {
 static const u16 sBloodveld_Mutated_Special_FormTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sDemon_Lesser_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sAbyssal_Minion_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sGiant_Rat_Crypt_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHellhoundTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBloodveld_Insatiable_Physical_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBloodveld_Insatiable_Special_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Greater_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sAbyssal_Demon_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBasilisk_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCockatriceTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Normal_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};

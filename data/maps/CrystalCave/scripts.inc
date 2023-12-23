@@ -13,9 +13,9 @@ CrystalCave_Start:
     givemon SPECIES_DECIDUEYE, 50, ITEM_LEFTOVERS
     givemon SPECIES_BLISSEY, 50, ITEM_LEFTOVERS
     // givemon SPECIES_HATTERENE, 50, ITEM_LEFTOVERS
-    givemon SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM, 50, ITEM_LEFTOVERS
     setflag FLAG_SYS_POKEMON_GET
     setflag FLAG_SYS_POKEDEX_GET
     special EnableNationalPokedex
+    additem ITEM_MASTER_BALL
     setflag FLAG_CATAS_START
     end

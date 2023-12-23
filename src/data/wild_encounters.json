@@ -12161,57 +12161,57 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_JELLY_NORMAL_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_ABYSSAL_MINION_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_GIANT_RAT_CRYPT_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_HELLHOUND"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_BLOODVELD_INSATIABLE_SPECIAL_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_DEMON_GREATER_OSRS_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_ABYSSAL_DEMON_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_BASILISK_OSRS_FORM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+                "species": "SPECIES_COCKATRICE"
               }
             ]
           }
