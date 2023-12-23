@@ -64,6 +64,9 @@
 #include "config/battle.h"
 #include "data/pokemon/item_drops.h"
 
+EWRAM_DATA u16 species2[PARTY_SIZE] = {0};
+EWRAM_DATA u16 items[PARTY_SIZE][5] = {0};
+
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
 // For example accuracycheck is defined as:
@@ -10471,39 +10474,55 @@ static void Cmd_various(void)
         CourtChangeSwapSideStatuses();
         break;
     }
-    case VARIOUS_GIVE_DROPPED_ITEMS:
+    case VARIOUS_GIVE_DROPPED_ITEMS_SET_SPECIES_ITEMS:
     {
         u32 i, j, k;
-        s32 validMonsCount = CalculatePartyCount(gEnemyParty);
-        for (i = 0; i < validMonsCount; i++)
+        u8 enemyPartyCount = CalculateEnemyPartyCount();
+        for (i = 0; i < enemyPartyCount; i++)
         {
             u16 species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES);
-            u8 numDrops = (Random() % (gItemDropSpecies[species].numDropsUpper - gItemDropSpecies[species].numDropsLower + 1)) + gItemDropSpecies[species].numDropsLower;
-            for (j = 0; j < numDrops; j++)
+            if (species != SPECIES_NONE)
             {
-                u32 rand = Random() % 100;
-                u32 percentTotal = 0;
-                for (k = 0; k < gItemDropSpecies[species].dropCount; k++)
+                u8 numDrops = (Random() % (gItemDropSpecies[species].numDropsUpper - gItemDropSpecies[species].numDropsLower + 1)) + gItemDropSpecies[species].numDropsLower;
+                if (numDrops > 0)
                 {
-                    u16 item = gItemDropSpecies[species].drops[k].item;
-                    if (item != ITEM_NONE)
+                    for (j = 0; j < numDrops; j++)
                     {
-                        percentTotal += gItemDropSpecies[species].drops[k].dropChance;
-                        if ((rand >= percentTotal - gItemDropSpecies[species].drops[k].dropChance) && (rand < percentTotal)) {
-                            StringCopy(gStringVar1, GetSpeciesName(species));
-                            CopyItemName(item, gStringVar2);
-                            if(AddBagItem(item, 1))
-                                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
-                            else
-                                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
-                            BattleScriptPush(gBattlescriptCurrInstr + 3);
-                            gBattlescriptCurrInstr = BattleScript_ItemDropped;
+                        u32 rand = Random() % 100;
+                        u32 percentTotal = 0;
+                        for (k = 0; k < gItemDropSpecies[species].dropCount; k++)
+                        {
+                            u16 item = gItemDropSpecies[species].drops[k].item;
+                            percentTotal += gItemDropSpecies[species].drops[k].dropChance;
+                            if ((rand >= percentTotal - gItemDropSpecies[species].drops[k].dropChance) && (rand < percentTotal)) {
+                                species2[i] = species;
+                                items[i][j] = item;
+                            }
                         }
                     }
                 }
             }
         }
+        gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;
         return;
+    }
+    case VARIOUS_GIVE_DROPPED_ITEMS_SPECIES_1_ITEM_1:
+    {
+        if (species2[0] != SPECIES_NONE && items[0][0] != ITEM_NONE)
+        {
+            StringCopy(gStringVar1, GetSpeciesName(species2[0]));
+            CopyItemName(items[0][0], gStringVar2);
+            if(AddBagItem(items[0][0], 1))
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
+            BattleScriptPush(gBattlescriptCurrInstr + 3);
+            gBattlescriptCurrInstr = BattleScript_ItemDropped;
+            species2[0] = SPECIES_NONE;
+            items[0][0] = ITEM_NONE;
+            return;
+        }
+        break;
     }
     case VARIOUS_SWAP_STATS:
     {
