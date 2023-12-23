@@ -5,6 +5,8 @@
 // These constants are NOT disabled by P_GEN_X_POKEMON to keep pokedex_orders.h clean.
 enum {
     NATIONAL_DEX_NONE,
+    // Runemon
+    NATIONAL_DEX_BLOODVELD_MUTATED_SPECIAL_FORM,
     // Kanto
     NATIONAL_DEX_BULBASAUR,
     NATIONAL_DEX_IVYSAUR,

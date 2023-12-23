@@ -39114,3 +39114,7 @@ static const u16 sOgerponTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_OGERPON
+
+static const u16 sBloodveld_Mutated_Special_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};

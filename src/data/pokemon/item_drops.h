@@ -1,4 +1,4 @@
-static const struct ItemDrops sTyranitarDrops[] = 
+static const struct ItemDrops sBloodveldMDrops[] = 
 {
     {ITEM_CHOPLE_BERRY, 25},
     {ITEM_SHUCA_BERRY, 25},
@@ -15,8 +15,8 @@ static const struct ItemDrops sMetagrossDrops[] =
 };
 
 const struct ItemDropSpecies gItemDropSpecies[] = {
-    [SPECIES_TYRANITAR] = {
-        .drops = sTyranitarDrops,
+    [SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM] = {
+        .drops = sBloodveldMDrops,
         .dropCount = 4,
         .numDropsLower = 4,
         .numDropsUpper = 4,

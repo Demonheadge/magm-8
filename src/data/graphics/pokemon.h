@@ -10906,6 +10906,12 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     // const u32 gMonShinyPalette_OgerponCornerstoneMaskTera[] = INCBIN_U32("graphics/pokemon/ogerpon/cornerstone/tera/shiny.gbapal.lz");
 #endif //P_FAMILY_OGERPON
 
+    const u32 gMonFrontPic_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/front.4bpp.lz");
+    const u32 gMonPalette_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Bloodveld_Mutated_Special_Form[] = INCBIN_U8("graphics/pokemon/Bloodveld_Mutated_Special_Form/icon.4bpp");
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

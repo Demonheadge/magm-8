@@ -10082,6 +10082,8 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Fezandipiti);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Ogerpon);
 #endif //P_FAMILY_OGERPON
 
+PLACEHOLDER_ANIM_SINGLE_FRAME(Bloodveld_Mutated_Special_Form);
+
 static const union AnimCmd sAnim_Egg_1[] =
 {
     ANIMCMD_FRAME(0, 6),
@@ -12729,4 +12731,5 @@ SINGLE_ANIMATION(Fezandipiti);
 #if P_FAMILY_OGERPON
 SINGLE_ANIMATION(Ogerpon);
 #endif //P_FAMILY_OGERPON
+SINGLE_ANIMATION(Bloodveld_Mutated_Special_Form);
 SINGLE_ANIMATION(Egg);

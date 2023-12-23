@@ -94,12 +94,12 @@ with open('output.txt', 'w') as w:
         w.write('        .evYield_Attack = ' + str(data[Attack_EV_Yield][Runemon_Index]) + ',\n')
         w.write('        .evYield_Defense = ' + str(data[Defense_EV_Yield][Runemon_Index]) + ',\n')
         w.write('        .evYield_Speed = ' + str(data[Speed_EV_Yield][Runemon_Index]) + ',\n')
-        w.write('        .evYield_SpecialAttack = ' + str(data[Special_Attack_EV_Yield][Runemon_Index]) + ',\n')
-        w.write('        .evYield_SpecialDefense = ' + str(data[Special_Defense_EV_Yield][Runemon_Index]) + ',\n')
-        w.write('        .genderRatio = ' + str(data[Gender_ratio][Runemon_Index]) + ',\n')
+        w.write('        .evYield_SpAttack = ' + str(data[Special_Attack_EV_Yield][Runemon_Index]) + ',\n')
+        w.write('        .evYield_SpDefense = ' + str(data[Special_Defense_EV_Yield][Runemon_Index]) + ',\n')
+        w.write('        .genderRatio = PERCENT_FEMALE(' + str(data[Gender_ratio][Runemon_Index]) + '),\n')
         w.write('        .eggCycles = ' + str(data[Egg_Cycles][Runemon_Index]) + ',\n')
         w.write('        .friendship = ' + str(data[Friendship][Runemon_Index]) + ',\n')
-        w.write('        .growthRate = ' + str(data[Exp_Growth][Runemon_Index]).upper().replace(' ', '_') + ',\n')
+        w.write('        .growthRate = GROWTH_' + str(data[Exp_Growth][Runemon_Index]).upper().replace(' ', '_') + ',\n')
         eggGroup2 = data[Egg_Group_2][Runemon_Index]
         if eggGroup2 == "0":
             eggGroup2 = data[Egg_Group_1][Runemon_Index]
@@ -107,7 +107,7 @@ with open('output.txt', 'w') as w:
         w.write('        .abilities = { ABILITY_' + str(data[Ability_1][Runemon_Index]) + ', ABILITY_' + str(data[Ability_2][Runemon_Index]) + ', ABILITY_' + str(data[Hidden_Ability][Runemon_Index]) + ' },\n')
         w.write('        .bodyColor = BODY_COLOR_BLACK,\n')
         w.write('        .speciesName = _("' + data[NAME][Runemon_Index].replace('_', ' ') + '"),\n')
-        w.write('        .cryId = CRY_' + data[NAME][Runemon_Index].upper() + ',\n')
+        w.write('        .cryId = CRY_BULBASAUR,\n')
         w.write('        .natDexNum = NATIONAL_DEX_' + data[NAME][Runemon_Index].upper() + ',\n')
         w.write('        .categoryName = _("' + data2[CATEGORY_DEX][Runemon_Index] + '"),\n')
         w.write('        .height = ' + str(data2[HEIGHT_DEX][Runemon_Index]) + ',\n')

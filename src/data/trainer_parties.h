@@ -4028,7 +4028,7 @@ static const struct TrainerMon sParty_Shelby5[] = {
 static const struct TrainerMon sParty_Calvin1[] = {
     {
     .lvl = 5,
-    .species = SPECIES_TYRANITAR,
+    .species = SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM,
     },
     {
     .lvl = 5,
