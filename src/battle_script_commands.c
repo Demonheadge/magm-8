@@ -10523,7 +10523,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[0] = SPECIES_NONE;
             items[0][0] = ITEM_NONE;
             return;
         }
@@ -10541,7 +10540,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[0] = SPECIES_NONE;
             items[0][1] = ITEM_NONE;
             return;
         }
@@ -10559,7 +10557,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[0] = SPECIES_NONE;
             items[0][2] = ITEM_NONE;
             return;
         }
@@ -10577,7 +10574,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[0] = SPECIES_NONE;
             items[0][3] = ITEM_NONE;
             return;
         }
@@ -10595,7 +10591,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[0] = SPECIES_NONE;
             items[0][4] = ITEM_NONE;
             return;
         }
@@ -10613,7 +10608,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[1] = SPECIES_NONE;
             items[1][0] = ITEM_NONE;
             return;
         }
@@ -10631,7 +10625,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[1] = SPECIES_NONE;
             items[1][1] = ITEM_NONE;
             return;
         }
@@ -10649,7 +10642,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[1] = SPECIES_NONE;
             items[1][2] = ITEM_NONE;
             return;
         }
@@ -10667,7 +10659,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[1] = SPECIES_NONE;
             items[1][3] = ITEM_NONE;
             return;
         }
@@ -10685,7 +10676,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[1] = SPECIES_NONE;
             items[1][4] = ITEM_NONE;
             return;
         }
@@ -10703,7 +10693,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[2] = SPECIES_NONE;
             items[2][0] = ITEM_NONE;
             return;
         }
@@ -10721,7 +10710,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[2] = SPECIES_NONE;
             items[2][1] = ITEM_NONE;
             return;
         }
@@ -10739,7 +10727,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[2] = SPECIES_NONE;
             items[2][2] = ITEM_NONE;
             return;
         }
@@ -10757,7 +10744,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[2] = SPECIES_NONE;
             items[2][3] = ITEM_NONE;
             return;
         }
@@ -10775,7 +10761,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[2] = SPECIES_NONE;
             items[2][4] = ITEM_NONE;
             return;
         }
@@ -10793,7 +10778,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[3] = SPECIES_NONE;
             items[3][0] = ITEM_NONE;
             return;
         }
@@ -10811,7 +10795,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[3] = SPECIES_NONE;
             items[3][1] = ITEM_NONE;
             return;
         }
@@ -10829,7 +10812,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[3] = SPECIES_NONE;
             items[3][2] = ITEM_NONE;
             return;
         }
@@ -10847,7 +10829,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[3] = SPECIES_NONE;
             items[3][3] = ITEM_NONE;
             return;
         }
@@ -10865,7 +10846,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[3] = SPECIES_NONE;
             items[3][4] = ITEM_NONE;
             return;
         }
@@ -10883,7 +10863,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[4] = SPECIES_NONE;
             items[4][0] = ITEM_NONE;
             return;
         }
@@ -10901,7 +10880,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[4] = SPECIES_NONE;
             items[4][1] = ITEM_NONE;
             return;
         }
@@ -10919,7 +10897,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[4] = SPECIES_NONE;
             items[4][2] = ITEM_NONE;
             return;
         }
@@ -10937,7 +10914,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[4] = SPECIES_NONE;
             items[4][3] = ITEM_NONE;
             return;
         }
@@ -10955,7 +10931,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[4] = SPECIES_NONE;
             items[4][4] = ITEM_NONE;
             return;
         }
@@ -10973,7 +10948,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[5] = SPECIES_NONE;
             items[5][0] = ITEM_NONE;
             return;
         }
@@ -10991,7 +10965,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[5] = SPECIES_NONE;
             items[5][1] = ITEM_NONE;
             return;
         }
@@ -11009,7 +10982,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[5] = SPECIES_NONE;
             items[5][2] = ITEM_NONE;
             return;
         }
@@ -11027,7 +10999,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[5] = SPECIES_NONE;
             items[5][3] = ITEM_NONE;
             return;
         }
@@ -11045,7 +11016,6 @@ static void Cmd_various(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
             BattleScriptPush(gBattlescriptCurrInstr + 3);
             gBattlescriptCurrInstr = BattleScript_ItemDropped;
-            species2[5] = SPECIES_NONE;
             items[5][4] = ITEM_NONE;
             return;
         }
