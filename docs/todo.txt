@@ -1,9 +1,34 @@
-Title Screen
-Runemons
-Mapping
-Scripting
-Items
-Moves
-TMs
-Tutors
+TM moves
+TM learnsets
+New moves
+New items
+PokeScape mons
+New Runemon
+Tutor moves
+Tutor learnsets
+Kourend Catacombs
+Slayer tasks
+Home
+Plot
+Amazon Prime
+Rock Smash
+Surf
+Fishing
+Visible item locations
+Hidden item locations
+Running shoes
+Itemfinder
+Grand Exchange
+Item price fluctuation
+Part of Tree Gnome Village
+Nieve
+Skotizo
+Altar sprite
 Trainers
+Trainer sprites
+Drop tables
+Builds
+PokeScape converter
+Learnable moves converter
+Rename mons
+Duraludon (Iron Dragon) sprite
