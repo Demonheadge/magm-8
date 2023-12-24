@@ -32,3 +32,9 @@ PokeScape converter
 Learnable moves converter
 Rename mons
 Duraludon (Iron Dragon) sprite
+Magic
+Prayer
+Capes
+Boots
+Necklaces
+Rings
