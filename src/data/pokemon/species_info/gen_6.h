@@ -4000,7 +4000,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         #endif
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_PURPLE,
-        .speciesName = _("Noivern"),
+        .speciesName = _("BrnzDragon"),
         .cryId = CRY_NOIVERN,
         .natDexNum = NATIONAL_DEX_NOIVERN,
         .categoryName = _("Sound Wave"),

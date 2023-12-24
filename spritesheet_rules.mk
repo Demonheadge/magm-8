@@ -722,13 +722,13 @@ $(FLDEFFGFXDIR)/record_mix_lights.4bpp: %.4bpp: %.png
 graphics/door_anims/battle_tower_multi_corridor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/pokemon/species/001.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon/species/rillaboom.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/pokemon/species/002.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon/species/duraludon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/pokemon/species/003.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon/species/grimmsnarl.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon/species/004.4bpp: %.4bpp: %.png

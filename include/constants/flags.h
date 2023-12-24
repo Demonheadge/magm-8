@@ -43,10 +43,10 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 #define FLAG_CATAS_START     0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_HIDE_CATAS_1_HILL_GIANT_1 0x21 // Unused Flag
+#define FLAG_HIDE_CATAS_1_HILL_GIANT_2 0x22 // Unused Flag
+#define FLAG_HIDE_CATAS_2_SKELETON_1 0x23 // Unused Flag
+#define FLAG_HIDE_CATAS_2_SKELETON_2 0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

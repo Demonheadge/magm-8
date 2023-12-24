@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_HillGiant",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CATAS_1_HILL_GIANT_1"
     },
     {
       "type": "object",
@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_HillGiant",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CATAS_1_HILL_GIANT_2"
     },
     {
       "type": "object",
@@ -83,7 +83,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_Skeleton",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CATAS_2_SKELETON_1"
     },
     {
       "type": "object",
@@ -97,7 +97,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_Skeleton",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CATAS_2_SKELETON_2"
     },
     {
       "type": "object",
@@ -130,8 +130,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_356",
-      "x": 13,
-      "y": 51,
+      "x": 12,
+      "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -213,7 +213,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
       "x": 37,
       "y": 16,
       "elevation": 0,
@@ -227,7 +227,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
       "x": 33,
       "y": 17,
       "elevation": 0,
@@ -325,7 +325,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
       "x": 39,
       "y": 6,
       "elevation": 0,
@@ -339,7 +339,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
       "x": 37,
       "y": 5,
       "elevation": 0,
@@ -353,7 +353,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
       "x": 46,
       "y": 5,
       "elevation": 0,
@@ -370,6 +370,20 @@
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_003",
       "x": 47,
       "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_679",
+      "x": 13,
+      "y": 51,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
