@@ -39162,3 +39162,7 @@ static const u16 sCockatriceTeachableLearnset[] = {
 static const u16 sJelly_Normal_FormTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sDemon_Greater_Black_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};

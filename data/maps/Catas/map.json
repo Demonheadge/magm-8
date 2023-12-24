@@ -54,8 +54,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_1_MUTATED_BLOODVELD_1"
     },
     {
       "type": "object",
@@ -68,8 +68,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_1_MUTATED_BLOODVELD_2"
     },
     {
       "type": "object",
@@ -83,7 +83,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_Skeleton",
-      "flag": "FLAG_HIDE_CATAS_2_SKELETON_1"
+      "flag": "FLAG_HIDE_CATAS_1_SKELETON_1"
     },
     {
       "type": "object",
@@ -97,7 +97,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Catas_Skeleton",
-      "flag": "FLAG_HIDE_CATAS_2_SKELETON_2"
+      "flag": "FLAG_HIDE_CATAS_1_SKELETON_2"
     },
     {
       "type": "object",
@@ -110,8 +110,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_Ghost",
+      "flag": "FLAG_HIDE_CATAS_1_GHOST_2"
     },
     {
       "type": "object",
@@ -124,8 +124,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_Ghost",
+      "flag": "FLAG_HIDE_CATAS_1_GHOST_1"
     },
     {
       "type": "object",
@@ -138,8 +138,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_Cyclops",
+      "flag": "FLAG_HIDE_CATAS_1_CYCLOPS_2"
     },
     {
       "type": "object",
@@ -152,8 +152,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_Cyclops",
+      "flag": "FLAG_HIDE_CATAS_1_CYCLOPS_1"
     },
     {
       "type": "object",
@@ -166,8 +166,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_2"
     },
     {
       "type": "object",
@@ -180,8 +180,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_1"
     },
     {
       "type": "object",
@@ -194,8 +194,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterNechrayael",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_2"
     },
     {
       "type": "object",
@@ -208,8 +208,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterNechrayael",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_1"
     },
     {
       "type": "object",
@@ -222,8 +222,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_2"
     },
     {
       "type": "object",
@@ -236,8 +236,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_1"
     },
     {
       "type": "object",
@@ -250,8 +250,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_IronDragon",
+      "flag": "FLAG_HIDE_CATAS_1_IRON_DRAGON_1"
     },
     {
       "type": "object",
@@ -264,8 +264,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_IronDragon",
+      "flag": "FLAG_HIDE_CATAS_1_IRON_DRAGON_2"
     },
     {
       "type": "object",
@@ -278,8 +278,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_BronzeDragon",
+      "flag": "FLAG_HIDE_CATAS_1_BRONZE_DRAGON_2"
     },
     {
       "type": "object",
@@ -292,8 +292,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_BronzeDragon",
+      "flag": "FLAG_HIDE_CATAS_1_BRONZE_DRAGON_1"
     },
     {
       "type": "object",
@@ -306,8 +306,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_3"
     },
     {
       "type": "object",
@@ -320,8 +320,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_4"
     },
     {
       "type": "object",
@@ -334,8 +334,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_4"
     },
     {
       "type": "object",
@@ -348,8 +348,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_3"
     },
     {
       "type": "object",
@@ -362,8 +362,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_5"
     },
     {
       "type": "object",
@@ -376,8 +376,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_BlackDemon",
+      "flag": "FLAG_HIDE_CATAS_1_BLACK_DEMON_1"
     },
     {
       "type": "object",
@@ -390,8 +390,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Catas_MagicAxe",
+      "flag": "FLAG_HIDE_CATAS_1_MAGIC_AXE_1"
     }
   ],
   "warp_events": [

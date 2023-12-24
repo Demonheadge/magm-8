@@ -10965,6 +10965,12 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonBackPic_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/back.4bpp.lz");
     const u32 gMonShinyPalette_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/shiny.gbapal.lz");
     const u8 gMonIcon_Basilisk_OSRS_Form[] = INCBIN_U8("graphics/pokemon/Basilisk_OSRS_Form/icon.4bpp");
+
+    const u32 gMonFrontPic_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/front.4bpp.lz");
+    const u32 gMonPalette_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Demon_Greater_Black_Form[] = INCBIN_U8("graphics/pokemon/Demon_Greater_Black_Form/icon.4bpp");
     
     const u32 gMonFrontPic_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/front.4bpp.lz");
     const u32 gMonPalette_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/normal.gbapal.lz");

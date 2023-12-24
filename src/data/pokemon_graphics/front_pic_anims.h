@@ -10094,6 +10094,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Abyssal_Demon_Form);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Basilisk_OSRS_Form);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Cockatrice);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Jelly_Normal_Form);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Demon_Greater_Black_Form);
 
 static const union AnimCmd sAnim_Egg_1[] =
 {
@@ -12754,4 +12755,5 @@ SINGLE_ANIMATION(Abyssal_Demon_Form);
 SINGLE_ANIMATION(Basilisk_OSRS_Form);
 SINGLE_ANIMATION(Cockatrice);
 SINGLE_ANIMATION(Jelly_Normal_Form);
+SINGLE_ANIMATION(Demon_Greater_Black_Form);
 SINGLE_ANIMATION(Egg);
