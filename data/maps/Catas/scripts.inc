@@ -25,16 +25,22 @@ Catas_Start:
     end
 
 Catas_Nieve::
-    goto_if_quest_complete QUEST_1, Catas_GiveSlayerPoints
+    lock
+    faceplayer
+    goto_if_quest_reward QUEST_1, Catas_GiveSlayerPoints
+    release
     end
 
-Catas_GiveSlayerPoints:
+Catas_GiveSlayerPoints::
     setvar VAR_0x8004, 12
-    frontier_givepoints
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
     msgbox Catas_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_1 
+    release
     end
 
-Catas_Text_ObtainedXSlayerPoints:
+Catas_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
 
 Catas_HillGiant::
