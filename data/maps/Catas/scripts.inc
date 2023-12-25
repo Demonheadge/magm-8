@@ -16,9 +16,26 @@ Catas_Start:
     setflag FLAG_SYS_POKEMON_GET
     setflag FLAG_SYS_POKEDEX_GET
     special EnableNationalPokedex
+    setflag FLAG_SYS_FRONTIER_PASS
     additem ITEM_MASTER_BALL
+    setflag FLAG_SYS_QUEST_MENU_GET
+    setvar VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT, 5
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     setflag FLAG_CATAS_START
     end
+
+Catas_Nieve::
+    goto_if_quest_complete QUEST_1, Catas_GiveSlayerPoints
+    end
+
+Catas_GiveSlayerPoints:
+    setvar VAR_0x8004, 12
+    frontier_givepoints
+    msgbox Catas_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    end
+
+Catas_Text_ObtainedXSlayerPoints:
+	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
 
 Catas_HillGiant::
     lock

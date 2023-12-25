@@ -1,40 +1,42 @@
-TM moves
-TM learnsets
-New moves
-New items
-PokeScape mons
-New Runemon
-Tutor moves
-Tutor learnsets
-Kourend Catacombs
-Slayer tasks
-Home
-Plot
-Amazon Prime
-Rock Smash
-Surf
-Fishing
-Visible item locations
-Hidden item locations
-Running shoes
-Itemfinder
-Grand Exchange
-Item price fluctuation
-Part of Tree Gnome Village
-Nieve
-Skotizo
 Altar sprite
-Trainers
-Trainer sprites
-Drop tables
-Builds
-PokeScape converter
-Learnable moves converter
-Rename mons
-Duraludon (Iron Dragon) sprite
-Magic
-Prayer
-Capes
+Amazon Prime
 Boots
+Builds
+Capes
+Drop tables
+Duraludon (Iron Dragon) sprite
+Fishing
+Grand Exchange
+Hidden item locations
+Home
+Item price fluctuation
+Itemfinder
+Kourend Catacombs
+Learnable moves converter
+Magic
 Necklaces
+New Runemon
+New items
+New moves
+Nieve
+Part of Tree Gnome Village
+Plot
+PokeScape converter
+PokeScape mons
+Prayer
+Rename mons
 Rings
+Rock Smash
+Running shoes
+Skotizo
+Slayer points
+Slayer shop
+Slayer tasks
+Surf
+TM learnsets
+TM moves
+Trainer sprites
+Trainers
+Tutor learnsets
+Tutor moves
+Visible item locations

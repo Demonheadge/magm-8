@@ -6557,6 +6557,7 @@ BattleScript_LocalBattleWonReward::
 BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	givedroppeditems
+    updateslayercounter
 	pickup
 	end2
 

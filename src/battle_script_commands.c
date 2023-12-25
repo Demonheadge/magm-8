@@ -63,6 +63,7 @@
 #include "constants/pokemon.h"
 #include "config/battle.h"
 #include "data/pokemon/item_drops.h"
+#include "quests.h"
 
 EWRAM_DATA u16 species2[PARTY_SIZE] = {0};
 EWRAM_DATA u16 items[PARTY_SIZE][5] = {0};
@@ -10478,6 +10479,24 @@ static void Cmd_various(void)
         VARIOUS_ARGS();
         CourtChangeSwapSideStatuses();
         break;
+    }
+    case VARIOUS_UPDATE_SLAYER_COUNTER:
+    {
+        u8 leftToDefeatAbbyDemonCount = VarGet(VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT);
+        s32 enemySpecies = GetMonData(&gEnemyParty[0],MON_DATA_SPECIES);
+
+        if ((!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) && (enemySpecies == SPECIES_ABYSSAL_DEMON_FORM))
+            leftToDefeatAbbyDemonCount--;
+
+        if ((leftToDefeatAbbyDemonCount <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
+        {
+            QuestMenu_GetSetQuestState(QUEST_1,FLAG_SET_REWARD);
+            QuestMenu_GetSetQuestState(QUEST_1,FLAG_REMOVE_ACTIVE);
+        }
+
+        VarSet(VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT,leftToDefeatAbbyDemonCount);
+        gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;
+        return;
     }
     case VARIOUS_GIVE_DROPPED_ITEMS_SET_SPECIES_ITEMS:
     {
