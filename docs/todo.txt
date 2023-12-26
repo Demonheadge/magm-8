@@ -1,4 +1,6 @@
 Altar sprite
+Alter overworld encounters
+Alter wild Pokemon
 Amazon Prime
 Boots
 Builds
