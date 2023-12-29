@@ -12215,6 +12215,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_KOUREND_CATACOMBS1",
+          "base_label": "gKourendCatacombs10",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_JELLY_NORMAL_FORM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_ABYSSAL_MINION_FORM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_GIANT_RAT_CRYPT_FORM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_HELLHOUND"
+              },
+              {
+                "min_level": 42,
+                "max_level": 44,
+                "species": "SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM"
+              },
+              {
+                "min_level": 42,
+                "max_level": 44,
+                "species": "SPECIES_BLOODVELD_INSATIABLE_SPECIAL_FORM"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_DEMON_GREATER_OSRS_FORM"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_ABYSSAL_DEMON_FORM"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_BASILISK_OSRS_FORM"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_COCKATRICE"
+              }
+            ]
+          }
         }
       ]
     },

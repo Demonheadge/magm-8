@@ -342,4 +342,7 @@ void SetControllerToLinkOpponent(u32 battler);
 // link partner
 void SetControllerToLinkPartner(u32 battler);
 
+struct Pokemon* GetBankPartyData(u8 bank);
+u8 GetMonType(struct Pokemon* mon, u8 typeId);
+
 #endif // GUARD_BATTLE_CONTROLLERS_H

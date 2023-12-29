@@ -35,7 +35,7 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 4,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS1",

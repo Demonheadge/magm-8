@@ -3523,4 +3523,7 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+extern const u8 CamomonsTypeIconsTiles[];
+extern const u8 CamomonsTypeIcons2Tiles[];
+
 #endif //GUARD_GRAPHICS_H
