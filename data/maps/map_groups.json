@@ -466,7 +466,14 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "KourendCatacombs1",
+    "KourendCatacombs2",
+    "KourendCatacombs3",
+    "KourendCatacombs4",
+    "KourendCatacombs5",
+    "KourendCatacombs6",
+    "KourendCatacombs7"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

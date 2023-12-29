@@ -1,0 +1,40 @@
+{
+  "id": "MAP_KOUREND_CATACOMBS2",
+  "name": "KourendCatacombs2",
+  "layout": "LAYOUT_KOUREND_CATACOMBS2",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_KOUREND_CATACOMBS1",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS3",
+      "offset": 35,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

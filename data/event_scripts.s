@@ -1457,3 +1457,24 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CrystalCave/scripts.inc"
 	.include "data/maps/CrystalCave/text.inc"
+
+	.include "data/maps/KourendCatacombs1/scripts.inc"
+	.include "data/maps/KourendCatacombs1/text.inc"
+
+	.include "data/maps/KourendCatacombs2/scripts.inc"
+	.include "data/maps/KourendCatacombs2/text.inc"
+
+	.include "data/maps/KourendCatacombs3/scripts.inc"
+	.include "data/maps/KourendCatacombs3/text.inc"
+
+	.include "data/maps/KourendCatacombs4/scripts.inc"
+	.include "data/maps/KourendCatacombs4/text.inc"
+
+	.include "data/maps/KourendCatacombs5/scripts.inc"
+	.include "data/maps/KourendCatacombs5/text.inc"
+
+	.include "data/maps/KourendCatacombs6/scripts.inc"
+	.include "data/maps/KourendCatacombs6/text.inc"
+
+	.include "data/maps/KourendCatacombs7/scripts.inc"
+	.include "data/maps/KourendCatacombs7/text.inc"

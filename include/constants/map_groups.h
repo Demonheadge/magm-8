@@ -400,6 +400,13 @@
 #define MAP_TERRA_CAVE_END                        (105 | (24 << 8))
 #define MAP_ALTERING_CAVE                         (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE             (107 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS1                    (108 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS2                    (109 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS3                    (110 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS4                    (111 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS5                    (112 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS6                    (113 | (24 << 8))
+#define MAP_KOUREND_CATACOMBS7                    (114 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1                   (0 | (25 << 8))

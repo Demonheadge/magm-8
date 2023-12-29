@@ -8412,6 +8412,90 @@
       "secondary_tileset": "gTileset_KourendCatacombs",
       "border_filepath": "data/layouts/CrystalCave/border.bin",
       "blockdata_filepath": "data/layouts/CrystalCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS1",
+      "name": "KourendCatacombs1_Layout",
+      "width": 35,
+      "height": 34,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs1/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs1/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS2",
+      "name": "KourendCatacombs2_Layout",
+      "width": 50,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs2/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs2/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS3",
+      "name": "KourendCatacombs3_Layout",
+      "width": 29,
+      "height": 34,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs3/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs3/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS4",
+      "name": "KourendCatacombs4_Layout",
+      "width": 80,
+      "height": 16,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs4/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs4/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS5",
+      "name": "KourendCatacombs5_Layout",
+      "width": 16,
+      "height": 34,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs5/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs5/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS6",
+      "name": "KourendCatacombs6_Layout",
+      "width": 16,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs6/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs6/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS7",
+      "name": "KourendCatacombs7_Layout",
+      "width": 14,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_KourendCatacombs",
+      "border_filepath": "data/layouts/KourendCatacombs7/border.bin",
+      "blockdata_filepath": "data/layouts/KourendCatacombs7/map.bin"
     }
   ]
 }
