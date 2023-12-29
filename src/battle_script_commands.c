@@ -10513,12 +10513,17 @@ static void Cmd_various(void)
                     for (j = 0; j < numDrops; j++)
                     {
                         u32 rand = Random() % 100;
-                        u32 percentTotal = 0;
+                        // u32 percentTotal = 0;
                         for (k = 0; k < gItemDropSpecies[species].dropCount; k++)
                         {
                             u16 item = gItemDropSpecies[species].drops[k].item;
-                            percentTotal += gItemDropSpecies[species].drops[k].dropChance;
+                            /* percentTotal += gItemDropSpecies[species].drops[k].dropChance;
                             if ((rand >= percentTotal - gItemDropSpecies[species].drops[k].dropChance) && (rand < percentTotal)) {
+                                species2[i] = species;
+                                items[i][j] = item;
+                            } */
+                            u8 dropChance = gItemDropSpecies[species].drops[k].dropChance;
+                            if (rand < dropChance) {
                                 species2[i] = species;
                                 items[i][j] = item;
                             }
