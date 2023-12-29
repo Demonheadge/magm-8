@@ -2090,6 +2090,9 @@ static void PlayerHandleChooseMove(u32 battler)
 #define IS_SINGLE_BATTLE !IS_DOUBLE_BATTLE
 #define SIDE(bank) GetBattlerSide(bank)
 
+static const struct SpritePalette sTypeIconPalTemplate = {CamomonsTypeIconsPal, TYPE_ICON_TAG};
+static const struct SpritePalette sTypeIconPalTemplate2 = {CamomonsTypeIcons2Pal, TYPE_ICON_TAG_2};
+
 struct Pokemon* GetBankPartyData(u8 bank)
 {
 	u8 index = gBattlerPartyIndexes[bank];
@@ -2293,6 +2296,11 @@ static const struct SpriteTemplate sTypeIconSpriteTemplate2 =
 
 static void TryLoadTypeIcons(u32 battler)
 {
+    if (IndexOfSpritePaletteTag(TYPE_ICON_TAG) == 0xFF)
+    {
+        LoadSpritePalette(&sTypeIconPalTemplate);
+        LoadSpritePalette(&sTypeIconPalTemplate2);
+    }
     for (u8 position = 0; position < gBattlersCount; ++position)
     {
         u8 bank = GetBattlerAtPosition(position);
@@ -2301,7 +2309,7 @@ static void TryLoadTypeIcons(u32 battler)
             continue;
 
         u8 type1, type2;
-        struct Pokemon* monIllusion = GetIllusionMonPtr(bank);
+        /* struct Pokemon* monIllusion = GetIllusionMonPtr(bank);
         if (monIllusion != GetBankPartyData(bank)) //Under Illusion
         {
             type1 = GetMonType(monIllusion, 0);
@@ -2311,7 +2319,10 @@ static void TryLoadTypeIcons(u32 battler)
         {
             type1 = gBattleMons[bank].type1;
             type2 = gBattleMons[bank].type2;
-        }
+        } */
+
+        type1 = gBattleMons[bank].type1;
+        type2 = gBattleMons[bank].type2;
 
         for (u8 typeNum = 0; typeNum < 2; ++typeNum) //Load each type
         {

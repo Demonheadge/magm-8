@@ -3525,5 +3525,7 @@ extern const u16 gMonMarkingsMenu_Pal[];
 
 extern const u8 CamomonsTypeIconsTiles[];
 extern const u8 CamomonsTypeIcons2Tiles[];
+extern const u16 CamomonsTypeIconsPal[];
+extern const u16 CamomonsTypeIcons2Pal[];
 
 #endif //GUARD_GRAPHICS_H
