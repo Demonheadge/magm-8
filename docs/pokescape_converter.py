@@ -131,8 +131,42 @@ with open('output.txt', 'w') as w:
         w.write('        LEARNSETS(' + data[NAME][Runemon_Index] + '),\n')
         w.write('    },\n')
 
+num = -100
+
+with open('pokedex.ts', 'w') as w2:
+	w2.write('export const Pokedex: {[speciesid: string]: SpeciesData} = {\n')
+	for Runemon_Index in Runemon_Indexes:
+		w2.write('	' + data[NAME][Runemon_Index].lower().replace('_', '') + ': \n')
+		w2.write('	{\n		num: ' + str(num) + ',\n')
+		w2.write('		name = "' + data[NAME][Runemon_Index].replace('_', ' ') + '",\n')
+		w2.write('		baseStats: {')
+		w2.write('hp: ' + str(data[HP][Runemon_Index]) + ', ')
+		w2.write('atk: ' + str(data[Attack][Runemon_Index]) + ', ')
+		w2.write('def: ' + str(data[Defense][Runemon_Index]) + ', ')
+		w2.write('spa: ' + str(data[Special_Attack][Runemon_Index]) + ', ')
+		w2.write('spd: ' + str(data[Special_Defense][Runemon_Index]) + ', ')
+		w2.write('spe: ' + str(data[Speed][Runemon_Index]) + '},\n')
+		type2 = data[Type_2][Runemon_Index]
+		if type2 == "0":
+			type2 = data[Type_1][Runemon_Index]
+		w2.write('		.types = { TYPE_' + str(data[Type_1][Runemon_Index]) + ', TYPE_' + str(type2) + ' },\n')
+		w2.write('		.genderRatio = PERCENT_FEMALE(' + str(data[Gender_ratio][Runemon_Index]) + '),\n')
+		w2.write('		.eggCycles = ' + str(data[Egg_Cycles][Runemon_Index]) + ',\n')
+		w2.write('		.friendship = ' + str(data[Friendship][Runemon_Index]) + ',\n')
+		w2.write('		.growthRate = GROWTH_' + str(data[Exp_Growth][Runemon_Index]).upper().replace(' ', '_') + ',\n')
+		eggGroup2 = data[Egg_Group_2][Runemon_Index]
+		if eggGroup2 == "0":
+			eggGroup2 = data[Egg_Group_1][Runemon_Index]
+		w2.write('		.eggGroups = { EGG_GROUP_' + str(data[Egg_Group_1][Runemon_Index]) + ', EGG_GROUP_' + str(eggGroup2) + ' },\n')
+		w2.write('		.abilities = { ABILITY_' + str(data[Ability_1][Runemon_Index]) + ', ABILITY_' + str(data[Ability_2][Runemon_Index]) + ', ABILITY_' + str(data[Hidden_Ability][Runemon_Index]) + ' },\n')
+		w2.write('		.height = ' + str(data2[HEIGHT_DEX][Runemon_Index]) + ',\n')
+		w2.write('		.weight = ' + str(data2[WEIGHT_DEX][Runemon_Index]) + ',\n')
+		w2.write('	},\n')
+		num = num - 1
+
 # Closing file
 f.close()
 f2.close()
 f3.close()
 w.close()
+w2.close()
