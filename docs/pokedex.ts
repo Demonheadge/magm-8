@@ -8270,4 +8270,3 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		abilities: {0: "Thick Fat", 1: "Pickup", H: "Pickup"},
 		weight: 0,
 	},
-};

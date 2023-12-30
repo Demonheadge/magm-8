@@ -11,6 +11,7 @@ f = open('PokeScape.json')
 f2 = open('PokeScape_Dex.json')
 f3 = open('PokeScape_Evos.json')
 f4 = open('PokeScape_Level_Up.json')
+f5 = open('tmhm_learnsets.json')
 
 # returns JSON object as 
 # a dictionary
@@ -18,6 +19,7 @@ data = json.load(f)
 data2 = json.load(f2)
 data3 = json.load(f3)
 data4 = json.load(f4)
+data5 = json.load(f5)
 
 Bloodveld_Mutated_Special_Form_Index = "399"
 Demon_Lesser_OSRS_Form = "697"
@@ -174,6 +176,15 @@ with open('learnsets.ts', 'w') as w3:
 		for pair in data4[Runemon]:
 			w3.write('\t\t\t' + pair[1].lower().replace('_', '') + ': ["9L' + str(pair[0]) + '"],\n')
 		w3.write('		},\n	},\n')
+
+with open('learnsets_tmhm.ts', 'w') as w4:
+	w4.write('export const Learnsets: {[k: string]: LearnsetData} = {\n')
+	for Runemon in list(data5.keys()):
+		w4.write('	' + Runemon.replace('SPECIES_', '').lower().replace('_', '') + ': {\n')
+		w4.write('		learnset: {\n')
+		for pair in data5[Runemon]:
+			w4.write('\t\t\t' + pair[1].lower().replace('_', '') + ': ["9M"],\n')
+		w4.write('		},\n	},\n')
 
 # Closing file
 f.close()
