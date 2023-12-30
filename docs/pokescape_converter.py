@@ -10,12 +10,14 @@ wrapper = textwrap.TextWrapper(width=37)
 f = open('PokeScape.json')
 f2 = open('PokeScape_Dex.json')
 f3 = open('PokeScape_Evos.json')
+f4 = open('PokeScape_Level_Up.json')
 
 # returns JSON object as 
 # a dictionary
 data = json.load(f)
 data2 = json.load(f2)
 data3 = json.load(f3)
+data4 = json.load(f4)
 
 Bloodveld_Mutated_Special_Form_Index = "399"
 Demon_Lesser_OSRS_Form = "697"
@@ -134,7 +136,7 @@ with open('output.txt', 'w') as w:
 num = -100
 
 with open('pokedex.ts', 'w') as w2:
-	w2.write('export const Pokedex: {[speciesid: string]: SpeciesData} = {\n')
+	w2.write('export const Learnsets: {[k: string]: LearnsetData} = {\n')
 	for Runemon_Index in range(1, len(data2[0])):
 		Runemon_Index = str(Runemon_Index)
 		w2.write('	' + data[NAME][Runemon_Index].lower().replace('_', '') + ': \n')
@@ -164,9 +166,19 @@ with open('pokedex.ts', 'w') as w2:
 		w2.write('	},\n')
 		num = num - 1
 
+with open('learnsets.ts', 'w') as w3:
+	w3.write('export const Learnsets: {[k: string]: LearnsetData} = {\n')
+	for Runemon in list(data4.keys()):
+		w3.write('	' + Runemon.lower().replace('_', '') + ': \n')
+		w3.write('	{\n		learnset: {\n')
+		for pair in data4[Runemon]:
+			w3.write('\t\t\t' + pair[1].lower().replace('_', '') + ': ["9L' + str(pair[0]) + '"],\n')
+		w3.write('		},\n	},\n')
+
 # Closing file
 f.close()
 f2.close()
 f3.close()
 w.close()
 w2.close()
+w3.close()
