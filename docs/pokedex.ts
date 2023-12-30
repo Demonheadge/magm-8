@@ -1,4 +1,4 @@
-export const Learnsets: {[k: string]: LearnsetData} = {
+export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	guthling: 
 	{
 		num: -100,
@@ -8270,3 +8270,4 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		abilities: {0: "Thick Fat", 1: "Pickup", H: "Pickup"},
 		weight: 0,
 	},
+};

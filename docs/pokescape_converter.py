@@ -136,7 +136,7 @@ with open('output.txt', 'w') as w:
 num = -100
 
 with open('pokedex.ts', 'w') as w2:
-	w2.write('export const Learnsets: {[k: string]: LearnsetData} = {\n')
+	w2.write('export const Pokedex: {[speciesid: string]: SpeciesData} = {\n')
 	for Runemon_Index in range(1, len(data2[0])):
 		Runemon_Index = str(Runemon_Index)
 		w2.write('	' + data[NAME][Runemon_Index].lower().replace('_', '') + ': \n')
@@ -169,8 +169,8 @@ with open('pokedex.ts', 'w') as w2:
 with open('learnsets.ts', 'w') as w3:
 	w3.write('export const Learnsets: {[k: string]: LearnsetData} = {\n')
 	for Runemon in list(data4.keys()):
-		w3.write('	' + Runemon.lower().replace('_', '') + ': \n')
-		w3.write('	{\n		learnset: {\n')
+		w3.write('	' + Runemon.lower().replace('_', '') + ': {\n')
+		w3.write('		learnset: {\n')
 		for pair in data4[Runemon]:
 			w3.write('\t\t\t' + pair[1].lower().replace('_', '') + ': ["9L' + str(pair[0]) + '"],\n')
 		w3.write('		},\n	},\n')
