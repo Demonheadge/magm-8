@@ -1,4 +1,8 @@
 export const Learnsets: {[k: string]: LearnsetData} = {
+	none: {
+		learnset: {
+		},
+	},
 	guthling: {
 		learnset: {
 			sunnyday: ["9M"],
@@ -19480,4 +19484,3 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			sunnyday: ["9M"],
 		},
 	},
-};

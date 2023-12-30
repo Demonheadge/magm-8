@@ -186,6 +186,14 @@ with open('learnsets_tmhm.ts', 'w') as w4:
 			w4.write('\t\t\t' + pair[1].lower().replace('_', '') + ': ["9M"],\n')
 		w4.write('		},\n	},\n')
 
+with open('formats-data.ts', 'w') as w5:
+	w5.write('export const FormatsData: {[k: string]: SpeciesFormatsData} = {\n')
+	for Runemon_Index in range(1, len(data2[0])):
+		Runemon_Index = str(Runemon_Index)
+		w5.write('	' + data[NAME][Runemon_Index].lower().replace('_', '') + ': {\n')
+		w5.write('\t\ttier: "OU",\n')
+		w5.write('\t},\n')
+
 # Closing file
 f.close()
 f2.close()
@@ -193,3 +201,5 @@ f3.close()
 w.close()
 w2.close()
 w3.close()
+w4.close()
+w5.close()
