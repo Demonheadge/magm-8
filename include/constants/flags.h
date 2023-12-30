@@ -70,8 +70,8 @@
 #define FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_1    0x39 // Unused Flag
 #define FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_2    0x3A // Unused Flag
 #define FLAG_HIDE_CATAS_1_GREATER_DEMON_5    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_HIDE_CATAS_1_HELLHOUND_1    0x3C // Unused Flag
+#define FLAG_HIDE_CATAS_1_HELLHOUND_2    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag

@@ -70,22 +70,22 @@
       "x": 14,
       "y": 30,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS4",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_KOUREND_CATACOMBS5",
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS5",
-      "dest_warp_id": "2"
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS5",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
