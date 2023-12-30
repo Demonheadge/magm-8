@@ -16,12 +16,22 @@
   "connections": [
     {
       "map": "MAP_KOUREND_CATACOMBS4",
-      "offset": 4,
+      "offset": 0,
       "direction": "down"
     },
     {
       "map": "MAP_KOUREND_CATACOMBS1",
       "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS6",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS2",
+      "offset": -26,
       "direction": "right"
     }
   ],
@@ -29,7 +39,27 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 14,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS4",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS5",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS5",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 

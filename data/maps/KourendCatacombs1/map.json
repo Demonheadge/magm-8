@@ -92,6 +92,48 @@
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 21,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 21,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
