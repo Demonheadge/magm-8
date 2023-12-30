@@ -135,10 +135,11 @@ num = -100
 
 with open('pokedex.ts', 'w') as w2:
 	w2.write('export const Pokedex: {[speciesid: string]: SpeciesData} = {\n')
-	for Runemon_Index in Runemon_Indexes:
+	for Runemon_Index in range(1, len(data2[0])):
+		Runemon_Index = str(Runemon_Index)
 		w2.write('	' + data[NAME][Runemon_Index].lower().replace('_', '') + ': \n')
 		w2.write('	{\n		num: ' + str(num) + ',\n')
-		w2.write('		name = "' + data[NAME][Runemon_Index].replace('_', ' ') + '",\n')
+		w2.write('		name: "' + data[NAME][Runemon_Index].replace('_', ' ') + '",\n')
 		w2.write('		baseStats: {')
 		w2.write('hp: ' + str(data[HP][Runemon_Index]) + ', ')
 		w2.write('atk: ' + str(data[Attack][Runemon_Index]) + ', ')
@@ -149,18 +150,17 @@ with open('pokedex.ts', 'w') as w2:
 		type2 = data[Type_2][Runemon_Index]
 		if type2 == "0":
 			type2 = data[Type_1][Runemon_Index]
-		w2.write('		.types = { TYPE_' + str(data[Type_1][Runemon_Index]) + ', TYPE_' + str(type2) + ' },\n')
-		w2.write('		.genderRatio = PERCENT_FEMALE(' + str(data[Gender_ratio][Runemon_Index]) + '),\n')
-		w2.write('		.eggCycles = ' + str(data[Egg_Cycles][Runemon_Index]) + ',\n')
-		w2.write('		.friendship = ' + str(data[Friendship][Runemon_Index]) + ',\n')
-		w2.write('		.growthRate = GROWTH_' + str(data[Exp_Growth][Runemon_Index]).upper().replace(' ', '_') + ',\n')
-		eggGroup2 = data[Egg_Group_2][Runemon_Index]
-		if eggGroup2 == "0":
-			eggGroup2 = data[Egg_Group_1][Runemon_Index]
-		w2.write('		.eggGroups = { EGG_GROUP_' + str(data[Egg_Group_1][Runemon_Index]) + ', EGG_GROUP_' + str(eggGroup2) + ' },\n')
-		w2.write('		.abilities = { ABILITY_' + str(data[Ability_1][Runemon_Index]) + ', ABILITY_' + str(data[Ability_2][Runemon_Index]) + ', ABILITY_' + str(data[Hidden_Ability][Runemon_Index]) + ' },\n')
-		w2.write('		.height = ' + str(data2[HEIGHT_DEX][Runemon_Index]) + ',\n')
-		w2.write('		.weight = ' + str(data2[WEIGHT_DEX][Runemon_Index]) + ',\n')
+		w2.write('		types: ["' + str(data[Type_1][Runemon_Index].title()))
+		if type2 != data[Type_1][Runemon_Index]:
+			w2.write('", "' + str(type2).title())
+		w2.write('"],\n')
+		# w2.write('		.genderRatio = PERCENT_FEMALE(' + str(data[Gender_ratio][Runemon_Index]) + '),\n')
+		# eggGroup2 = data[Egg_Group_2][Runemon_Index]
+		# if eggGroup2 == "0":
+			# eggGroup2 = data[Egg_Group_1][Runemon_Index]
+		# w2.write('		.eggGroups = { EGG_GROUP_' + str(data[Egg_Group_1][Runemon_Index]) + ', EGG_GROUP_' + str(eggGroup2) + ' },\n')
+		w2.write('		abilities: {0: "' + str(data[Ability_1][Runemon_Index].replace('_', ' ').title()) + '", 1: "' + str(data[Ability_2][Runemon_Index].replace('_', ' ').title()) + '", H: "' + str(data[Hidden_Ability][Runemon_Index].replace('_', ' ').title()) + '"},\n')
+		w2.write('		weight: ' + str(data2[WEIGHT_DEX][Runemon_Index]) + ',\n')
 		w2.write('	},\n')
 		num = num - 1
 
