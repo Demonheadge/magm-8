@@ -1,8 +1,8 @@
 import os, sys, glob
 from PIL import Image, ImageSequence
-images = glob.glob("pokescape_monsters/*/back.png")
-master_width = 96
-master_height = 96
+images = glob.glob("icons/*")
+master_width = 40
+master_height = 30
 background = Image.new(
         mode='RGBA',
         size=(master_width, master_height),
@@ -16,6 +16,7 @@ for filename in images:
         color=(0,0,0,0))
     image = Image.open(filename)
     width, height = image.size
+    # master.paste(image)
     master.paste(image,(round((master_width - width)/2),round((master_height - height)/2)))
     # frames = []
     # frame_copy = image.copy()
@@ -32,5 +33,6 @@ for filename in images:
     # frames.append(frame_copy)
     # if '-front' not in filename and '-old' not in filename:
         # frames[0].save(filename.lower().replace('.gif', '') + '-front.gif', save_all=True, append_images=frames[:-1], duration=50, disposal=2)
-    master.save(filename.replace(filename, filename.replace('pokescape_monsters\\', '').replace('\\back.png', '.png')).lower().replace('_', ''))
+    # master.save(filename.replace(filename, filename.replace('pokescape_monsters\\', '').replace('\\icon.png', '.png')).lower().replace('_', ''))
+    master.save(filename.replace(filename, filename.replace('icons\\', '')).lower().replace('_', ''))
     # print("\t'" + filename.replace('avatars\\', '').lower().replace('.png', '') + "-prism',")
