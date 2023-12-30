@@ -11,31 +11,33 @@
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS1",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS1"
+      "direction": "left"
     },
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS2",
       "offset": -35,
-      "map": "MAP_KOUREND_CATACOMBS2"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS4",
       "offset": -51,
-      "map": "MAP_KOUREND_CATACOMBS4"
+      "direction": "down"
     },
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS7",
       "offset": 15,
-      "map": "MAP_KOUREND_CATACOMBS7"
+      "direction": "up"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 6,
       "y": 2,
@@ -49,6 +51,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 12,
       "y": 21,
@@ -62,6 +65,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 24,
       "y": 17,
@@ -75,6 +79,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 26,
       "y": 21,
@@ -88,6 +93,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 9,
       "y": 4,
@@ -101,6 +107,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
       "x": 7,
       "y": 19,
@@ -114,6 +121,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
       "x": 20,
       "y": 30,
@@ -129,53 +137,53 @@
   ],
   "warp_events": [
     {
-      "x": 22,
-      "y": 4,
+      "x": 4,
+      "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "6"
     },
     {
       "x": 6,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_warp_id": "2"
     },
     {
       "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_warp_id": "1"
     },
     {
-      "x": 4,
-      "y": 11,
+      "x": 22,
+      "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS7",
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_warp_id": "5"
     },
     {
       "x": 8,
-      "y": 27,
+      "y": 28,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_warp_id": "4"
     },
     {
       "x": 18,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS4",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [
@@ -188,7 +196,9 @@
       "y": 1,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -196,7 +206,9 @@
       "y": 8,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -204,7 +216,9 @@
       "y": 26,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -212,7 +226,9 @@
       "y": 13,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -220,7 +236,9 @@
       "y": 14,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -228,7 +246,9 @@
       "y": 15,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }

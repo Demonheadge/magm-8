@@ -11,26 +11,28 @@
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS5",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS5"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS2",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS2"
+      "direction": "right"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS1",
       "offset": 26,
-      "map": "MAP_KOUREND_CATACOMBS1"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 3,
       "y": 2,
@@ -44,6 +46,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 12,
       "y": 11,
@@ -62,8 +65,8 @@
       "x": 14,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS6",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [
@@ -76,7 +79,9 @@
       "y": 9,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }

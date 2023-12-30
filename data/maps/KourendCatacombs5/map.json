@@ -11,31 +11,33 @@
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS4",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS4"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS1",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS1"
+      "direction": "right"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS2",
       "offset": -26,
-      "map": "MAP_KOUREND_CATACOMBS2"
+      "direction": "right"
     },
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS6",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS6"
+      "direction": "up"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 5,
       "y": 4,
@@ -49,6 +51,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
       "x": 15,
       "y": 28,
@@ -67,22 +70,22 @@
       "x": 14,
       "y": 30,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS5",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS4",
+      "dest_warp_id": "2"
     },
     {
       "x": 8,
-      "y": 22,
+      "y": 23,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS5",
-      "dest_warp_id": 0
+      "dest_warp_id": "2"
     },
     {
       "x": 8,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS5",
-      "dest_warp_id": 0
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -95,7 +98,9 @@
       "y": 6,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -103,7 +108,9 @@
       "y": 15,
       "elevation": 3,
       "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }
