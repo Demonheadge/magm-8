@@ -859,6 +859,12 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SWIFT_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_SwiftMochi},
     [ITEM_FRESH_START_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_FreshStartMochi},
     [ITEM_GLIMMERING_CHARM] = {gItemIcon_GlimmeringCharm, gItemIconPalette_GlimmeringCharm},
+    [ITEM_ANCIENT_SHARD] = {gItemIcon_ANCIENT_SHARD, gItemIconPalette_ANCIENT_SHARD},
+    [ITEM_DARK_TOTEM_BASE] = {gItemIcon_DARK_TOTEM_BASE, gItemIconPalette_DARK_TOTEM_BASE},
+    [ITEM_DARK_TOTEM_MID] = {gItemIcon_DARK_TOTEM_MID, gItemIconPalette_DARK_TOTEM_MID},
+    [ITEM_DARK_TOTEM_TOP] = {gItemIcon_DARK_TOTEM_TOP, gItemIconPalette_DARK_TOTEM_TOP},
+    [ITEM_DARK_TOTEM] = {gItemIcon_DARK_TOTEM, gItemIconPalette_DARK_TOTEM},
+    [ITEM_XERIC] = {gItemIcon_Xeric, gItemIconPalette_Xeric},
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

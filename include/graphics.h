@@ -1700,6 +1700,19 @@ extern const u32 gItemIcon_ExpCharm[];
 extern const u32 gItemIconPalette_ExpCharm[];
 extern const u32 gItemIcon_GlimmeringCharm[];
 extern const u32 gItemIconPalette_GlimmeringCharm[];
+//PokeScape
+extern const u32 gItemIcon_ANCIENT_SHARD[];
+extern const u32 gItemIconPalette_ANCIENT_SHARD[];
+extern const u32 gItemIcon_DARK_TOTEM_BASE[];
+extern const u32 gItemIconPalette_DARK_TOTEM_BASE[];
+extern const u32 gItemIcon_DARK_TOTEM_MID[];
+extern const u32 gItemIconPalette_DARK_TOTEM_MID[];
+extern const u32 gItemIcon_DARK_TOTEM_TOP[];
+extern const u32 gItemIconPalette_DARK_TOTEM_TOP[];
+extern const u32 gItemIcon_DARK_TOTEM[];
+extern const u32 gItemIconPalette_DARK_TOTEM[];
+extern const u32 gItemIcon_Xeric[];
+extern const u32 gItemIconPalette_Xeric[];
 // Form-changing Key Items
 extern const u32 gItemIcon_RotomCatalog[];
 extern const u32 gItemIconPalette_RotomCatalog[];

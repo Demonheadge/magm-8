@@ -9814,4 +9814,59 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_ANCIENT_SHARD] =
+    {
+        .name = _("ANCIENT SHARD"),
+        .price = 0,
+        .description = sANCIENT_SHARD_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_DARK_TOTEM_BASE] =
+    {
+        .name = _("TOTEM BASE"),
+        .price = 0,
+        .description = sDARK_TOTEM_BASE_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_DARK_TOTEM_MID] =
+    {
+        .name = _("TOTEM MID"),
+        .price = 0,
+        .description = sDARK_TOTEM_MID_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_DARK_TOTEM_TOP] =
+    {
+        .name = _("TOTEM TOP"),
+        .price = 0,
+        .description = sDARK_TOTEM_TOP_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_DARK_TOTEM] =
+    {
+        .name = _("DARK TOTEM"),
+        .price = 0,
+        .description = sDARK_TOTEM_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_XERIC] =
+    {
+        .name = _("Xeric Ammy"),
+        .price = 0,
+        .description = sXeric_Desc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };

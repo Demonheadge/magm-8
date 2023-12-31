@@ -989,7 +989,14 @@
 #define ITEM_814 814 // TWV0YWwgQWxsb3k=
 #define ITEM_815 815 // U3RlbGxhciBUZXJhIFNoYXJk
 
-#define ITEMS_COUNT 816
+#define	ITEM_ANCIENT_SHARD	816
+#define	ITEM_DARK_TOTEM_BASE	817
+#define	ITEM_DARK_TOTEM_MID	818
+#define	ITEM_DARK_TOTEM_TOP	819
+#define	ITEM_DARK_TOTEM	820
+#define	ITEM_XERIC  821
+
+#define ITEMS_COUNT 822
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
