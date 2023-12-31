@@ -65,8 +65,8 @@
       "x": 14,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS6",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [

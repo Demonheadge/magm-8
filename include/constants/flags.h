@@ -76,20 +76,24 @@
 #define FLAG_DAY_2    0x3F // Unused Flag
 #define FLAG_DAY_3    0x40 // Unused Flag
 #define FLAG_DAY_4    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_HIDE_CATAS_3_MOSS_GIANT_1    0x42 // Unused Flag
+#define FLAG_HIDE_CATAS_3_MOSS_GIANT_2    0x43 // Unused Flag
+#define FLAG_HIDE_CATAS_3_MOSS_GIANT_3    0x44 // Unused Flag
+#define FLAG_HIDE_CATAS_3_MOSS_GIANT_4    0x45 // Unused Flag
+#define FLAG_HIDE_CATAS_3_DUST_DEVIL_1    0x46 // Unused Flag
+#define FLAG_HIDE_CATAS_3_DUST_DEVIL_2    0x47 // Unused Flag
+#define FLAG_HIDE_CATAS_3_DUST_DEVIL_3    0x48 // Unused Flag
+#define FLAG_HIDE_CATAS_3_JELLY_1    0x49 // Unused Flag
+#define FLAG_HIDE_CATAS_3_JELLY_2    0x4A // Unused Flag
+#define FLAG_HIDE_CATAS_3_LESSER_DEMON_1    0x49 // Unused Flag
+#define FLAG_HIDE_CATAS_3_LESSER_DEMON_2    0x4A // Unused Flag
+#define FLAG_HIDE_CATAS_3_GHOST_1    0x49 // Unused Flag
+#define FLAG_HIDE_CATAS_3_GHOST_2    0x4A // Unused Flag
+#define FLAG_HIDE_CATAS_3_BLOODVELD_1    0x4B // Unused Flag
+#define FLAG_HIDE_CATAS_4_JELLY_1    0x4C // Unused Flag
+#define FLAG_HIDE_CATAS_4_JELLY_2    0x4D // Unused Flag
+#define FLAG_HIDE_CATAS_4_KING_CRAB_1    0x4E // Unused Flag
+#define FLAG_HIDE_CATAS_4_KING_CRAB_2    0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -339,6 +343,16 @@
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
+#define FLAG_HIDE_CATAS_4_DAGANNOTH_1            0x13D // These Wonder Card flags are referenced but never set
+#define FLAG_HIDE_CATAS_4_DAGANNOTH_2            0x13E
+#define FLAG_HIDE_CATAS_4_ANKOU_1            0x13F
+#define FLAG_HIDE_CATAS_4_ANKOU_2            0x140
+#define FLAG_HIDE_CATAS_4_BANSHEE_1            0x141
+#define FLAG_HIDE_CATAS_4_BANSHEE_2            0x142
+#define FLAG_HIDE_CATAS_4_BANSHEE_3            0x143
+#define FLAG_HIDE_CATAS_4_SPECTRE_1            0x144
+#define FLAG_HIDE_CATAS_4_SPECTRE_2            0x145
+#define FLAG_HIDE_CATAS_4_SPECTRE_3           0x146
 #define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
 #define FLAG_WONDER_CARD_UNUSED_2            0x13E
 #define FLAG_WONDER_CARD_UNUSED_3            0x13F

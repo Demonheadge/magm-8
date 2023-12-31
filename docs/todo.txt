@@ -22,3 +22,4 @@ Friends list and recruitment
 Item spawns depending on day
 Drop tables
 PC item
+Display level-up learnsets for enemies in battle
