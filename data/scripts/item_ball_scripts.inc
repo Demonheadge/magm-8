@@ -657,3 +657,51 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+KourendCatacombs_EventScript_ItemBass::
+	finditem ITEM_BASS
+	end
+
+KourendCatacombs_EventScript_ItemCod::
+	finditem ITEM_COD
+	end
+
+KourendCatacombs_EventScript_ItemKarambwan::
+	finditem ITEM_COOKED_KARAMBWAN
+	end
+
+KourendCatacombs_EventScript_ItemLobster::
+	finditem ITEM_LOBSTER
+	end
+
+KourendCatacombs_EventScript_ItemPike::
+	finditem ITEM_PIKE
+	end
+
+KourendCatacombs_EventScript_ItemShark::
+	finditem ITEM_SHARK
+	end
+
+KourendCatacombs_EventScript_ItemAntivenom::
+	finditem ITEM_ANTIVENOM_POTION
+	end
+
+KourendCatacombs_EventScript_ItemMagicPotion::
+	finditem ITEM_MAGIC_POTION
+	end
+
+KourendCatacombs_EventScript_ItemRangePotion::
+	finditem ITEM_RANGING_POTION
+	end
+
+KourendCatacombs_EventScript_ItemCombatPotion::
+	finditem ITEM_COMBAT_POTION
+	end
+
+KourendCatacombs_EventScript_ItemAgilityPotion::
+	finditem ITEM_AGILITY_POTION
+	end
+
+KourendCatacombs_EventScript_ItemDefensePotion::
+	finditem ITEM_DEFENSE_POTION
+	end
