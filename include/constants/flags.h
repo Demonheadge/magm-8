@@ -353,6 +353,11 @@
 #define FLAG_HIDE_CATAS_4_SPECTRE_1            0x144
 #define FLAG_HIDE_CATAS_4_SPECTRE_2            0x145
 #define FLAG_HIDE_CATAS_4_SPECTRE_3           0x146
+#define FLAG_HIDE_CATAS_5_SPECTRE_1           0x147
+#define FLAG_HIDE_CATAS_5_SHADE_1           0x148
+#define FLAG_HIDE_CATAS_5_SHADE_2           0x149
+#define FLAG_HIDE_CATAS_5_STEEL_DRAGON_1           0x14A
+#define FLAG_HIDE_CATAS_5_STEEL_DRAGON_2           0x14B
 #define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
 #define FLAG_WONDER_CARD_UNUSED_2            0x13E
 #define FLAG_WONDER_CARD_UNUSED_3            0x13F

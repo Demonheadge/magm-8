@@ -2,7 +2,7 @@
   "id": "MAP_KOUREND_CATACOMBS6",
   "name": "KourendCatacombs6",
   "layout": "LAYOUT_KOUREND_CATACOMBS6",
-  "music": "MUS_RG_MT_MOON",
+  "music": "MUS_PS_KOUREND_CATACOMBS",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
