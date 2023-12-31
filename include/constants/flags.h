@@ -358,6 +358,8 @@
 #define FLAG_HIDE_CATAS_5_SHADE_2           0x149
 #define FLAG_HIDE_CATAS_5_STEEL_DRAGON_1           0x14A
 #define FLAG_HIDE_CATAS_5_STEEL_DRAGON_2           0x14B
+#define FLAG_HIDE_CATAS_6_BLUE_DRAGON_1           0x14C
+#define FLAG_HIDE_CATAS_6_BLUE_DRAGON_2           0x14D
 #define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
 #define FLAG_WONDER_CARD_UNUSED_2            0x13E
 #define FLAG_WONDER_CARD_UNUSED_3            0x13F
@@ -531,10 +533,10 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
+#define FLAG_HIDE_CATAS_6_RED_DRAGON_1                    0x1DE // Unused Flag
+#define FLAG_HIDE_CATAS_6_RED_DRAGON_2                    0x1DF // Unused Flag
+#define FLAG_HIDE_CATAS_6_BLACK_DRAGON_1                    0x1E0 // Unused Flag
+#define FLAG_HIDE_CATAS_6_BLACK_DRAGON_2                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
