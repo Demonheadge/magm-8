@@ -64,6 +64,16 @@ const struct WildPokemon {{ encounter.base_label }}_FishingMons[] =
 
 const struct WildPokemonInfo {{ encounter.base_label }}_FishingMonsInfo = { {{encounter.fishing_mons.encounter_rate}}, {{ encounter.base_label }}_FishingMons };
 {% endif %}
+{% if existsIn(encounter, "land_mons_2") %}
+const struct WildPokemon {{ encounter.base_label }}_LandMons2[] =
+{
+## for wild_mon in encounter.land_mons_2.mons
+    { {{ wild_mon.min_level }}, {{ wild_mon.max_level }}, {{ wild_mon.species }} },
+## endfor
+};
+
+const struct WildPokemonInfo {{ encounter.base_label }}_LandMons2Info = { {{encounter.wheat_mons.encounter_rate}}, {{ encounter.base_label }}_LandMons2 };
+{% endif %}
 ## endfor
 
 const struct WildPokemonHeader {{ wild_encounter_group.label }}[] =

@@ -26,6 +26,8 @@ KourendCatacombs1_Nieve::
     lock
     faceplayer
     goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPoints
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     random 2
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
@@ -35,7 +37,10 @@ KourendCatacombs1_Nieve::
 
 KourendCatacombs1_AssignAbyssalDemons::
     setflag FLAG_ABYSSAL_DEMONS
-    setvar VAR_SLAYER_LEFT_TO_DEFEAT, 2
+    random 2
+    addvar VAR_RESULT, 2
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedAbyssalDemons, MSGBOX_DEFAULT
     release
@@ -44,6 +49,7 @@ KourendCatacombs1_AssignAbyssalDemons::
 KourendCatacombs1_AssignBlackDemons::
     setflag FLAG_BLACK_DEMONS
     setvar VAR_SLAYER_LEFT_TO_DEFEAT, 2
+    buffernumberstring STR_VAR_1, VAR_SLAYER_LEFT_TO_DEFEAT
     questmenu QUEST_MENU_SET_ACTIVE QUEST_2
     msgbox KourendCatacombs1_Text_AssignedBlackDemons, MSGBOX_DEFAULT
     release
@@ -64,10 +70,10 @@ KourendCatacombs1_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
 
 KourendCatacombs1_Text_AssignedAbyssalDemons::
-	.string "You have been assigned 2 Abyssal Demons.$"
+	.string "You have been assigned {STR_VAR_1} Abyssal Demons.$"
 
 KourendCatacombs1_Text_AssignedBlackDemons::
-	.string "You have been assigned 2 Black Demons.$"
+	.string "You have been assigned {STR_VAR_1} Black Demons.$"
 
 KourendCatacombs1_HillGiant::
     lock
