@@ -1853,8 +1853,8 @@ const u8 gText_QuestActive[] =_("active");
 //names
 const u8 gText_SideQuestName_1[] = _("Abyssal Demons");
 const u8 gText_SideQuestName_2[] = _("Black Demons");
-const u8 gText_SideQuestName_3[] = _("Side Quest 3");
-const u8 gText_SideQuestName_4[] = _("Side Quest 4");
+const u8 gText_SideQuestName_3[] = _("Greater Demons");
+const u8 gText_SideQuestName_4[] = _("Greater Nechrayael");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
 const u8 gText_SideQuestName_6[] = _("Side Quest 6");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7");
@@ -1885,8 +1885,8 @@ const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("Slay {STR_VAR_3} Abby Demon(s).");
 const u8 gText_SideQuestDesc_2[] = _("Slay {STR_VAR_3} Black Demon(s).");
-const u8 gText_SideQuestDesc_3[] = _("Description 3");
-const u8 gText_SideQuestDesc_4[] = _("Description 4");
+const u8 gText_SideQuestDesc_3[] = _("Slay {STR_VAR_3} Greater Demon(s).");
+const u8 gText_SideQuestDesc_4[] = _("Slay {STR_VAR_3} Greater Nechrayael.");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
 const u8 gText_SideQuestDesc_6[] = _("Description 6");
 const u8 gText_SideQuestDesc_7[] = _("Description 7");
@@ -1916,9 +1916,9 @@ const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
 const u8 gText_SideQuestDoneDesc_1[] = _("Completed Abyssal Demons");
-const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
-const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
-const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
+const u8 gText_SideQuestDoneDesc_2[] = _("Completed Black Demons");
+const u8 gText_SideQuestDoneDesc_3[] = _("Completed Greater Demons");
+const u8 gText_SideQuestDoneDesc_4[] = _("Completed Greater Nechrayael");
 const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
 const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
 const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");

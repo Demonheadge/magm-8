@@ -10493,6 +10493,14 @@ static void Cmd_various(void)
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
         }
+        else if (FlagGet(FLAG_GREATER_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_OSRS_FORM) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
+        else if (FlagGet(FLAG_GREATER_NECHRAYAEL) && enemySpecies == SPECIES_LICKILICKY) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
 
         if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
         {

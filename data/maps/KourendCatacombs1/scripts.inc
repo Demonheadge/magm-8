@@ -25,13 +25,20 @@ KourendCatacombs1_Start:
 KourendCatacombs1_Nieve::
     lock
     faceplayer
-    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPoints
+    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsAbyssalDemons
+    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsBlackDemons
+    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsGreaterDemons
+    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsGreaterNechrayael
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
-    random 2
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_3
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_4
+    random 4
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
     case 1, KourendCatacombs1_AssignBlackDemons
+    case 2, KourendCatacombs1_AssignGreaterDemons
+    case 3, KourendCatacombs1_AssignGreaterNechrayael
     release
     end
 
@@ -41,7 +48,7 @@ KourendCatacombs1_AssignAbyssalDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_LOCKED QUEST_1
+    questmenu FLAG_SET_UNLOCKED QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedAbyssalDemons, MSGBOX_DEFAULT
     release
@@ -53,20 +60,73 @@ KourendCatacombs1_AssignBlackDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_LOCKED QUEST_2
+    questmenu FLAG_SET_UNLOCKED QUEST_2
     questmenu QUEST_MENU_SET_ACTIVE QUEST_2
     msgbox KourendCatacombs1_Text_AssignedBlackDemons, MSGBOX_DEFAULT
     release
     end
 
-KourendCatacombs1_GiveSlayerPoints::
+KourendCatacombs1_AssignGreaterDemons::
+    setflag FLAG_GREATER_DEMONS
+    random 4
+    addvar VAR_RESULT, 5
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu FLAG_SET_UNLOCKED QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedGreaterDemons, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignGreaterNechrayael::
+    setflag FLAG_GREATER_NECHRAYAEL
+    random 4
+    addvar VAR_RESULT, 4
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu FLAG_SET_UNLOCKED QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedGreaterNechrayael, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsAbyssalDemons::
     clearflag FLAG_ABYSSAL_DEMONS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_1
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsBlackDemons::
     clearflag FLAG_BLACK_DEMONS
     setvar VAR_0x8004, 12
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
     msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
-    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_1 
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_2
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsGreaterDemons::
+    clearflag FLAG_GREATER_DEMONS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_3
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsGreaterNechrayael::
+    clearflag FLAG_GREATER_NECHRAYAEL
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_4
     release
     end
 
@@ -74,10 +134,16 @@ KourendCatacombs1_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
 
 KourendCatacombs1_Text_AssignedAbyssalDemons::
-	.string "You have been assigned {STR_VAR_1} Abyssal Demons.$"
+	.string "You have been assigned {STR_VAR_1}\nAbyssal Demons.$"
 
 KourendCatacombs1_Text_AssignedBlackDemons::
-	.string "You have been assigned {STR_VAR_1} Black Demons.$"
+	.string "You have been assigned {STR_VAR_1}\nBlack Demons.$"
+
+KourendCatacombs1_Text_AssignedGreaterDemons::
+	.string "You have been assigned {STR_VAR_1}\nGreater Demons.$"
+
+KourendCatacombs1_Text_AssignedGreaterNechrayael::
+	.string "You have been assigned {STR_VAR_1}\nGreater Nechrayael.$"
 
 KourendCatacombs1_HillGiant::
     lock
