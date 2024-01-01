@@ -46,7 +46,7 @@ KourendCatacombs2_AbyssalDemon::
 KourendCatacombs2_IronDragon::
     lock
     faceplayer
-    setwildbattle SPECIES_DURALUDON, 45
+    setwildbattle SPECIES_SKARMORY, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

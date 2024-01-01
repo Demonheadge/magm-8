@@ -1,26 +1,57 @@
 Room scripting
+-Jordank
 Slayer tasks
+-Insert PokeScape mons first
 Slayer shop
+-Come up with prices
 GE
-Fast leveling
+-Map
+-Script
 Adjust leveling formula
+-pret
 TGV
+-Map
+-Script
+-PC
 Visible item spawns for each day
+-Flags
 Hidden item spawns for each day
+-Flags
 Items from OSRS
+-Code in
 Runemon (builds)
+-Demonheadge
+-PokeScape
 TMs and compatibility
+-Come up with TM list
 Tutors and combatibility
+-Come up with tutor list
 Add Runemon
+-Demonheadge
 Wild Pokemon spawns (regular and clusters)
+-Demonheadge
+-Figure out how to code in separate tiles
 Overworld encounters
+-Change to Runemon when applicable
 "Trainers"
+-Demonheadge
 OSRS weapon/spell/magic/prayer moves
+-Code in
 OW encounter step count reset
+-pret
 Day tracking (Slayer tasks completed / one dark totem piece acquired)
+-Code in
 Friends list and recruitment
+-BSBob
+-MGriffin
+-ghoulslash
 Item spawns depending on day
+-Set/unset flags depending on day flag
 Drop tables
-PC item
+-Add in Runemon, first
 Display level-up learnsets for enemies in battle
+-BSBob
+-MGriffin
+-ghoulslash
 Tweak level-up learnsets
+-Move every level
