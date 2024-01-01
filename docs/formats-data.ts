@@ -2756,4 +2756,3 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	pigsummoningform: {
 		tier: "OU",
 	},
-};
