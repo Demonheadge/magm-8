@@ -26,9 +26,9 @@ KourendCatacombs1_Nieve::
     lock
     faceplayer
     goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsAbyssalDemons
-    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsBlackDemons
-    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsGreaterDemons
-    goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPointsGreaterNechrayael
+    goto_if_quest_reward QUEST_2, KourendCatacombs1_GiveSlayerPointsBlackDemons
+    goto_if_quest_reward QUEST_3, KourendCatacombs1_GiveSlayerPointsGreaterDemons
+    goto_if_quest_reward QUEST_4, KourendCatacombs1_GiveSlayerPointsGreaterNechrayael
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     questmenu QUEST_MENU_SET_INACTIVE QUEST_3
