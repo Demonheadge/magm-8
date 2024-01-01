@@ -19,8 +19,6 @@ KourendCatacombs1_Start:
     setflag FLAG_SYS_FRONTIER_PASS
     additem ITEM_MASTER_BALL
     setflag FLAG_SYS_QUEST_MENU_GET
-    setvar VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT, 5
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     setflag FLAG_CATAS_START
     end
 
@@ -28,10 +26,32 @@ KourendCatacombs1_Nieve::
     lock
     faceplayer
     goto_if_quest_reward QUEST_1, KourendCatacombs1_GiveSlayerPoints
+    random 2
+    switch VAR_RESULT
+    case 0, KourendCatacombs1_AssignAbyssalDemons
+    case 1, KourendCatacombs1_AssignBlackDemons
+    release
+    end
+
+KourendCatacombs1_AssignAbyssalDemons::
+    setflag FLAG_ABYSSAL_DEMONS
+    setvar VAR_SLAYER_LEFT_TO_DEFEAT, 2
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedAbyssalDemons, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignBlackDemons::
+    setflag FLAG_BLACK_DEMONS
+    setvar VAR_SLAYER_LEFT_TO_DEFEAT, 2
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_2
+    msgbox KourendCatacombs1_Text_AssignedBlackDemons, MSGBOX_DEFAULT
     release
     end
 
 KourendCatacombs1_GiveSlayerPoints::
+    clearflag FLAG_ABYSSAL_DEMONS
+    clearflag FLAG_BLACK_DEMONS
     setvar VAR_0x8004, 12
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
@@ -42,6 +62,12 @@ KourendCatacombs1_GiveSlayerPoints::
 
 KourendCatacombs1_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
+
+KourendCatacombs1_Text_AssignedAbyssalDemons::
+	.string "You have been assigned 2 Abyssal Demons.$"
+
+KourendCatacombs1_Text_AssignedBlackDemons::
+	.string "You have been assigned 2 Black Demons.$"
 
 KourendCatacombs1_HillGiant::
     lock

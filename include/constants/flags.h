@@ -687,9 +687,9 @@
 #define FLAG_HIDE_CATAS_2_MOSS_GIANT_1  0x26F // Unused Flag
 #define FLAG_HIDE_CATAS_2_BLOODVELD_2  0x270 // Unused Flag
 #define FLAG_HIDE_CATAS_2_FIRE_GIANT_2  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
+#define FLAG_HIDE_CATAS_5_SHADE_3  0x272 // Unused Flag
+#define FLAG_ABYSSAL_DEMONS  0x273 // Unused Flag
+#define FLAG_BLACK_DEMONS  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag

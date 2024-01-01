@@ -1852,7 +1852,7 @@ const u8 gText_QuestActive[] =_("active");
 
 //names
 const u8 gText_SideQuestName_1[] = _("Abyssal Demons");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
+const u8 gText_SideQuestName_2[] = _("Black Demons");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1884,7 +1884,7 @@ const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("Slay {STR_VAR_3} Abby Demon(s).");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_2[] = _("Slay {STR_VAR_3} Black Demon(s).");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
@@ -1948,7 +1948,7 @@ const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
 const u8 gText_SideQuestMap1[] = _("Catacombs of Kourend");
-const u8 gText_SideQuestMap2[] = _("Map 2");
+const u8 gText_SideQuestMap2[] = _("Catacombs of Kourend");
 const u8 gText_SideQuestMap3[] = _("Map 3");
 const u8 gText_SideQuestMap4[] = _("Map 4");
 const u8 gText_SideQuestMap5[] = _("Map 5");

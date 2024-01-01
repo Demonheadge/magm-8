@@ -19,7 +19,7 @@ Catas_Start:
     setflag FLAG_SYS_FRONTIER_PASS
     additem ITEM_MASTER_BALL
     setflag FLAG_SYS_QUEST_MENU_GET
-    setvar VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT, 5
+    setvar VAR_SLAYER_LEFT_TO_DEFEAT, 5
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     setflag FLAG_CATAS_START
     end

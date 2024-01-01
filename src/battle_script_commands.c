@@ -10482,19 +10482,25 @@ static void Cmd_various(void)
     }
     case VARIOUS_UPDATE_SLAYER_COUNTER:
     {
-        u8 leftToDefeatAbbyDemonCount = VarGet(VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT);
+        u8 leftToDefeat = VarGet(VAR_SLAYER_LEFT_TO_DEFEAT);
         s32 enemySpecies = GetMonData(&gEnemyParty[0],MON_DATA_SPECIES);
 
-        if ((!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) && (enemySpecies == SPECIES_ABYSSAL_DEMON_FORM))
-            leftToDefeatAbbyDemonCount--;
+        if (FlagGet(FLAG_ABYSSAL_DEMONS) && enemySpecies == SPECIES_ABYSSAL_DEMON_FORM) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
+        else if (FlagGet(FLAG_BLACK_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_BLACK_FORM) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
 
-        if ((leftToDefeatAbbyDemonCount <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
+        if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
         {
             QuestMenu_GetSetQuestState(QUEST_1,FLAG_SET_REWARD);
             QuestMenu_GetSetQuestState(QUEST_1,FLAG_REMOVE_ACTIVE);
         }
 
-        VarSet(VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT,leftToDefeatAbbyDemonCount);
+        VarSet(VAR_SLAYER_LEFT_TO_DEFEAT,leftToDefeat);
         gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;
         return;
     }

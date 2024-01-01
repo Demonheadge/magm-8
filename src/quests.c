@@ -575,10 +575,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
 	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_POKEMON_003,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_1_SUB_COUNT
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_3,
@@ -2062,7 +2062,7 @@ void GenerateQuestFlavorText(s32 questId)
 }
 void UpdateQuestFlavorText(s32 questId)
 {
-    u16 slayerCount = VarGet(VAR_LEFT_TO_DEFEAT_ABBY_DEMON_COUNT);
+    u16 slayerCount = VarGet(VAR_SLAYER_LEFT_TO_DEFEAT);
     ConvertIntToDecimalStringN(gStringVar3, slayerCount, STR_CONV_MODE_LEFT_ALIGN, 1);
 	StringCopy(gStringVar1, sSideQuests[questId].desc);
 }
