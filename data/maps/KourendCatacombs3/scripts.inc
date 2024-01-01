@@ -32,7 +32,7 @@ KourendCatacombs3_MossGiant::
 KourendCatacombs3_Jelly::
     lock
     faceplayer
-    setwildbattle SPECIES_JELLY_NORMAL_FORM, 45
+    setwildbattle SPECIES_JELLY_WARPED_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -46,7 +46,7 @@ KourendCatacombs3_Jelly::
 KourendCatacombs3_DustDevil::
     lock
     faceplayer
-    setwildbattle SPECIES_CRADILY, 45
+    setwildbattle SPECIES_DUST_DEVIL, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

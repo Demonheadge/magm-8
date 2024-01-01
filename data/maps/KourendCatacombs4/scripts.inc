@@ -4,7 +4,7 @@ KourendCatacombs4_MapScripts::
 KourendCatacombs4_Jelly::
     lock
     faceplayer
-    setwildbattle SPECIES_JELLY_NORMAL_FORM, 45
+    setwildbattle SPECIES_JELLY_WARPED_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -18,7 +18,7 @@ KourendCatacombs4_Jelly::
 KourendCatacombs4_KingCrab::
     lock
     faceplayer
-    setwildbattle SPECIES_CRUSTLE, 45
+    setwildbattle SPECIES_ROCK_CRAB_GIANT_SAND_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -32,7 +32,7 @@ KourendCatacombs4_KingCrab::
 KourendCatacombs4_Dagannoth::
     lock
     faceplayer
-    setwildbattle SPECIES_NIDOKING, 45
+    setwildbattle SPECIES_DAGANNOTH_NORMAL_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

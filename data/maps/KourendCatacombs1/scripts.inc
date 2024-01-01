@@ -116,7 +116,7 @@ KourendCatacombs1_AbyssalDemon::
 KourendCatacombs1_MagicAxe::
     lock
     faceplayer
-    setwildbattle SPECIES_HONEDGE, 50
+    setwildbattle SPECIES_SPOOKAXE, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

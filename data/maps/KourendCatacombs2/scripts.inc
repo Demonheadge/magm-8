@@ -144,7 +144,7 @@ KourendCatacombs2_FireGiant::
 KourendCatacombs2_AnimatedPickaxe::
     lock
     faceplayer
-    setwildbattle SPECIES_DOUBLADE, 50
+    setwildbattle SPECIES_SPOOKAXE, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

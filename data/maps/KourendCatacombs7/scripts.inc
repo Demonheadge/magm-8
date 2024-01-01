@@ -4,7 +4,7 @@ KourendCatacombs7_MapScripts::
 KourendCatacombs7_BlackDemon::
     lock
     faceplayer
-    setwildbattle SPECIES_GRIMMSNARL, 45
+    setwildbattle SPECIES_DEMON_GREATER_BLACK_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

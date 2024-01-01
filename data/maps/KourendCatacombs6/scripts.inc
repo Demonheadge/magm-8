@@ -4,7 +4,7 @@ KourendCatacombs6_MapScripts::
 KourendCatacombs6_BlueDragon::
     lock
     faceplayer
-    setwildbattle SPECIES_DRAGONITE, 45
+    setwildbattle SPECIES_DRAGON_BRUTAL_BLUE_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -18,7 +18,7 @@ KourendCatacombs6_BlueDragon::
 KourendCatacombs6_RedDragon::
     lock
     faceplayer
-    setwildbattle SPECIES_SALAMENCE, 45
+    setwildbattle SPECIES_DRAGON_BRUTAL_RED_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -32,7 +32,7 @@ KourendCatacombs6_RedDragon::
 KourendCatacombs6_BlackDragon::
     lock
     faceplayer
-    setwildbattle SPECIES_HYDREIGON, 45
+    setwildbattle SPECIES_DRAGON_BRUTAL_BLACK_FORM, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
