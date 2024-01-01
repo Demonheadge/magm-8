@@ -48,7 +48,7 @@ KourendCatacombs1_AssignAbyssalDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu FLAG_SET_UNLOCKED QUEST_1
+    questmenu QUEST_MENU_SET_UNLOCKED QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedAbyssalDemons, MSGBOX_DEFAULT
     release
@@ -60,7 +60,7 @@ KourendCatacombs1_AssignBlackDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu FLAG_SET_UNLOCKED QUEST_2
+    questmenu QUEST_MENU_SET_UNLOCKED QUEST_2
     questmenu QUEST_MENU_SET_ACTIVE QUEST_2
     msgbox KourendCatacombs1_Text_AssignedBlackDemons, MSGBOX_DEFAULT
     release
@@ -72,7 +72,7 @@ KourendCatacombs1_AssignGreaterDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu FLAG_SET_UNLOCKED QUEST_1
+    questmenu QUEST_MENU_SET_UNLOCKED QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedGreaterDemons, MSGBOX_DEFAULT
     release
@@ -84,7 +84,7 @@ KourendCatacombs1_AssignGreaterNechrayael::
     addvar VAR_RESULT, 4
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu FLAG_SET_UNLOCKED QUEST_1
+    questmenu QUEST_MENU_SET_UNLOCKED QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedGreaterNechrayael, MSGBOX_DEFAULT
     release
