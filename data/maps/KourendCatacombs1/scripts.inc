@@ -70,7 +70,7 @@ KourendCatacombs1_AssignGreaterDemons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_3
     msgbox KourendCatacombs1_Text_AssignedGreaterDemons, MSGBOX_DEFAULT
     release
     end
@@ -81,7 +81,7 @@ KourendCatacombs1_AssignGreaterNechrayael::
     addvar VAR_RESULT, 4
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_4
     msgbox KourendCatacombs1_Text_AssignedGreaterNechrayael, MSGBOX_DEFAULT
     release
     end
