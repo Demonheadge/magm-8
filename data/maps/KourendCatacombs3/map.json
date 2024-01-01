@@ -313,7 +313,7 @@
     },
     {
       "x": 6,
-      "y": 11,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS3",
       "dest_warp_id": "2"
@@ -327,7 +327,7 @@
     },
     {
       "x": 22,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS7",
       "dest_warp_id": "0"
