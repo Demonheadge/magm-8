@@ -281,7 +281,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_500",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
       "x": 14,
       "y": 30,
       "elevation": 0,
@@ -290,12 +290,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs2_FireGiant",
-      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_2"
+      "script": "KourendCatacombs1_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_2_HILL_GIANT_2"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_500",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
       "x": 11,
       "y": 31,
       "elevation": 0,
@@ -304,12 +304,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs2_FireGiant",
-      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_1"
+      "script": "KourendCatacombs1_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_2_HILL_GIANT_1"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_001",
       "x": 24,
       "y": 28,
       "elevation": 0,
@@ -318,12 +318,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs2_MutatedBloodveld",
-      "flag": "FLAG_HIDE_CATAS_2_BLOODVELD_2"
+      "script": "KourendCatacombs3_MossGiant",
+      "flag": "FLAG_HIDE_CATAS_2_MOSS_GIANT_2"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_001",
       "x": 20,
       "y": 31,
       "elevation": 0,
@@ -332,14 +332,14 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs2_MutatedBloodveld",
-      "flag": "FLAG_HIDE_CATAS_2_BLOODVELD_1"
+      "script": "KourendCatacombs3_MossGiant",
+      "flag": "FLAG_HIDE_CATAS_2_MOSS_GIANT_1"
     },
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_680",
-      "x": 30,
-      "y": 16,
+      "x": 6,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -361,13 +361,69 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "KourendCatacombs2_FireGiant",
-      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_4"
+      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "x": 4,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_2_BLOODVELD_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
+      "x": 30,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs1_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_2_HILL_GIANT_3"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
+      "x": 29,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs1_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_2_HILL_GIANT_4"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "x": 5,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_2_BLOODVELD_2"
     },
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_500",
-      "x": 5,
-      "y": 22,
+      "x": 9,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -375,7 +431,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "KourendCatacombs2_FireGiant",
-      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_3"
+      "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_2"
     }
   ],
   "warp_events": [

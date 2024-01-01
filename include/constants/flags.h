@@ -676,17 +676,17 @@
 #define FLAG_HIDE_CATAS_7_BLACK_DEMON_3  0x264 // Unused Flag
 #define FLAG_HIDE_CATAS_7_BLACK_DEMON_4  0x265 // Unused Flag
 #define FLAG_HIDE_CATAS_2_FIRE_GIANT_1  0x266 // Unused Flag
-#define FLAG_HIDE_CATAS_2_FIRE_GIANT_2  0x267 // Unused Flag
+#define FLAG_HIDE_CATAS_2_MOSS_GIANT_2  0x267 // Unused Flag
 #define FLAG_HIDE_CATAS_2_BLOODVELD_1  0x268 // Unused Flag
-#define FLAG_HIDE_CATAS_2_BLOODVELD_2  0x269 // Unused Flag
+#define FLAG_HIDE_CATAS_2_HILL_GIANT_1  0x269 // Unused Flag
 #define FLAG_HIDE_CATAS_2_ANIMATED_PICKAXE_1  0x26A // Unused Flag
-#define FLAG_HIDE_CATAS_2_FIRE_GIANT_3  0x26B // Unused Flag
+#define FLAG_HIDE_CATAS_2_HILL_GIANT_2  0x26B // Unused Flag
 #define FLAG_POKEMON_MANSION_SWITCH_STATE  0x26C
-#define FLAG_HIDE_CATAS_2_FIRE_GIANT_4  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
+#define FLAG_HIDE_CATAS_2_HILL_GIANT_3  0x26D // Unused Flag
+#define FLAG_HIDE_CATAS_2_HILL_GIANT_4  0x26E // Unused Flag
+#define FLAG_HIDE_CATAS_2_MOSS_GIANT_1  0x26F // Unused Flag
+#define FLAG_HIDE_CATAS_2_BLOODVELD_2  0x270 // Unused Flag
+#define FLAG_HIDE_CATAS_2_FIRE_GIANT_2  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
