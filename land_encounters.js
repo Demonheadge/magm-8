@@ -1,5 +1,9 @@
 const land2EncounterType = 3;
-const title = "Set Land 2 Encounter";
+const title = "Set Metatile Land Encounter";
+const title2 = "Set Metatile";
+const title3 = "Set Land Encounter";
+const label = 'Determines from which table the wild Pokemon will come from.';
+const landEncounterIndexes = [3, 4, 5, 6, 7, 8, 9];
 
 var metatileId = 0;
 var maxMetatileId;
@@ -13,11 +17,16 @@ export function onProjectOpened(projectPath) {
 
 export function prompt() {
     // Show a prompt to ask which metatile to set your special encounter type on
-    let response = utility.getInputNumber(title, "Metatile ID", metatileId, 0, maxMetatileId);
+    let response = utility.getInputNumber(title2, "Metatile ID", metatileId, 0, maxMetatileId);
     if (!response.ok)
         return;
 
     // Set your special encounter type
     metatileId = response.input;
-    map.setMetatileEncounterType(metatileId, land2EncounterType);
+    let response2 = utility.getInputItem(title3, label, landEncounterIndexes, 0, false);
+    if (!response2.ok)
+        return;
+
+    const landEncounterIndex = parseInt(response2.input);
+    map.setMetatileEncounterType(metatileId, landEncounterIndex);
 }

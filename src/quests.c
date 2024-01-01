@@ -1665,6 +1665,7 @@ u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 	{
 		case FLAG_GET_UNLOCKED:
 		case FLAG_SET_UNLOCKED:
+        case FLAG_SET_LOCKED:
 			break;
 		case FLAG_GET_INACTIVE:
 		case FLAG_GET_ACTIVE:
@@ -1700,6 +1701,9 @@ u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 			return gSaveBlock2Ptr->questData[index] & mask;
 		case FLAG_SET_UNLOCKED:
 			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+        case FLAG_SET_LOCKED:
+			gSaveBlock2Ptr->questData[index] &= ~mask;
 			return 1;
 		case FLAG_GET_INACTIVE:
 			bit2 = bit + 1;

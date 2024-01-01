@@ -43,6 +43,12 @@ enum {
     WILD_AREA_ROCKS,
     WILD_AREA_FISHING,
     WILD_AREA_LAND_2,
+    WILD_AREA_LAND_3,
+    WILD_AREA_LAND_4,
+    WILD_AREA_LAND_5,
+    WILD_AREA_LAND_6,
+    WILD_AREA_LAND_7,
+    WILD_AREA_LAND_8,
 };
 
 #define WILD_CHECK_REPEL    (1 << 0)
@@ -482,6 +488,12 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     {
     case WILD_AREA_LAND:
     case WILD_AREA_LAND_2:
+    case WILD_AREA_LAND_3:
+    case WILD_AREA_LAND_4:
+    case WILD_AREA_LAND_5:
+    case WILD_AREA_LAND_6:
+    case WILD_AREA_LAND_7:
+    case WILD_AREA_LAND_8:
         if (OW_MAGNET_PULL < GEN_9 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_WILD_COUNT))
             break;
         if (OW_STATIC < GEN_9 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, LAND_WILD_COUNT))
@@ -654,8 +666,6 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 prevMetatileBehavior)
                 return FALSE;
             else if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE) != TRUE)
                 return FALSE;
-            else if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, WILD_CHECK_KEEN_EYE) != TRUE)
-                return FALSE;
             else if (!TryGenerateBattlePikeWildMon(TRUE))
                 return FALSE;
 
@@ -670,8 +680,6 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 prevMetatileBehavior)
             else if (WildEncounterCheck(gBattlePyramidWildMonHeaders[headerId].landMonsInfo->encounterRate, FALSE) != TRUE)
                 return FALSE;
             else if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE) != TRUE)
-                return FALSE;
-            else if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, WILD_CHECK_KEEN_EYE) != TRUE)
                 return FALSE;
 
             GenerateBattlePyramidWildMon();
@@ -761,6 +769,282 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 prevMetatileBehavior)
                     {
                         struct Pokemon mon1 = gEnemyParty[0];
                         TryGenerateWildMon(gWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_3)
+        {
+            if (gWildMonHeaders[headerId].landMons3Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons3Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons3Info, WILD_AREA_LAND_3, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons3Info, WILD_AREA_LAND_3, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_4)
+        {
+            if (gWildMonHeaders[headerId].landMons4Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons4Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons4Info, WILD_AREA_LAND_4, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons4Info, WILD_AREA_LAND_4, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_5)
+        {
+            if (gWildMonHeaders[headerId].landMons5Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons5Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons5Info, WILD_AREA_LAND_5, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons5Info, WILD_AREA_LAND_5, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_6)
+        {
+            if (gWildMonHeaders[headerId].landMons6Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons6Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons6Info, WILD_AREA_LAND_6, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons6Info, WILD_AREA_LAND_6, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_7)
+        {
+            if (gWildMonHeaders[headerId].landMons7Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons7Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons7Info, WILD_AREA_LAND_7, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons7Info, WILD_AREA_LAND_7, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+                }
+
+                return FALSE;
+            }
+        }
+        if (curMetatileEncounterType == TILE_ENCOUNTER_LAND_8)
+        {
+            if (gWildMonHeaders[headerId].landMons8Info == NULL)
+                return FALSE;
+            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+                return FALSE;
+            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMons8Info->encounterRate, FALSE) != TRUE)
+                return FALSE;
+
+            if (TryStartRoamerEncounter() == TRUE)
+            {
+                roamer = &gSaveBlock1Ptr->roamer;
+                if (!IsWildLevelAllowedByRepel(roamer->level))
+                    return FALSE;
+
+                BattleSetup_StartRoamerBattle();
+                return TRUE;
+            }
+            else
+            {
+                if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // try a regular wild land encounter
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMons8Info, WILD_AREA_LAND_8, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].landMons8Info, WILD_AREA_LAND_8, WILD_CHECK_KEEN_EYE);
                         gEnemyParty[1] = mon1;
                         BattleSetup_StartDoubleWildBattle();
                     }
@@ -865,8 +1149,6 @@ bool8 SweetScentWildEncounter(void)
             headerId = GetBattlePikeWildMonHeaderId();
             if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
                 return FALSE;
-            if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, 0) != TRUE)
-                return FALSE;
 
             TryGenerateBattlePikeWildMon(FALSE);
             BattleSetup_StartBattlePikeWildBattle();
@@ -876,8 +1158,6 @@ bool8 SweetScentWildEncounter(void)
         {
             headerId = gSaveBlock2Ptr->frontier.curChallengeBattleNum;
             if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
-                return FALSE;
-            if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, 0) != TRUE)
                 return FALSE;
 
             GenerateBattlePyramidWildMon();
@@ -903,25 +1183,6 @@ bool8 SweetScentWildEncounter(void)
                 SetUpMassOutbreakEncounter(0);
             else
                 TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0);
-
-            BattleSetup_StartWildBattle();
-            return TRUE;
-        }
-        else if (metatileEncounterType == TILE_ENCOUNTER_LAND_2)
-        {
-            if (gWildMonHeaders[headerId].landMons2Info == NULL)
-                return FALSE;
-
-            if (TryStartRoamerEncounter() == TRUE)
-            {
-                BattleSetup_StartRoamerBattle();
-                return TRUE;
-            }
-
-            if (DoMassOutbreakEncounterTest() == TRUE)
-                SetUpMassOutbreakEncounter(0);
-            else
-                TryGenerateWildMon(gWildMonHeaders[headerId].landMons2Info, WILD_AREA_LAND_2, 0);
 
             BattleSetup_StartWildBattle();
             return TRUE;
@@ -984,6 +1245,12 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     u16 headerId;
     const struct WildPokemonInfo *landMonsInfo;
     const struct WildPokemonInfo *landMons2Info;
+    const struct WildPokemonInfo *landMons3Info;
+    const struct WildPokemonInfo *landMons4Info;
+    const struct WildPokemonInfo *landMons5Info;
+    const struct WildPokemonInfo *landMons6Info;
+    const struct WildPokemonInfo *landMons7Info;
+    const struct WildPokemonInfo *landMons8Info;
     const struct WildPokemonInfo *waterMonsInfo;
 
     *isWaterMon = FALSE;
@@ -992,6 +1259,12 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
         return SPECIES_NONE;
     landMonsInfo = gWildMonHeaders[headerId].landMonsInfo;
     landMons2Info = gWildMonHeaders[headerId].landMons2Info;
+    landMons3Info = gWildMonHeaders[headerId].landMons3Info;
+    landMons4Info = gWildMonHeaders[headerId].landMons4Info;
+    landMons5Info = gWildMonHeaders[headerId].landMons5Info;
+    landMons6Info = gWildMonHeaders[headerId].landMons6Info;
+    landMons7Info = gWildMonHeaders[headerId].landMons7Info;
+    landMons8Info = gWildMonHeaders[headerId].landMons8Info;
     waterMonsInfo = gWildMonHeaders[headerId].waterMonsInfo;
     // Neither
     if (landMonsInfo == NULL && landMons2Info == NULL && waterMonsInfo == NULL)
@@ -1001,6 +1274,18 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
         return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
     else if (landMons2Info != NULL && waterMonsInfo == NULL)
         return landMons2Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons3Info != NULL && waterMonsInfo == NULL)
+        return landMons3Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons4Info != NULL && waterMonsInfo == NULL)
+        return landMons4Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons5Info != NULL && waterMonsInfo == NULL)
+        return landMons5Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons6Info != NULL && waterMonsInfo == NULL)
+        return landMons6Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons7Info != NULL && waterMonsInfo == NULL)
+        return landMons7Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (landMons8Info != NULL && waterMonsInfo == NULL)
+        return landMons8Info->wildPokemon[ChooseWildMonIndex_Land()].species;
     // Water Pokemon
     else if (landMonsInfo == NULL && landMons2Info == NULL && waterMonsInfo != NULL)
     {
@@ -1010,10 +1295,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     // Either land or water Pokemon
     if ((Random() % 100) < 80)
     {
-        if (landMonsInfo != NULL && landMons2Info == NULL) return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
-        else if (landMonsInfo == NULL && landMons2Info != NULL) return landMons2Info->wildPokemon[ChooseWildMonIndex_Land()].species;
-        else if ((Random() % 2) == 0) return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
-        else return landMons2Info->wildPokemon[ChooseWildMonIndex_Land()].species;
+        return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
     }
     else
     {
@@ -1145,6 +1427,12 @@ static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16
     {
     case WILD_AREA_LAND:
     case WILD_AREA_LAND_2:
+    case WILD_AREA_LAND_3:
+    case WILD_AREA_LAND_4:
+    case WILD_AREA_LAND_5:
+    case WILD_AREA_LAND_6:
+    case WILD_AREA_LAND_7:
+    case WILD_AREA_LAND_8:
         numMon = LAND_WILD_COUNT;
         break;
     case WILD_AREA_WATER:
