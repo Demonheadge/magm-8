@@ -55,3 +55,9 @@ Display level-up learnsets for enemies in battle
 -ghoulslash
 Tweak level-up learnsets
 -Move every level
+Title screen
+-Caco
+Remove intro
+-Aqua Hideout
+Respawn point
+Heal location
