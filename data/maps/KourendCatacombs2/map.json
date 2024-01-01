@@ -392,6 +392,85 @@
       "flag": "FLAG_HIDE_CATAS_1_HELLHOUND_1"
     }
   ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 6,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 38,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 43,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 31,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 36,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 40,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 45,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS6",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
 
   ],
