@@ -41,6 +41,7 @@ KourendCatacombs1_AssignAbyssalDemons::
     addvar VAR_RESULT, 2
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_UNLOCK_QUEST QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE QUEST_1
     msgbox KourendCatacombs1_Text_AssignedAbyssalDemons, MSGBOX_DEFAULT
     release
@@ -50,6 +51,7 @@ KourendCatacombs1_AssignBlackDemons::
     setflag FLAG_BLACK_DEMONS
     setvar VAR_SLAYER_LEFT_TO_DEFEAT, 2
     buffernumberstring STR_VAR_1, VAR_SLAYER_LEFT_TO_DEFEAT
+    questmenu QUEST_MENU_UNLOCK_QUEST QUEST_2
     questmenu QUEST_MENU_SET_ACTIVE QUEST_2
     msgbox KourendCatacombs1_Text_AssignedBlackDemons, MSGBOX_DEFAULT
     release
