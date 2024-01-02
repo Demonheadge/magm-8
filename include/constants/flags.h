@@ -703,7 +703,7 @@
 #define FLAG_ANKOU  0x27F // Unused Flag
 #define FLAG_SPECTRES  0x280 // Unused Flag
 #define FLAG_DAGANNOTH  0x281 // Unused Flag
-#define FLAG_DUST_DEVIL  0x282 // Unused Flag
+#define FLAG_DUST_DEVILS  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
