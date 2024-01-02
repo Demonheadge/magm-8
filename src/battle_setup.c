@@ -1922,6 +1922,16 @@ void IncrementRematchStepCounter(void)
     }
 }
 
+void IncrementClearedFlagStepCounters(void)
+{
+    u8 Catas1Cyclops1 = VarGet(VAR_CATAS_1_CYCLOPS_1);
+    if (FlagGet(FLAG_HIDE_CATAS_1_CYCLOPS_1))
+    {
+        Catas1Cyclops1++;
+        VarSet(VAR_CATAS_1_CYCLOPS_1, Catas1Cyclops1);
+    }
+}
+
 static bool32 IsRematchStepCounterMaxed(void)
 {
     if (HasAtLeastFiveBadges() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)

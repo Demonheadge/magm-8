@@ -565,11 +565,17 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     }
 
     IncrementRematchStepCounter();
+    IncrementClearedFlagStepCounters();
     UpdateFriendshipStepCounter();
     UpdateFarawayIslandStepCounter();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
+        if (VarGet(VAR_CATAS_1_CYCLOPS_1) >= 10)
+        {
+            FlagClear(FLAG_HIDE_CATAS_1_CYCLOPS_1);
+            VarSet(VAR_CATAS_1_CYCLOPS_1, 0);
+        }
     #if OW_POISON_DAMAGE < GEN_5
         if (UpdatePoisonStepCounter() == TRUE)
         {

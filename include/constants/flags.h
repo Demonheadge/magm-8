@@ -692,7 +692,7 @@
 #define FLAG_BLACK_DEMONS  0x274 // Unused Flag
 #define FLAG_GREATER_DEMONS  0x275 // Unused Flag
 #define FLAG_GREATER_NECHRAYAEL  0x276 // Unused Flag
-#define FLAG_MUTATED_BLOODVELDS  0x277 // Unused Flag
+#define FLAG_BLOODVELDS  0x277 // Unused Flag
 #define FLAG_BLACK_DRAGONS  0x278 // Unused Flag
 #define FLAG_BLUE_DRAGONS  0x279 // Unused Flag
 #define FLAG_RED_DRAGONS  0x27A // Unused Flag

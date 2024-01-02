@@ -10485,7 +10485,7 @@ static void Cmd_various(void)
         u8 leftToDefeat = VarGet(VAR_SLAYER_LEFT_TO_DEFEAT);
         s32 enemySpecies = GetMonData(&gEnemyParty[0],MON_DATA_SPECIES);
 
-        if (FlagGet(FLAG_ABYSSAL_DEMONS) && enemySpecies == SPECIES_ABYSSAL_DEMON_FORM) {
+        if (FlagGet(FLAG_ABYSSAL_DEMONS) && (enemySpecies == SPECIES_ABYSSAL_DEMON_FORM || enemySpecies == SPECIES_ABYSSAL_MINION_FORM)) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
             if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
@@ -10494,7 +10494,7 @@ static void Cmd_various(void)
                 QuestMenu_GetSetQuestState(QUEST_1,FLAG_REMOVE_ACTIVE);
             }
         }
-        else if (FlagGet(FLAG_BLACK_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_BLACK_FORM) {
+        else if (FlagGet(FLAG_BLACK_DEMONS) && (enemySpecies == SPECIES_DEMON_GREATER_BLACK_FORM || enemySpecies == SPECIES_DEMON_LESSER_BLACK_FORM)) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
             if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_2,FLAG_GET_ACTIVE))
@@ -10503,7 +10503,7 @@ static void Cmd_various(void)
                 QuestMenu_GetSetQuestState(QUEST_2,FLAG_REMOVE_ACTIVE);
             }
         }
-        else if (FlagGet(FLAG_GREATER_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_OSRS_FORM) {
+        else if (FlagGet(FLAG_GREATER_DEMONS) && (enemySpecies == SPECIES_DEMON_GREATER_OSRS_FORM || enemySpecies == SPECIES_DEMON_GREATER_TONGUE_FORM)) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
             if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_3,FLAG_GET_ACTIVE))
@@ -10521,7 +10521,7 @@ static void Cmd_various(void)
                 QuestMenu_GetSetQuestState(QUEST_4,FLAG_REMOVE_ACTIVE);
             }
         }
-        else if (FlagGet(FLAG_MUTATED_BLOODVELDS) && enemySpecies == SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM) {
+        else if (FlagGet(FLAG_BLOODVELDS) && (enemySpecies == SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM || enemySpecies == SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM || enemySpecies == SPECIES_BLOODVELD_INSATIABLE_SPECIAL_FORM)) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
             if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_5,FLAG_GET_ACTIVE))

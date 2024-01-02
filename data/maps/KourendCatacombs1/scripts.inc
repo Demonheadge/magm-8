@@ -20,6 +20,7 @@ KourendCatacombs1_Start:
     additem ITEM_MASTER_BALL
     setflag FLAG_SYS_B_DASH
     setflag FLAG_SYS_QUEST_MENU_GET
+    setvar VAR_CATAS_1_CYCLOPS_1, 0
     setflag FLAG_CATAS_START
     end
 
@@ -30,7 +31,7 @@ KourendCatacombs1_Nieve::
     goto_if_quest_reward QUEST_2, KourendCatacombs1_GiveSlayerPointsBlackDemons
     goto_if_quest_reward QUEST_3, KourendCatacombs1_GiveSlayerPointsGreaterDemons
     goto_if_quest_reward QUEST_4, KourendCatacombs1_GiveSlayerPointsGreaterNechrayael
-    goto_if_quest_reward QUEST_5, KourendCatacombs1_GiveSlayerPointsMutatedBloodvelds
+    goto_if_quest_reward QUEST_5, KourendCatacombs1_GiveSlayerPointsBloodvelds
     goto_if_quest_reward QUEST_6, KourendCatacombs1_GiveSlayerPointsBlackDragons
     goto_if_quest_reward QUEST_7, KourendCatacombs1_GiveSlayerPointsBlueDragons
     goto_if_quest_reward QUEST_8, KourendCatacombs1_GiveSlayerPointsRedDragons
@@ -54,7 +55,7 @@ KourendCatacombs1_Nieve::
     case 1, KourendCatacombs1_AssignBlackDemons
     case 2, KourendCatacombs1_AssignGreaterDemons
     case 3, KourendCatacombs1_AssignGreaterNechrayael
-    case 4, KourendCatacombs1_AssignMutatedBloodvelds
+    case 4, KourendCatacombs1_AssignBloodvelds
     case 5, KourendCatacombs1_AssignBlackDragons
     case 6, KourendCatacombs1_AssignBlueDragons
     case 7, KourendCatacombs1_AssignRedDragons
@@ -108,14 +109,14 @@ KourendCatacombs1_AssignGreaterNechrayael::
     release
     end
 
-KourendCatacombs1_AssignMutatedBloodvelds::
-    setflag FLAG_MUTATED_BLOODVELDS
+KourendCatacombs1_AssignBloodvelds::
+    setflag FLAG_BLOODVELDS
     random 4
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
     questmenu QUEST_MENU_SET_ACTIVE QUEST_5
-    msgbox KourendCatacombs1_Text_AssignedMutatedBloodvelds, MSGBOX_DEFAULT
+    msgbox KourendCatacombs1_Text_AssignedBloodvelds, MSGBOX_DEFAULT
     release
     end
 
@@ -225,8 +226,8 @@ KourendCatacombs1_GiveSlayerPointsGreaterNechrayael::
     release
     end
 
-KourendCatacombs1_GiveSlayerPointsMutatedBloodvelds::
-    clearflag FLAG_MUTATED_BLOODVELDS
+KourendCatacombs1_GiveSlayerPointsBloodvelds::
+    clearflag FLAG_BLOODVELDS
     setvar VAR_0x8004, 12
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
@@ -310,8 +311,8 @@ KourendCatacombs1_Text_AssignedGreaterDemons::
 KourendCatacombs1_Text_AssignedGreaterNechrayael::
 	.string "You have been assigned {STR_VAR_1}\nGreater Nechrayael.$"
 
-KourendCatacombs1_Text_AssignedMutatedBloodvelds::
-	.string "You have been assigned {STR_VAR_1}\nMutated Bloodvelds.$"
+KourendCatacombs1_Text_AssignedBloodvelds::
+	.string "You have been assigned {STR_VAR_1}\nBloodvelds.$"
 
 KourendCatacombs1_Text_AssignedBlackDragons::
 	.string "You have been assigned {STR_VAR_1}\nBrutal Black Dragons.$"
