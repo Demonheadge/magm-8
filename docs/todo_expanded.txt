@@ -1,14 +1,12 @@
 Room scripting
 -Jordank
 Slayer tasks
--Insert PokeScape mons first
+-Knock em out
 Slayer shop
 -Come up with prices
 GE
 -Map
 -Script
-Adjust leveling formula
--pret
 TGV
 -Map
 -Script
@@ -22,44 +20,46 @@ Items from OSRS
 Runemon (builds)
 -Demonheadge
 -PokeScape
+-Sprites
 TMs and compatibility
 -Come up with TM list
 Tutors and combatibility
 -Come up with tutor list
-Add Runemon
+Add Runemon not in PokeScape
 -Demonheadge
+-Sprites
 Wild Pokemon spawns (regular and clusters)
 -Demonheadge
--Figure out how to code in separate tiles
 Overworld encounters
--Change to Runemon when applicable
+-Sprites
 "Trainers"
 -Demonheadge
+-Sprites
 OSRS weapon/spell/magic/prayer moves
 -Code in
 OW encounter step count reset
 -pret
 Day tracking (Slayer tasks completed / one dark totem piece acquired)
+-Flags
 -Code in
 Friends list and recruitment
--BSBob
--MGriffin
--ghoulslash
+-Caco
 Item spawns depending on day
 -Set/unset flags depending on day flag
 Drop tables
--Add in Runemon, first
+-Knock em out
 Display level-up learnsets for enemies in battle
 -BSBob
--MGriffin
--ghoulslash
 Tweak level-up learnsets
--Move every level
+-Knock em out
 Title screen
 -Caco
 Remove intro
 -Aqua Hideout
 Respawn point
+-TGV
 Heal location
+-TGV
 Tweak existing Pokemon to be Runemon
 -Demonheadge
+-PokeScape
