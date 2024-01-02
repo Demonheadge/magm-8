@@ -559,6 +559,16 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 
 static bool8 TryStartStepCountScript(u16 metatileBehavior)
 {
+    u8 i;
+    u16 vars[20];
+    u16 flags[20];
+    
+    vars[0] = VAR_CATAS_1_CYCLOPS_1;
+    vars[1] = VAR_CATAS_1_CYCLOPS_2;
+
+    flags[0] = FLAG_HIDE_CATAS_1_CYCLOPS_1;
+    flags[1] = FLAG_HIDE_CATAS_1_CYCLOPS_2;
+
     if (InUnionRoom() == TRUE)
     {
         return FALSE;
@@ -571,10 +581,13 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
-        if (VarGet(VAR_CATAS_1_CYCLOPS_1) >= 10)
+        for (i = 0; i < ARRAY_COUNT(vars); i++)
         {
-            FlagClear(FLAG_HIDE_CATAS_1_CYCLOPS_1);
-            VarSet(VAR_CATAS_1_CYCLOPS_1, 0);
+            if (VarGet(vars[i]) >= 100)
+            {
+                FlagClear(flags[i]);
+                VarSet(vars[i], 0);
+            }
         }
     #if OW_POISON_DAMAGE < GEN_5
         if (UpdatePoisonStepCounter() == TRUE)

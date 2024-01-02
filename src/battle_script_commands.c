@@ -10584,6 +10584,33 @@ static void Cmd_various(void)
                 QuestMenu_GetSetQuestState(QUEST_11,FLAG_REMOVE_ACTIVE);
             }
         }
+        else if (FlagGet(FLAG_STEEL_DRAGONS) && enemySpecies == SPECIES_DURALUDON) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_12,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_12,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_12,FLAG_REMOVE_ACTIVE);
+            }
+        }
+        else if (FlagGet(FLAG_ANKOU) && enemySpecies == SPECIES_DUSKNOIR) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_13,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_13,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_13,FLAG_REMOVE_ACTIVE);
+            }
+        }
+        else if (FlagGet(FLAG_SPECTRES) && enemySpecies == SPECIES_GOLURK) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_14,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_14,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_14,FLAG_REMOVE_ACTIVE);
+            }
+        }
 
         VarSet(VAR_SLAYER_LEFT_TO_DEFEAT,leftToDefeat);
         gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;

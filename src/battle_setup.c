@@ -1924,11 +1924,24 @@ void IncrementRematchStepCounter(void)
 
 void IncrementClearedFlagStepCounters(void)
 {
-    u8 Catas1Cyclops1 = VarGet(VAR_CATAS_1_CYCLOPS_1);
-    if (FlagGet(FLAG_HIDE_CATAS_1_CYCLOPS_1))
+    u8 i;
+    u16 vars[20];
+    u16 flags[20];
+    
+    vars[0] = VAR_CATAS_1_CYCLOPS_1;
+    vars[1] = VAR_CATAS_1_CYCLOPS_2;
+
+    flags[0] = FLAG_HIDE_CATAS_1_CYCLOPS_1;
+    flags[1] = FLAG_HIDE_CATAS_1_CYCLOPS_2;
+
+    for (i = 0; i < ARRAY_COUNT(vars); i++)
     {
-        Catas1Cyclops1++;
-        VarSet(VAR_CATAS_1_CYCLOPS_1, Catas1Cyclops1);
+        u8 var = VarGet(vars[i]);
+        if (FlagGet(flags[i]))
+        {
+            var++;
+            VarSet(vars[i], var);
+        }
     }
 }
 

@@ -699,9 +699,9 @@
 #define FLAG_FIRE_GIANTS  0x27B // Unused Flag
 #define FLAG_HELLHOUNDS  0x27C // Unused Flag
 #define FLAG_IRON_DRAGONS  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_STEEL_DRAGONS  0x27E // Unused Flag
+#define FLAG_ANKOU  0x27F // Unused Flag
+#define FLAG_SPECTRES  0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag

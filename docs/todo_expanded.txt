@@ -40,7 +40,7 @@ Overworld encounters
 OSRS weapon/spell/magic/prayer moves
 -Code in
 OW encounter step count reset
--pret
+-Knock em out
 Day tracking (Slayer tasks completed / one dark totem piece acquired)
 -Flags
 -Code in
@@ -62,4 +62,6 @@ Heal location
 -TGV
 Tweak existing Pokemon to be Runemon
 -Demonheadge
+-PokeScape
+Abby Spectre
 -PokeScape

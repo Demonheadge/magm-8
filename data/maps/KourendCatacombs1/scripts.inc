@@ -38,6 +38,9 @@ KourendCatacombs1_Nieve::
     goto_if_quest_reward QUEST_9, KourendCatacombs1_GiveSlayerPointsFireGiants
     goto_if_quest_reward QUEST_10, KourendCatacombs1_GiveSlayerPointsHellhounds
     goto_if_quest_reward QUEST_11, KourendCatacombs1_GiveSlayerPointsIronDragons
+    goto_if_quest_reward QUEST_12, KourendCatacombs1_GiveSlayerPointsSteelDragons
+    goto_if_quest_reward QUEST_13, KourendCatacombs1_GiveSlayerPointsAnkou
+    goto_if_quest_reward QUEST_14, KourendCatacombs1_GiveSlayerPointsSpectres
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     questmenu QUEST_MENU_SET_INACTIVE QUEST_3
@@ -49,7 +52,10 @@ KourendCatacombs1_Nieve::
     questmenu QUEST_MENU_SET_INACTIVE QUEST_9
     questmenu QUEST_MENU_SET_INACTIVE QUEST_10
     questmenu QUEST_MENU_SET_INACTIVE QUEST_11
-    random 11
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_12
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_13
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_14
+    random 14
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
     case 1, KourendCatacombs1_AssignBlackDemons
@@ -62,6 +68,9 @@ KourendCatacombs1_Nieve::
     case 8, KourendCatacombs1_AssignFireGiants
     case 9, KourendCatacombs1_AssignHellhounds
     case 10, KourendCatacombs1_AssignIronDragons
+    case 11, KourendCatacombs1_AssignSteelDragons
+    case 12, KourendCatacombs1_AssignAnkou
+    case 13, KourendCatacombs1_AssignSpectres
     release
     end
 
@@ -186,6 +195,39 @@ KourendCatacombs1_AssignIronDragons::
     release
     end
 
+KourendCatacombs1_AssignSteelDragons::
+    setflag FLAG_STEEL_DRAGONS
+    random 3
+    addvar VAR_RESULT, 2
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_12
+    msgbox KourendCatacombs1_Text_AssignedSteelDragons, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignAnkou::
+    setflag FLAG_ANKOU
+    random 3
+    addvar VAR_RESULT, 3
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_13
+    msgbox KourendCatacombs1_Text_AssignedAnkou, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignSpectres::
+    setflag FLAG_SPECTRES
+    random 4
+    addvar VAR_RESULT, 5
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedSpectres, MSGBOX_DEFAULT
+    release
+    end
+
 KourendCatacombs1_GiveSlayerPointsAbyssalDemons::
     clearflag FLAG_ABYSSAL_DEMONS
     setvar VAR_0x8004, 12
@@ -292,7 +334,37 @@ KourendCatacombs1_GiveSlayerPointsIronDragons::
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
     msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
-    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_10
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_11
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsSteelDragons::
+    clearflag FLAG_STEEL_DRAGONS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_12
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsAnkou::
+    clearflag FLAG_ANKOU
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_13
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsSpectres::
+    clearflag FLAG_SPECTRES
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_14
     release
     end
 
@@ -331,6 +403,15 @@ KourendCatacombs1_Text_AssignedHellhounds::
 
 KourendCatacombs1_Text_AssignedIronDragons::
 	.string "You have been assigned {STR_VAR_1}\nIron Dragons.$"
+
+KourendCatacombs1_Text_AssignedSteelDragons::
+	.string "You have been assigned {STR_VAR_1}\nSteel Dragons.$"
+
+KourendCatacombs1_Text_AssignedAnkou::
+	.string "You have been assigned {STR_VAR_1}\nAnkou.$"
+
+KourendCatacombs1_Text_AssignedSpectres::
+	.string "You have been assigned {STR_VAR_1}\nSpectres.$"
 
 KourendCatacombs1_HillGiant::
     lock
