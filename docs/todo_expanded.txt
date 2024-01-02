@@ -56,8 +56,6 @@ Tweak level-up learnsets
 -Knock em out
 Title screen
 -Caco
-Remove intro
--Aqua Hideout
 Respawn point
 -TGV
 Heal location
