@@ -34,6 +34,7 @@ KourendCatacombs1_Nieve::
     goto_if_quest_reward QUEST_6, KourendCatacombs1_GiveSlayerPointsBlackDragons
     goto_if_quest_reward QUEST_7, KourendCatacombs1_GiveSlayerPointsBlueDragons
     goto_if_quest_reward QUEST_8, KourendCatacombs1_GiveSlayerPointsRedDragons
+    goto_if_quest_reward QUEST_9, KourendCatacombs1_GiveSlayerPointsFireGiants
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     questmenu QUEST_MENU_SET_INACTIVE QUEST_3
@@ -42,7 +43,8 @@ KourendCatacombs1_Nieve::
     questmenu QUEST_MENU_SET_INACTIVE QUEST_6
     questmenu QUEST_MENU_SET_INACTIVE QUEST_7
     questmenu QUEST_MENU_SET_INACTIVE QUEST_8
-    random 8
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_9
+    random 9
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
     case 1, KourendCatacombs1_AssignBlackDemons
@@ -52,6 +54,7 @@ KourendCatacombs1_Nieve::
     case 5, KourendCatacombs1_AssignBlackDragons
     case 6, KourendCatacombs1_AssignBlueDragons
     case 7, KourendCatacombs1_AssignRedDragons
+    case 8, KourendCatacombs1_AssignFireGiants
     release
     end
 
@@ -143,6 +146,17 @@ KourendCatacombs1_AssignRedDragons::
     release
     end
 
+KourendCatacombs1_AssignFireGiants::
+    setflag FLAG_FIRE_GIANTS
+    random 4
+    addvar VAR_RESULT, 5
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_9
+    msgbox KourendCatacombs1_Text_AssignedFireGiants, MSGBOX_DEFAULT
+    release
+    end
+
 KourendCatacombs1_GiveSlayerPointsAbyssalDemons::
     clearflag FLAG_ABYSSAL_DEMONS
     setvar VAR_0x8004, 12
@@ -223,6 +237,16 @@ KourendCatacombs1_GiveSlayerPointsRedDragons::
     release
     end
 
+KourendCatacombs1_GiveSlayerPointsFireGiants::
+    clearflag FLAG_FIRE_GIANTS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_9
+    release
+    end
+
 KourendCatacombs1_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"
 
@@ -249,6 +273,9 @@ KourendCatacombs1_Text_AssignedBlueDragons::
 
 KourendCatacombs1_Text_AssignedRedDragons::
 	.string "You have been assigned {STR_VAR_1}\nBrutal Red Dragons.$"
+
+KourendCatacombs1_Text_AssignedFireGiants::
+	.string "You have been assigned {STR_VAR_1}\nFire Giants.$"
 
 KourendCatacombs1_HillGiant::
     lock
