@@ -20,6 +20,7 @@ KourendCatacombs1_Start:
     additem ITEM_MASTER_BALL
     setflag FLAG_SYS_B_DASH
     setflag FLAG_SYS_QUEST_MENU_GET
+    setrespawn HEAL_LOCATION_CATACOMBS_OF_KOUREND
     setflag FLAG_CATAS_START
     end
 
