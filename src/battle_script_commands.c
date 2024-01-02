@@ -10525,6 +10525,10 @@ static void Cmd_various(void)
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
         }
+        else if (FlagGet(FLAG_IRON_DRAGONS) && enemySpecies == SPECIES_SKARMORY) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
 
         if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
         {
