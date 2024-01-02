@@ -18,7 +18,7 @@ KourendCatacombs1_Start:
     special EnableNationalPokedex
     setflag FLAG_SYS_FRONTIER_PASS
     additem ITEM_MASTER_BALL
-    setflag FLAG_RECEIVED_RUNNING_SHOES
+    setflag FLAG_SYS_B_DASH
     setflag FLAG_SYS_QUEST_MENU_GET
     setflag FLAG_CATAS_START
     end
