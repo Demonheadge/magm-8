@@ -20,7 +20,6 @@ KourendCatacombs1_Start:
     additem ITEM_MASTER_BALL
     setflag FLAG_SYS_B_DASH
     setflag FLAG_SYS_QUEST_MENU_GET
-    setvar VAR_CATAS_1_CYCLOPS_1, 0
     setflag FLAG_CATAS_START
     end
 
@@ -229,7 +228,7 @@ KourendCatacombs1_AssignSpectres::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_4
     msgbox KourendCatacombs1_Text_AssignedSpectres, MSGBOX_DEFAULT
     release
     end
@@ -240,7 +239,7 @@ KourendCatacombs1_AssignDagannoth::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_15
     msgbox KourendCatacombs1_Text_AssignedDagannoth, MSGBOX_DEFAULT
     release
     end
@@ -251,7 +250,7 @@ KourendCatacombs1_AssignDustDevils::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_16
     msgbox KourendCatacombs1_Text_AssignedDustDevils, MSGBOX_DEFAULT
     release
     end
@@ -455,11 +454,17 @@ KourendCatacombs1_Text_AssignedIronDragons::
 KourendCatacombs1_Text_AssignedSteelDragons::
 	.string "You have been assigned {STR_VAR_1}\nSteel Dragons.$"
 
-KourendCatacombs1_Text_AssignedDagannoth::
+KourendCatacombs1_Text_AssignedAnkou::
 	.string "You have been assigned {STR_VAR_1}\nAnkou.$"
 
-KourendCatacombs1_Text_AssignedDustDevils::
+KourendCatacombs1_Text_AssignedSpectres::
 	.string "You have been assigned {STR_VAR_1}\nSpectres.$"
+
+KourendCatacombs1_Text_AssignedDagannoth::
+	.string "You have been assigned {STR_VAR_1}\nDagannoth.$"
+
+KourendCatacombs1_Text_AssignedDustDevils::
+	.string "You have been assigned {STR_VAR_1}\nDust Devils.$"
 
 KourendCatacombs1_HillGiant::
     lock
