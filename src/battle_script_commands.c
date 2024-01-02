@@ -10501,6 +10501,10 @@ static void Cmd_various(void)
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
         }
+        else if (FlagGet(FLAG_MUTATED_BLOODVELDS) && enemySpecies == SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+        }
 
         if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
         {
