@@ -655,7 +655,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_10,
 	      gText_SideQuestDoneDesc_10,
 	      gText_SideQuestMap10,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_POKEMON_229,
 	      OBJECT,
 	      NULL,
 	      0
