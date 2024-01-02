@@ -4210,7 +4210,7 @@ static void Cmd_getexp(void)
                 if (IsValidForBattle(&gPlayerParty[*expMonId]))
                 {
                     if (wasSentOut)
-                        gBattleMoveDamage = gBattleStruct->expValue;
+                        gBattleMoveDamage = gBattleStruct->expValue * 5;
                     else
                         gBattleMoveDamage = 0;
 
