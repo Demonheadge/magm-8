@@ -65,3 +65,5 @@ Tweak existing Pokemon to be Runemon
 -PokeScape
 Abby Spectre
 -PokeScape
+Slayer points
+-Tweak Battle Frontier UI

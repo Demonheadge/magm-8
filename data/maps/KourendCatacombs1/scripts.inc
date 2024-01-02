@@ -41,6 +41,8 @@ KourendCatacombs1_Nieve::
     goto_if_quest_reward QUEST_12, KourendCatacombs1_GiveSlayerPointsSteelDragons
     goto_if_quest_reward QUEST_13, KourendCatacombs1_GiveSlayerPointsAnkou
     goto_if_quest_reward QUEST_14, KourendCatacombs1_GiveSlayerPointsSpectres
+    goto_if_quest_reward QUEST_15, KourendCatacombs1_GiveSlayerPointsDagannoth
+    goto_if_quest_reward QUEST_16, KourendCatacombs1_GiveSlayerPointsDustDevils
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     questmenu QUEST_MENU_SET_INACTIVE QUEST_3
@@ -55,7 +57,9 @@ KourendCatacombs1_Nieve::
     questmenu QUEST_MENU_SET_INACTIVE QUEST_12
     questmenu QUEST_MENU_SET_INACTIVE QUEST_13
     questmenu QUEST_MENU_SET_INACTIVE QUEST_14
-    random 14
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_15
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_16
+    random 16
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
     case 1, KourendCatacombs1_AssignBlackDemons
@@ -71,6 +75,8 @@ KourendCatacombs1_Nieve::
     case 11, KourendCatacombs1_AssignSteelDragons
     case 12, KourendCatacombs1_AssignAnkou
     case 13, KourendCatacombs1_AssignSpectres
+    case 14, KourendCatacombs1_AssignDagannoth
+    case 15, KourendCatacombs1_AssignDustDevils
     release
     end
 
@@ -228,6 +234,28 @@ KourendCatacombs1_AssignSpectres::
     release
     end
 
+KourendCatacombs1_AssignDagannoth::
+    setflag FLAG_DAGANNOTH
+    random 4
+    addvar VAR_RESULT, 5
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedDagannoth, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignDustDevils::
+    setflag FLAG_DUST_DEVILS
+    random 4
+    addvar VAR_RESULT, 5
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    msgbox KourendCatacombs1_Text_AssignedDustDevils, MSGBOX_DEFAULT
+    release
+    end
+
 KourendCatacombs1_GiveSlayerPointsAbyssalDemons::
     clearflag FLAG_ABYSSAL_DEMONS
     setvar VAR_0x8004, 12
@@ -365,6 +393,26 @@ KourendCatacombs1_GiveSlayerPointsSpectres::
     buffernumberstring STR_VAR_1, 12
     msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
     questmenu QUEST_MENU_COMPLETE_QUEST QUEST_14
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsDagannoth::
+    clearflag FLAG_DAGANNOTH
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_15
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsDustDevils::
+    clearflag FLAG_DUST_DEVILS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_16
     release
     end
 
