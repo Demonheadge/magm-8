@@ -2424,6 +2424,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_SLAYER_SHOP:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 44;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2584,7 +2594,54 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_SLAYER_SHOP] =
+    {
+        gText_AntifirePotion24SP,
+        gText_AntiDragonShield36SP,
+        gText_BlackMask48SP,
+        gText_BlessedSet72SP,
+        gText_BroadArrows24SP,
+        gText_BroadBolts24SP,
+        gText_EternalBoots36SP,
+        gText_FireCape60SP,
+        gText_GodCape60SP,
+        gText_InfernalCape72SP,
+        gText_MirrorShield24SP,
+        gText_MythicalCape48SP,
+        gText_ObsidianSet84SP,
+        gText_SalveAmulet60SP,
+        gText_SlayerHelmet72SP,
+        gText_AssaultVest60SP,
+        gText_ChoiceBand84SP,
+        gText_ChoiceScarf84SP,
+        gText_ChoiceSpecs84SP,
+        gText_Eviolite60SP,
+        gText_ExpertBelt48SP,
+        gText_FocusSash48SP,
+        gText_HeavyDutyBoots36SP,
+        gText_Leftovers84SP,
+        gText_LifeOrb72SP,
+        gText_LumBerry48SP,
+        gText_RockyHelmet48SP,
+        gText_SalacBerry36SP,
+        gText_AirBalloon12SP,
+        gText_DampRock12SP,
+        gText_ElectricSeed12SP,
+        gText_GrassySeed12SP,
+        gText_HeatRock12SP,
+        gText_IcyRock12SP,
+        gText_LiechiBerry24SP,
+        gText_LightClay24SP,
+        gText_MistySeed12SP,
+        gText_PetayaBerry24SP,
+        gText_PsychicSeed12SP,
+        gText_SmoothRock12SP,
+        gText_TerrainExtender24SP,
+        gText_ThroatSpray12SP,
+        gText_WhiteHerb24SP,
+        gText_Exit
+    },
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -3026,7 +3083,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
 {
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    if ((menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR) || menu == SCROLL_SLAYER_SHOP)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
@@ -3065,6 +3122,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
+        case SCROLL_SLAYER_SHOP:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sSlayerShopItemDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sSlayerShopItems[selection]);
+            break;
         }
     }
 }
@@ -3093,6 +3154,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_SLAYER_SHOP:
             DestroySpriteAndFreeResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
         }

@@ -3254,4 +3254,48 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
+extern const u8 gText_AntifirePotion24SP[];
+extern const u8 gText_AntiDragonShield36SP[];
+extern const u8 gText_BlackMask48SP[];
+extern const u8 gText_BlessedSet72SP[];
+extern const u8 gText_BroadArrows24SP[];
+extern const u8 gText_BroadBolts24SP[];
+extern const u8 gText_EternalBoots36SP[];
+extern const u8 gText_FireCape60SP[];
+extern const u8 gText_GodCape60SP[];
+extern const u8 gText_InfernalCape72SP[];
+extern const u8 gText_MirrorShield24SP[];
+extern const u8 gText_MythicalCape48SP[];
+extern const u8 gText_ObsidianSet84SP[];
+extern const u8 gText_SalveAmulet60SP[];
+extern const u8 gText_SlayerHelmet72SP[];
+extern const u8 gText_AssaultVest60SP[];
+extern const u8 gText_ChoiceBand84SP[];
+extern const u8 gText_ChoiceScarf84SP[];
+extern const u8 gText_ChoiceSpecs84SP[];
+extern const u8 gText_Eviolite60SP[];
+extern const u8 gText_ExpertBelt48SP[];
+extern const u8 gText_FocusSash48SP[];
+extern const u8 gText_HeavyDutyBoots36SP[];
+extern const u8 gText_Leftovers84SP[];
+extern const u8 gText_LifeOrb72SP[];
+extern const u8 gText_LumBerry48SP[];
+extern const u8 gText_RockyHelmet48SP[];
+extern const u8 gText_SalacBerry36SP[];
+extern const u8 gText_AirBalloon12SP[];
+extern const u8 gText_DampRock12SP[];
+extern const u8 gText_ElectricSeed12SP[];
+extern const u8 gText_GrassySeed12SP[];
+extern const u8 gText_HeatRock12SP[];
+extern const u8 gText_IcyRock12SP[];
+extern const u8 gText_LiechiBerry24SP[];
+extern const u8 gText_LightClay24SP[];
+extern const u8 gText_MistySeed12SP[];
+extern const u8 gText_PetayaBerry24SP[];
+extern const u8 gText_PsychicSeed12SP[];
+extern const u8 gText_SmoothRock12SP[];
+extern const u8 gText_TerrainExtender24SP[];
+extern const u8 gText_ThroatSpray12SP[];
+extern const u8 gText_WhiteHerb24SP[];
+
 #endif // GUARD_STRINGS_H

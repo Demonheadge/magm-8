@@ -24,6 +24,364 @@ KourendCatacombs1_Start:
     setflag FLAG_CATAS_START
     end
 
+KourendCatacombs1_SlayerShop::
+	setvar VAR_0x8004, SCROLL_SLAYER_SHOP
+	special ShowFrontierExchangeCornerItemIconWindow
+	special ShowScrollableMultichoice
+	waitstate
+	special CloseFrontierExchangeCornerItemIconWindow
+	switch VAR_RESULT
+    case 0, KourendCatacombs1_EventScript_AntifirePotion24SP
+    case 1, KourendCatacombs1_EventScript_AntiDragonShield36SP
+    case 2, KourendCatacombs1_EventScript_BlackMask48SP
+    case 3, KourendCatacombs1_EventScript_BlessedSet72SP
+    case 4, KourendCatacombs1_EventScript_BroadArrows24SP
+    case 5, KourendCatacombs1_EventScript_BroadBolts24SP
+    case 6, KourendCatacombs1_EventScript_EternalBoots36SP
+    case 7, KourendCatacombs1_EventScript_FireCape60SP
+    case 8, KourendCatacombs1_EventScript_GodCape60SP
+    case 9, KourendCatacombs1_EventScript_InfernalCape72SP
+    case 10, KourendCatacombs1_EventScript_MirrorShield24SP
+    case 11, KourendCatacombs1_EventScript_MythicalCape48SP
+    case 12, KourendCatacombs1_EventScript_ObsidianSet84SP
+    case 13, KourendCatacombs1_EventScript_SalveAmulet60SP
+    case 14, KourendCatacombs1_EventScript_SlayerHelmet72SP
+    case 15, KourendCatacombs1_EventScript_AssaultVest60SP
+    case 16, KourendCatacombs1_EventScript_ChoiceBand84SP
+    case 17, KourendCatacombs1_EventScript_ChoiceScarf84SP
+    case 18, KourendCatacombs1_EventScript_ChoiceSpecs84SP
+    case 19, KourendCatacombs1_EventScript_Eviolite60SP
+    case 20, KourendCatacombs1_EventScript_ExpertBelt48SP
+    case 21, KourendCatacombs1_EventScript_FocusSash48SP
+    case 22, KourendCatacombs1_EventScript_HeavyDutyBoots36SP
+    case 23, KourendCatacombs1_EventScript_Leftovers84SP
+    case 24, KourendCatacombs1_EventScript_LifeOrb72SP
+    case 25, KourendCatacombs1_EventScript_LumBerry48SP
+    case 26, KourendCatacombs1_EventScript_RockyHelmet48SP
+    case 27, KourendCatacombs1_EventScript_SalacBerry36SP
+    case 28, KourendCatacombs1_EventScript_AirBalloon12SP
+    case 29, KourendCatacombs1_EventScript_DampRock12SP
+    case 30, KourendCatacombs1_EventScript_ElectricSeed12SP
+    case 31, KourendCatacombs1_EventScript_GrassySeed12SP
+    case 32, KourendCatacombs1_EventScript_HeatRock12SP
+    case 33, KourendCatacombs1_EventScript_IcyRock12SP
+    case 34, KourendCatacombs1_EventScript_LiechiBerry24SP
+    case 35, KourendCatacombs1_EventScript_LightClay24SP
+    case 36, KourendCatacombs1_EventScript_MistySeed12SP
+    case 37, KourendCatacombs1_EventScript_PetayaBerry24SP
+    case 38, KourendCatacombs1_EventScript_PsychicSeed12SP
+    case 39, KourendCatacombs1_EventScript_SmoothRock12SP
+    case 40, KourendCatacombs1_EventScript_TerrainExtender24SP
+    case 41, KourendCatacombs1_EventScript_ThroatSpray12SP
+    case 42, KourendCatacombs1_EventScript_WhiteHerb24SP
+	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ClerkGoodbye
+	end
+
+KourendCatacombs1_EventScript_ClerkGoodbye::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ThankYouVisitWithPoints, MSGBOX_DEFAULT
+	special CloseBattlePointsWindow
+	release
+	end
+
+KourendCatacombs1_Text_ThankYouVisitWithPoints:
+	.string "Thank you very much.\p"
+	.string "Please visit me when you have\n"
+	.string "saved up Slayer Points.$"
+
+KourendCatacombs1_EventScript_AntifirePotion24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_ANTIFIRE_POTION
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_AntiDragonShield36SP::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8009, ITEM_ANTI_DRAGON_SHIELD
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_BlackMask48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_BLACK_MASK
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_BlessedSet72SP::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8009, ITEM_BLESSED_SET
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_BroadArrows24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_BROAD_ARROWS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_BroadBolts24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_BROAD_BOLTS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_EternalBoots36SP::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8009, ITEM_ETERNAL_BOOTS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_FireCape60SP::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8009, ITEM_FIRE_CAPE
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_GodCape60SP::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8009, ITEM_GOD_CAPE
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_InfernalCape72SP::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8009, ITEM_INFERNAL_CAPE
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_MirrorShield24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_MIRROR_SHIELD
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_MythicalCape48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_MYTHICAL_CAPE
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ObsidianSet84SP::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8009, ITEM_OBSIDIAN_SET
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_SalveAmulet60SP::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8009, ITEM_SALVE_AMULET
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_SlayerHelmet72SP::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8009, ITEM_SLAYER_HELMET
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_AssaultVest60SP::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8009, ITEM_ASSAULT_VEST
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ChoiceBand84SP::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8009, ITEM_CHOICE_BAND
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ChoiceScarf84SP::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8009, ITEM_CHOICE_SCARF
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ChoiceSpecs84SP::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8009, ITEM_CHOICE_SPECS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_Eviolite60SP::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8009, ITEM_EVIOLITE
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ExpertBelt48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_EXPERT_BELT
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_FocusSash48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_FOCUS_SASH
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_HeavyDutyBoots36SP::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8009, ITEM_HEAVY_DUTY_BOOTS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_Leftovers84SP::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8009, ITEM_LEFTOVERS
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_LifeOrb72SP::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8009, ITEM_LIFE_ORB
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_LumBerry48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_LUM_BERRY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_RockyHelmet48SP::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8009, ITEM_ROCKY_HELMET
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_SalacBerry36SP::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8009, ITEM_SALAC_BERRY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_AirBalloon12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_AIR_BALLOON
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_DampRock12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_DAMP_ROCK
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ElectricSeed12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_ELECTRIC_SEED
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_GrassySeed12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_GRASSY_SEED
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_HeatRock12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_HEAT_ROCK
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_IcyRock12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_ICY_ROCK
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_LiechiBerry24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_LIECHI_BERRY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_LightClay24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_LIGHT_CLAY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_MistySeed12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_MISTY_SEED
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_PetayaBerry24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_PETAYA_BERRY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_PsychicSeed12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_PSYCHIC_SEED
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_SmoothRock12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_SMOOTH_ROCK
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_TerrainExtender24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_TERRAIN_EXTENDER
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_ThroatSpray12SP::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8009, ITEM_THROAT_SPRAY
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_WhiteHerb24SP::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8009, ITEM_WHITE_HERB
+	goto KourendCatacombs1_EventScript_TryPurchasePrize
+	end
+
+KourendCatacombs1_EventScript_TryPurchasePrize::
+	specialvar VAR_TEMP_1, GetFrontierBattlePoints
+	goto_if_ge VAR_TEMP_1, VAR_0x8008, KourendCatacombs1_EventScript_TryGiveItem
+	msgbox KourendCatacombs1_Text_DontHaveEnoughPoints, MSGBOX_DEFAULT
+	goto KourendCatacombs1_SlayerShop
+	end
+
+KourendCatacombs1_Text_DontHaveEnoughPoints:
+	.string "I'm so sorry…\n"
+	.string "You don't have enough Battle Points…$"
+
+KourendCatacombs1_EventScript_TryGiveItem::
+	checkitemspace VAR_0x8009
+	goto_if_eq VAR_RESULT, FALSE, KourendCatacombs1_EventScript_BagFull
+	copyvar VAR_0x8004, VAR_0x8008
+	special TakeFrontierBattlePoints
+	additem VAR_0x8009
+	special UpdateBattlePointsWindow
+	playse SE_SHOP
+	msgbox KourendCatacombs1_Text_HereIsYourPrize, MSGBOX_DEFAULT
+	goto KourendCatacombs1_SlayerShop
+	end
+
+KourendCatacombs1_Text_HereIsYourPrize:
+	.string "Here is your prize!$"
+
+KourendCatacombs1_EventScript_BagFull::
+	msgbox KourendCatacombs1_Text_DontHaveSpaceToHoldIt, MSGBOX_DEFAULT
+	special CloseBattlePointsWindow
+	release
+	end
+
+KourendCatacombs1_Text_DontHaveSpaceToHoldIt:
+	.string "I'm so sorry…\n"
+	.string "You don't have space to hold it…$"
+
 KourendCatacombs1_Nieve::
     lock
     faceplayer
