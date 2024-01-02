@@ -33,6 +33,7 @@ KourendCatacombs1_Nieve::
     goto_if_quest_reward QUEST_5, KourendCatacombs1_GiveSlayerPointsMutatedBloodvelds
     goto_if_quest_reward QUEST_6, KourendCatacombs1_GiveSlayerPointsBlackDragons
     goto_if_quest_reward QUEST_7, KourendCatacombs1_GiveSlayerPointsBlueDragons
+    goto_if_quest_reward QUEST_8, KourendCatacombs1_GiveSlayerPointsRedDragons
     questmenu QUEST_MENU_SET_INACTIVE QUEST_1
     questmenu QUEST_MENU_SET_INACTIVE QUEST_2
     questmenu QUEST_MENU_SET_INACTIVE QUEST_3
@@ -40,7 +41,8 @@ KourendCatacombs1_Nieve::
     questmenu QUEST_MENU_SET_INACTIVE QUEST_5
     questmenu QUEST_MENU_SET_INACTIVE QUEST_6
     questmenu QUEST_MENU_SET_INACTIVE QUEST_7
-    random 7
+    questmenu QUEST_MENU_SET_INACTIVE QUEST_8
+    random 8
     switch VAR_RESULT
     case 0, KourendCatacombs1_AssignAbyssalDemons
     case 1, KourendCatacombs1_AssignBlackDemons
@@ -49,6 +51,7 @@ KourendCatacombs1_Nieve::
     case 4, KourendCatacombs1_AssignMutatedBloodvelds
     case 5, KourendCatacombs1_AssignBlackDragons
     case 6, KourendCatacombs1_AssignBlueDragons
+    case 7, KourendCatacombs1_AssignRedDragons
     release
     end
 
@@ -124,8 +127,19 @@ KourendCatacombs1_AssignBlueDragons::
     addvar VAR_RESULT, 5
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
-    questmenu QUEST_MENU_SET_ACTIVE QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_7
     msgbox KourendCatacombs1_Text_AssignedBlueDragons, MSGBOX_DEFAULT
+    release
+    end
+
+KourendCatacombs1_AssignRedDragons::
+    setflag FLAG_RED_DRAGONS
+    random 3
+    addvar VAR_RESULT, 2
+    copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
+    buffernumberstring STR_VAR_1, VAR_RESULT
+    questmenu QUEST_MENU_SET_ACTIVE QUEST_8
+    msgbox KourendCatacombs1_Text_AssignedRedDragons, MSGBOX_DEFAULT
     release
     end
 
@@ -185,7 +199,7 @@ KourendCatacombs1_GiveSlayerPointsBlackDragons::
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
     msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
-    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_5
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_6
     release
     end
 
@@ -195,7 +209,17 @@ KourendCatacombs1_GiveSlayerPointsBlueDragons::
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12
     msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
-    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_4
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_7
+    release
+    end
+
+KourendCatacombs1_GiveSlayerPointsRedDragons::
+    clearflag FLAG_RED_DRAGONS
+    setvar VAR_0x8004, 12
+    special GiveFrontierBattlePoints
+    buffernumberstring STR_VAR_1, 12
+    msgbox KourendCatacombs1_Text_ObtainedXSlayerPoints, MSGBOX_GETPOINTS
+    questmenu QUEST_MENU_COMPLETE_QUEST QUEST_8
     release
     end
 
@@ -222,6 +246,9 @@ KourendCatacombs1_Text_AssignedBlackDragons::
 
 KourendCatacombs1_Text_AssignedBlueDragons::
 	.string "You have been assigned {STR_VAR_1}\nBrutal Blue Dragons.$"
+
+KourendCatacombs1_Text_AssignedRedDragons::
+	.string "You have been assigned {STR_VAR_1}\nBrutal Red Dragons.$"
 
 KourendCatacombs1_HillGiant::
     lock
