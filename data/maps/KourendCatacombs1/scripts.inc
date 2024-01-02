@@ -262,7 +262,7 @@ KourendCatacombs1_GiveSlayerPointsFireGiants::
     end
 
 KourendCatacombs1_GiveSlayerPointsHellhounds::
-    clearflag FLAG_FIRE_GIANTS
+    clearflag FLAG_HELLHOUNDS
     setvar VAR_0x8004, 12
     special GiveFrontierBattlePoints
     buffernumberstring STR_VAR_1, 12

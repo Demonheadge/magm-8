@@ -61,3 +61,5 @@ Remove intro
 -Aqua Hideout
 Respawn point
 Heal location
+Tweak existing Pokemon to be Runemon
+-Demonheadge
