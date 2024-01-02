@@ -455,10 +455,10 @@ KourendCatacombs1_Text_AssignedIronDragons::
 KourendCatacombs1_Text_AssignedSteelDragons::
 	.string "You have been assigned {STR_VAR_1}\nSteel Dragons.$"
 
-KourendCatacombs1_Text_AssignedAnkou::
+KourendCatacombs1_Text_AssignedDagannoth::
 	.string "You have been assigned {STR_VAR_1}\nAnkou.$"
 
-KourendCatacombs1_Text_AssignedSpectres::
+KourendCatacombs1_Text_AssignedDustDevils::
 	.string "You have been assigned {STR_VAR_1}\nSpectres.$"
 
 KourendCatacombs1_HillGiant::
