@@ -176,8 +176,8 @@ KourendCatacombs1_AssignHellhounds::
 
 KourendCatacombs1_AssignIronDragons::
     setflag FLAG_IRON_DRAGONS
-    random 2
-    addvar VAR_RESULT, 1
+    random 3
+    addvar VAR_RESULT, 2
     copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
     buffernumberstring STR_VAR_1, VAR_RESULT
     questmenu QUEST_MENU_SET_ACTIVE QUEST_11

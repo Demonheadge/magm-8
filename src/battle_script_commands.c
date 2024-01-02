@@ -10488,52 +10488,101 @@ static void Cmd_various(void)
         if (FlagGet(FLAG_ABYSSAL_DEMONS) && enemySpecies == SPECIES_ABYSSAL_DEMON_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_1,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_1,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_BLACK_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_BLACK_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_2,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_2,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_2,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_GREATER_DEMONS) && enemySpecies == SPECIES_DEMON_GREATER_OSRS_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_3,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_3,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_3,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_GREATER_NECHRAYAEL) && enemySpecies == SPECIES_LICKILICKY) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_4,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_4,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_4,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_MUTATED_BLOODVELDS) && enemySpecies == SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_5,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_5,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_5,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_BLACK_DRAGONS) && enemySpecies == SPECIES_DRAGON_BRUTAL_BLACK_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_6,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_6,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_6,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_BLUE_DRAGONS) && enemySpecies == SPECIES_DRAGON_BRUTAL_BLUE_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_7,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_7,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_7,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_RED_DRAGONS) && enemySpecies == SPECIES_DRAGON_BRUTAL_RED_FORM) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_8,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_8,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_8,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_FIRE_GIANTS) && enemySpecies == SPECIES_EMBOAR) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_9,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_9,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_9,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_HELLHOUNDS) && enemySpecies == SPECIES_HELLHOUND) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_10,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_10,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_10,FLAG_REMOVE_ACTIVE);
+            }
         }
         else if (FlagGet(FLAG_IRON_DRAGONS) && enemySpecies == SPECIES_SKARMORY) {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 leftToDefeat--;
-        }
-
-        if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_1,FLAG_GET_ACTIVE))
-        {
-            QuestMenu_GetSetQuestState(QUEST_1,FLAG_SET_REWARD);
-            QuestMenu_GetSetQuestState(QUEST_1,FLAG_REMOVE_ACTIVE);
+            if ((leftToDefeat <= 0) && QuestMenu_GetSetQuestState(QUEST_11,FLAG_GET_ACTIVE))
+            {
+                QuestMenu_GetSetQuestState(QUEST_11,FLAG_SET_REWARD);
+                QuestMenu_GetSetQuestState(QUEST_11,FLAG_REMOVE_ACTIVE);
+            }
         }
 
         VarSet(VAR_SLAYER_LEFT_TO_DEFEAT,leftToDefeat);
