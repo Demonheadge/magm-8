@@ -13,8 +13,10 @@ TGV
 -PC
 Visible item spawns for each day
 -Flags
+-Demonheadge
 Hidden item spawns for each day
 -Flags
+-Demonheadge
 Items from OSRS
 -Code in
 Runemon (builds)
