@@ -2434,6 +2434,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_SLAYER_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2640,6 +2650,20 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_TerrainExtender24SP,
         gText_ThroatSpray12SP,
         gText_WhiteHerb24SP,
+        gText_Exit
+    },
+    [SCROLL_SLAYER_TUTOR] =
+    {
+        gText_Softboiled16BP,
+        gText_SeismicToss24BP,
+        gText_DreamEater24BP,
+        gText_MegaPunch24BP,
+        gText_MegaKick48BP,
+        gText_BodySlam48BP,
+        gText_RockSlide48BP,
+        gText_Counter48BP,
+        gText_ThunderWave48BP,
+        gText_SwordsDance48BP,
         gText_Exit
     },
 };
@@ -3180,7 +3204,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3223,7 +3247,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)

@@ -23,8 +23,11 @@ Runemon (builds)
 -Sprites
 TMs and compatibility
 -Come up with TM list
+-Sell in Slayer shop
+-Sell in GE
 Tutors and combatibility
 -Come up with tutor list
+-Notes
 Add Runemon not in PokeScape
 -Demonheadge
 -Sprites

@@ -24,6 +24,75 @@ KourendCatacombs1_Start:
     setflag FLAG_CATAS_START
     end
 
+KourendCatacombs1_SlayerTutor::
+    special ShowBattlePointsWindow
+	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_1
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, KourendCatacombs1_EventScript_Softboiled
+	case 10, KourendCatacombs1_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ExitTutorMoveSelect
+	end
+
+KourendCatacombs1_EventScript_ExitTutorMoveSelect::
+	special CloseBattleFrontierTutorWindow
+	special CloseBattlePointsWindow
+	msgbox KourendCatacombs1_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+KourendCatacombs1_EventScript_Softboiled::
+	setvar VAR_0x8008, 16
+	setvar VAR_0x8005, MOVE_SOFT_BOILED
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ConfirmMoveSelection::
+	specialvar VAR_TEMP_1, GetFrontierBattlePoints
+	goto_if_ge VAR_TEMP_1, VAR_0x8008, KourendCatacombs1_EventScript_TeachTutorMove
+	msgbox KourendCatacombs1_Text_HaventGotEnoughPoints, MSGBOX_DEFAULT
+	goto KourendCatacombs1_SlayerTutor
+	end
+
+KourendCatacombs1_EventScript_TeachTutorMove::
+	msgbox KourendCatacombs1_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special CloseBattlePointsWindow
+	special CloseBattleFrontierTutorWindow
+	special ChooseMonForMoveTutor
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, KourendCatacombs1_EventScript_CancelChooseMon
+	msgbox KourendCatacombs1_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
+	copyvar VAR_0x8004, VAR_0x8008
+	special TakeFrontierBattlePoints
+	release
+	end
+
+KourendCatacombs1_EventScript_CancelChooseMon::
+	msgbox KourendCatacombs1_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+KourendCatacombs1_Text_YouDontWantTo:
+	.string "What's that?\n"
+	.string "You don't want to…\p"
+	.string "If you want to see how skilled I am,\n"
+	.string "you come see me anytime!$"
+
+KourendCatacombs1_Text_IllTakeBattlePoints:
+	.string "Do you see how skilled I am now?\n"
+	.string "I'll take your Battle Points, thanks!$"
+
+KourendCatacombs1_Text_HaventGotEnoughPoints:
+	.string "What the…\n"
+	.string "You haven't got enough Battle Points!$"
+
+KourendCatacombs1_Text_TeachMoveToWhichMon:
+	.string "Fine, fine, now pick the POKéMON\n"
+	.string "I should teach the move to.$"
+
 KourendCatacombs1_SlayerShop::
     lock
     faceplayer
