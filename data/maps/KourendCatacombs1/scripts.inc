@@ -31,8 +31,8 @@ KourendCatacombs1_SlayerTutor::
 	special ShowScrollableMultichoice
 	waitstate
 	switch VAR_RESULT
-	case 0, KourendCatacombs1_EventScript_Softboiled
-	case 10, KourendCatacombs1_EventScript_ExitTutorMoveSelect
+	case 0, KourendCatacombs1_EventScript_Crunch
+    case 1, KourendCatacombs1_EventScript_DarkPulse
 	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ExitTutorMoveSelect
 	end
 
@@ -43,9 +43,15 @@ KourendCatacombs1_EventScript_ExitTutorMoveSelect::
 	release
 	end
 
-KourendCatacombs1_EventScript_Softboiled::
+KourendCatacombs1_EventScript_Crunch::
 	setvar VAR_0x8008, 24
 	setvar VAR_0x8005, MOVE_CRUNCH
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_DarkPulse::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8005, MOVE_DARK_PULSE
 	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
 	end
 
