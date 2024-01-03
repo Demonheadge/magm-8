@@ -103,12 +103,12 @@
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_CATAS_1_CYCLOPS_2                        0x4055 // Unused Var
-#define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
+#define VAR_CATAS_1_MAGIC_AXE_1                        0x4056 // Unused Var
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
+#define VAR_CATAS_1_GHOST_1                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
+#define VAR_CATAS_1_GHOST_2                           0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E

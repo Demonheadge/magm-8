@@ -1930,9 +1930,15 @@ void IncrementClearedFlagStepCounters(void)
     
     vars[0] = VAR_CATAS_1_CYCLOPS_1;
     vars[1] = VAR_CATAS_1_CYCLOPS_2;
+    vars[2] = VAR_CATAS_1_MAGIC_AXE_1;
+    vars[3] = VAR_CATAS_1_GHOST_1;
+    vars[4] = VAR_CATAS_1_GHOST_2;
 
     flags[0] = FLAG_HIDE_CATAS_1_CYCLOPS_1;
     flags[1] = FLAG_HIDE_CATAS_1_CYCLOPS_2;
+    flags[2] = FLAG_HIDE_CATAS_1_MAGIC_AXE_1;
+    flags[3] = FLAG_HIDE_CATAS_1_GHOST_1;
+    flags[4] = FLAG_HIDE_CATAS_1_GHOST_2;
 
     for (i = 0; i < ARRAY_COUNT(vars); i++)
     {

@@ -915,3 +915,7 @@ KourendCatacombs1_MagicAxe::
 KourendCatacombs1_EventScript_RemoveStaticPokemon::
 	goto Common_EventScript_RemoveStaticPokemon
 	end
+
+KourendCatacombs1_Text_LeftoversDesc::
+	.string "A hold item that gradually restores\n"
+	.string "HP in battle.$"
