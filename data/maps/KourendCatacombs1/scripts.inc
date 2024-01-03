@@ -33,6 +33,17 @@ KourendCatacombs1_SlayerTutor::
 	switch VAR_RESULT
 	case 0, KourendCatacombs1_EventScript_Crunch
     case 1, KourendCatacombs1_EventScript_DarkPulse
+    case 2, KourendCatacombs1_EventScript_EnergyBall
+    case 3, KourendCatacombs1_EventScript_Hex
+    case 4, KourendCatacombs1_EventScript_Hurricane
+    case 5, KourendCatacombs1_EventScript_LavaPlume
+    case 6, KourendCatacombs1_EventScript_LeechLife
+    case 7, KourendCatacombs1_EventScript_PsychoCut
+    case 8, KourendCatacombs1_EventScript_RazorShell
+    case 9, KourendCatacombs1_EventScript_SteelWing
+    case 10, KourendCatacombs1_EventScript_SwordsDance
+    case 11, KourendCatacombs1_EventScript_Tailwind
+    case 12, KourendCatacombs1_EventScript_UTurn
 	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ExitTutorMoveSelect
 	end
 
@@ -54,6 +65,74 @@ KourendCatacombs1_EventScript_DarkPulse::
 	setvar VAR_0x8005, MOVE_DARK_PULSE
 	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
 	end
+
+KourendCatacombs1_EventScript_EnergyBall::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8005, MOVE_ENERGY_BALL
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Hex::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_HEX
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Hurricane::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_HURRICANE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_LavaPlume::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8005, MOVE_LAVA_PLUME
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_LeechLife::
+	setvar VAR_0x8008, 12
+	setvar VAR_0x8005, MOVE_LEECH_LIFE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_PsychoCut::
+	setvar VAR_0x8008, 36
+	setvar VAR_0x8005, MOVE_PSYCHO_CUT
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_RazorShell::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_SteelWing::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_STEEL_WING
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_SwordsDance::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Tailwind::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_TAILWIND
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_UTurn::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_U_TURN
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+
 
 KourendCatacombs1_EventScript_ConfirmMoveSelection::
 	specialvar VAR_TEMP_1, GetFrontierBattlePoints
