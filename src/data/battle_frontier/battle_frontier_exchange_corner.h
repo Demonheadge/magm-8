@@ -136,7 +136,6 @@ static const u16 sSlayerShopItems[] =
     ITEM_ICY_ROCK,
     ITEM_LIECHI_BERRY,
     ITEM_LIGHT_CLAY,
-    ITEM_LUM_BERRY,
     ITEM_MISTY_SEED,
     ITEM_PETAYA_BERRY,
     ITEM_PSYCHIC_SEED,
