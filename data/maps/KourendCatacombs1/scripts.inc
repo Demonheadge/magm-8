@@ -93,9 +93,17 @@ KourendCatacombs1_Text_TeachMoveToWhichMon:
 	.string "Fine, fine, now pick the POKéMON\n"
 	.string "I should teach the move to.$"
 
+KourendCatacombs1_Text_WelcomePleaseChoosePrize:
+	.string "Hello, this is the EXCHANGE SERVICE\n"
+	.string "CORNER.\p"
+	.string "We exchange the Battle Points you\n"
+	.string "have collected for lovely prizes.\p"
+	.string "Please choose a prize from this list.$"
+
 KourendCatacombs1_SlayerShop::
     lock
     faceplayer
+    msgbox KourendCatacombs1_Text_WelcomePleaseChoosePrize, MSGBOX_DEFAULT
     special ShowBattlePointsWindow
 	setvar VAR_0x8004, SCROLL_SLAYER_SHOP
 	special ShowFrontierExchangeCornerItemIconWindow
@@ -970,7 +978,7 @@ KourendCatacombs1_AbyssalDemon::
 KourendCatacombs1_MagicAxe::
     lock
     faceplayer
-    setwildbattle SPECIES_SPOOKAXE, 45
+    setwildbattle SPECIES_EXORAXE, 45
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

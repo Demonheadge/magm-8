@@ -2703,7 +2703,8 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
             task->tLeft = adjustedLeft;
     }
 
-    template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth, task->tHeight, 0xF, 0x64);
+    if (task->tScrollMultiId == SCROLL_SLAYER_SHOP) template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth + 1, task->tHeight, 0xF, 0x64);
+    else template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth, task->tHeight, 0xF, 0x64);
     windowId = AddWindow(&template);
     task->tWindowId = windowId;
     SetStandardWindowBorderStyle(windowId, FALSE);
