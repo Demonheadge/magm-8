@@ -26,7 +26,7 @@ KourendCatacombs1_Start:
 
 KourendCatacombs1_SlayerTutor::
     special ShowBattlePointsWindow
-	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_1
+	setvar VAR_0x8004, SCROLL_SLAYER_TUTOR
 	setvar VAR_0x8006, 0
 	special ShowScrollableMultichoice
 	waitstate
@@ -44,8 +44,8 @@ KourendCatacombs1_EventScript_ExitTutorMoveSelect::
 	end
 
 KourendCatacombs1_EventScript_Softboiled::
-	setvar VAR_0x8008, 16
-	setvar VAR_0x8005, MOVE_SOFT_BOILED
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_CRUNCH
 	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
 	end
 

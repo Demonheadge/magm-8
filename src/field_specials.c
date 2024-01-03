@@ -2436,7 +2436,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_SLAYER_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 11;
+        task->tNumItems = 14;
         task->tLeft = 15;
         task->tTop = 1;
         task->tWidth = 14;
@@ -2654,16 +2654,19 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_SLAYER_TUTOR] =
     {
-        gText_Softboiled16BP,
-        gText_SeismicToss24BP,
-        gText_DreamEater24BP,
-        gText_MegaPunch24BP,
-        gText_MegaKick48BP,
-        gText_BodySlam48BP,
-        gText_RockSlide48BP,
-        gText_Counter48BP,
-        gText_ThunderWave48BP,
-        gText_SwordsDance48BP,
+        gText_Crunch24SP,
+        gText_DarkPulse36SP,
+        gText_EnergyBall36SP,
+        gText_Hex24SP,
+        gText_Hurricane60SP,
+        gText_LavaPlume36SP,
+        gText_LeechLife12SP,
+        gText_PsychoCut36SP,
+        gText_RazorShell24SP,
+        gText_SteelWing24SP,
+        gText_SwordsDance72SP,
+        gText_Tailwind24SP,
+        gText_UTurn24SP,
         gText_Exit
     },
 };
@@ -3247,14 +3250,34 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_FirePunchDesc,
         gText_Exit,
     };
+    
+    static const u8 *const sKourendCatacombs1_TutorMoveDescriptions1[] =
+    {
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        gText_Exit,
+    };
 
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        else
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+        else
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sKourendCatacombs1_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
     }
 }
 

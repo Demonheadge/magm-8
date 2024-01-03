@@ -3299,4 +3299,18 @@ extern const u8 gText_TerrainExtender24SP[];
 extern const u8 gText_ThroatSpray12SP[];
 extern const u8 gText_WhiteHerb24SP[];
 
+extern const u8 gText_EnergyBall36SP[];
+extern const u8 gText_PsychoCut36SP[];
+extern const u8 gText_DarkPulse36SP[];
+extern const u8 gText_UTurn24SP[];
+extern const u8 gText_Hex24SP[];
+extern const u8 gText_RazorShell24SP[];
+extern const u8 gText_SwordsDance72SP[];
+extern const u8 gText_Hurricane60SP[];
+extern const u8 gText_SteelWing24SP[];
+extern const u8 gText_LeechLife12SP[];
+extern const u8 gText_Crunch24SP[];
+extern const u8 gText_Tailwind24SP[];
+extern const u8 gText_LavaPlume36SP[];
+
 #endif // GUARD_STRINGS_H
