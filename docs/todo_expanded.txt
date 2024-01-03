@@ -1,9 +1,7 @@
 Room scripting
 -Jordank
 Slayer tasks
--Knock em out
-Slayer shop
--Come up with prices
+-New method
 GE
 -Map
 -Script
