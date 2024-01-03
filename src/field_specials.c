@@ -2427,9 +2427,9 @@ void ShowScrollableMultichoice(void)
     case SCROLL_SLAYER_SHOP:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 44;
-        task->tLeft = 14;
+        task->tLeft = 11;
         task->tTop = 1;
-        task->tWidth = 15;
+        task->tWidth = 18;
         task->tHeight = 12;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;

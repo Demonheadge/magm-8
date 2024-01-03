@@ -25,6 +25,9 @@ KourendCatacombs1_Start:
     end
 
 KourendCatacombs1_SlayerShop::
+    lock
+    faceplayer
+    special ShowBattlePointsWindow
 	setvar VAR_0x8004, SCROLL_SLAYER_SHOP
 	special ShowFrontierExchangeCornerItemIconWindow
 	special ShowScrollableMultichoice

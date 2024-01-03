@@ -43,7 +43,7 @@
 #define SCROLL_SLAYER_SHOP   13
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
-#define MAX_SCROLL_MULTI_LENGTH 16
+#define MAX_SCROLL_MULTI_LENGTH 44
 
 // Dept Store Floor Numbers
 #define DEPT_STORE_FLOORNUM_B4F       0
