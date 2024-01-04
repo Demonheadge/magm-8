@@ -1925,8 +1925,8 @@ void IncrementRematchStepCounter(void)
 void IncrementClearedFlagStepCounters(void)
 {
     u8 i;
-    u16 vars[100];
-    u16 flags[100];
+    u16 vars[5];
+    u16 flags[5];
     
     vars[0] = VAR_CATAS_1_CYCLOPS_1;
     vars[1] = VAR_CATAS_1_CYCLOPS_2;
