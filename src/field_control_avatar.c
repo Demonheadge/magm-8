@@ -39,6 +39,8 @@
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
+static EWRAM_DATA u16 vars[100] = {0};
+static EWRAM_DATA u16 flags[100] = {0};
 
 u8 gSelectedObjectEvent;
 
@@ -557,11 +559,9 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     return FALSE;
 }
 
-static bool8 TryStartStepCountScript(u16 metatileBehavior)
+void IncrementClearedFlagStepCounters(void)
 {
     u8 i;
-    u16 vars[5];
-    u16 flags[5];
     
     vars[0] = VAR_CATAS_1_CYCLOPS_1;
     vars[1] = VAR_CATAS_1_CYCLOPS_2;
@@ -575,6 +575,21 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     flags[3] = FLAG_HIDE_CATAS_1_GHOST_1;
     flags[4] = FLAG_HIDE_CATAS_1_GHOST_2;
 
+    for (i = 0; i < ARRAY_COUNT(vars); i++)
+    {
+        u16 var = VarGet(vars[i]);
+        if (FlagGet(flags[i]))
+        {
+            var++;
+            VarSet(vars[i], var);
+        }
+    }
+}
+
+static bool8 TryStartStepCountScript(u16 metatileBehavior)
+{
+    u8 i;
+    
     if (InUnionRoom() == TRUE)
     {
         return FALSE;
