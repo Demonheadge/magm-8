@@ -30,8 +30,6 @@ Wild Pokemon spawns (regular and clusters)
 -Demonheadge
 OSRS weapon/spell/magic/prayer moves
 -Code in
-OW encounter step count reset
--Knock em out
 Day tracking (Slayer tasks completed / one dark totem piece acquired)
 -Flags
 -Code in
