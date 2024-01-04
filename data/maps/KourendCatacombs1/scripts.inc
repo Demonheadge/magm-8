@@ -97,7 +97,6 @@ KourendCatacombs1_SlayerTutor::
 	end
 
 KourendCatacombs1_EventScript_ExitTutorMoveSelect::
-	special CloseBattleFrontierTutorWindow
 	special CloseBattlePointsWindow
 	msgbox KourendCatacombs1_Text_YouDontWantTo, MSGBOX_DEFAULT
 	release
@@ -360,7 +359,6 @@ KourendCatacombs1_EventScript_TeachTutorMove::
 	msgbox KourendCatacombs1_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special CloseBattlePointsWindow
-	special CloseBattleFrontierTutorWindow
 	special ChooseMonForMoveTutor
 	waitstate
 	goto_if_eq VAR_RESULT, FALSE, KourendCatacombs1_EventScript_CancelChooseMon
