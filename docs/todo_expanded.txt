@@ -20,24 +20,14 @@ Items from OSRS
 Runemon (builds)
 -Demonheadge
 -PokeScape
--Sprites
-TMs and compatibility
--Come up with TM list
--Sell in Slayer shop
--Sell in GE
 Tutors and combatibility
--Come up with tutor list
 -Notes
 Add Runemon not in PokeScape
 -Demonheadge
--Sprites
 Wild Pokemon spawns (regular and clusters)
 -Demonheadge
-Overworld encounters
--Sprites
 "Trainers"
 -Demonheadge
--Sprites
 OSRS weapon/spell/magic/prayer moves
 -Code in
 OW encounter step count reset
@@ -47,6 +37,7 @@ Day tracking (Slayer tasks completed / one dark totem piece acquired)
 -Code in
 Friends list and recruitment
 -Caco
+-BSBob
 Item spawns depending on day
 -Set/unset flags depending on day flag
 Drop tables
@@ -56,7 +47,7 @@ Display level-up learnsets for enemies in battle
 Tweak level-up learnsets
 -Knock em out
 Title screen
--Caco
+-Brolunite
 Respawn point
 -TGV
 Heal location
