@@ -3238,11 +3238,11 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
 
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
-        if (gSpecialVar_0x8006 == 0)
+        /* if (gSpecialVar_0x8006 == 0)
         {
             sTutorMoveAndElevatorWindowId = AddWindow(&sBattleFrontierTutor_WindowTemplate);
             SetStandardWindowBorderStyle(sTutorMoveAndElevatorWindowId, FALSE);
-        }
+        } */
         ShowBattleFrontierTutorMoveDescription(menu, selection);
     }
 }

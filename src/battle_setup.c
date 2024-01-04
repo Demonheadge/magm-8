@@ -1942,7 +1942,7 @@ void IncrementClearedFlagStepCounters(void)
 
     for (i = 0; i < ARRAY_COUNT(vars); i++)
     {
-        u8 var = VarGet(vars[i]);
+        u16 var = VarGet(vars[i]);
         if (FlagGet(flags[i]))
         {
             var++;
