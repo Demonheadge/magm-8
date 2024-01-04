@@ -24,26 +24,75 @@ KourendCatacombs1_Start:
     setflag FLAG_CATAS_START
     end
 
+KourendCatacombs1_Text_RightTutorIntro:
+	.string "Ihihihi!\p"
+	.string "I know it's hard to see now, but I used\n"
+	.string "to be one fantastic TRAINER.\p"
+	.string "I had a reputation as the most\n"
+	.string "invincible SWIMMER around, I tell you!\p"
+	.string "… … … … … …\p"
+	.string "What's wrong?\n"
+	.string "You don't believe me.\p"
+	.string "I'm not like that buffoonish woman over\n"
+	.string "there. I'm actually experienced!\p"
+	.string "I can prove it to you.\n"
+	.string "I can teach your POKéMON hard and\l"
+	.string "yet pretty moves.\p"
+	.string "But my lessons don't come free.\n"
+	.string "How about paying for the moves I teach\l"
+	.string "with a wee bit of Battle Points?$"
+
 KourendCatacombs1_SlayerTutor::
+    lock
+    faceplayer
+    msgbox KourendCatacombs1_Text_RightTutorIntro, MSGBOX_DEFAULT
     special ShowBattlePointsWindow
 	setvar VAR_0x8004, SCROLL_SLAYER_TUTOR
-	setvar VAR_0x8006, 0
 	special ShowScrollableMultichoice
 	waitstate
 	switch VAR_RESULT
-	case 0, KourendCatacombs1_EventScript_Crunch
-    case 1, KourendCatacombs1_EventScript_DarkPulse
-    case 2, KourendCatacombs1_EventScript_EnergyBall
-    case 3, KourendCatacombs1_EventScript_Hex
-    case 4, KourendCatacombs1_EventScript_Hurricane
-    case 5, KourendCatacombs1_EventScript_LavaPlume
-    case 6, KourendCatacombs1_EventScript_LeechLife
-    case 7, KourendCatacombs1_EventScript_PsychoCut
-    case 8, KourendCatacombs1_EventScript_RazorShell
-    case 9, KourendCatacombs1_EventScript_SteelWing
-    case 10, KourendCatacombs1_EventScript_SwordsDance
-    case 11, KourendCatacombs1_EventScript_Tailwind
-    case 12, KourendCatacombs1_EventScript_UTurn
+    case 0, KourendCatacombs1_EventScript_AbyssalDagger
+    case 1, KourendCatacombs1_EventScript_AbyssalWhip
+    case 2, KourendCatacombs1_EventScript_AncientStaff
+    case 3, KourendCatacombs1_EventScript_Augury
+    case 4, KourendCatacombs1_EventScript_BloodBarrage
+    case 5, KourendCatacombs1_EventScript_DragonCrossbow
+    case 6, KourendCatacombs1_EventScript_DragonScimitar
+    case 7, KourendCatacombs1_EventScript_EarthSurge
+    case 8, KourendCatacombs1_EventScript_FireSurge
+    case 9, KourendCatacombs1_EventScript_IbansStaff
+    case 10, KourendCatacombs1_EventScript_IceBarrage
+    case 11, KourendCatacombs1_EventScript_LeafBladedBattleaxe
+    case 12, KourendCatacombs1_EventScript_LeafBladedSpear
+    case 13, KourendCatacombs1_EventScript_LeafBladedSword
+    case 14, KourendCatacombs1_EventScript_MagicShortbow
+    case 15, KourendCatacombs1_EventScript_Piety
+    case 16, KourendCatacombs1_EventScript_ProtectFromMagic
+    case 17, KourendCatacombs1_EventScript_ProtectFromMelee
+    case 18, KourendCatacombs1_EventScript_ProtectFromMissiles
+    case 19, KourendCatacombs1_EventScript_Rigour
+    case 20, KourendCatacombs1_EventScript_ShadowBarrage
+    case 21, KourendCatacombs1_EventScript_SlayersStaff
+    case 22, KourendCatacombs1_EventScript_SmokeBarrage
+    case 23, KourendCatacombs1_EventScript_ToxicBlowpipe
+    case 24, KourendCatacombs1_EventScript_TwistedBow
+    case 25, KourendCatacombs1_EventScript_WaterSurge
+    case 26, KourendCatacombs1_EventScript_WindSurge
+    case 27, KourendCatacombs1_EventScript_ZamorakianHasta
+    case 28, KourendCatacombs1_EventScript_Crunch
+    case 29, KourendCatacombs1_EventScript_Crunch
+    case 30, KourendCatacombs1_EventScript_DarkPulse
+    case 31, KourendCatacombs1_EventScript_EnergyBall
+    case 32, KourendCatacombs1_EventScript_Hex
+    case 33, KourendCatacombs1_EventScript_Hurricane
+    case 34, KourendCatacombs1_EventScript_LavaPlume
+    case 35, KourendCatacombs1_EventScript_LeechLife
+    case 36, KourendCatacombs1_EventScript_PsychoCut
+    case 37, KourendCatacombs1_EventScript_RazorShell
+    case 38, KourendCatacombs1_EventScript_SteelWing
+    case 39, KourendCatacombs1_EventScript_SwordsDance
+    case 40, KourendCatacombs1_EventScript_Tailwind
+    case 41, KourendCatacombs1_EventScript_UTurn
 	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ExitTutorMoveSelect
 	end
 
@@ -132,7 +181,173 @@ KourendCatacombs1_EventScript_UTurn::
 	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
 	end
 
+KourendCatacombs1_EventScript_AbyssalDagger::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_ABYSSAL_DAGGER
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
 
+KourendCatacombs1_EventScript_AbyssalWhip::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_ABYSSAL_WHIP
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_AncientStaff::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_ANCIENT_STAFF
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Augury::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_AUGURY
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_BloodBarrage::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_BLOOD_BARRAGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_DragonCrossbow::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_DRAGON_CROSSBOW
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_DragonScimitar::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_DRAGON_SCIMITAR
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_EarthSurge::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_EARTH_SURGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_FireSurge::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_FIRE_SURGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_IbansStaff::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_IBANS_STAFF
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_IceBarrage::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_ICE_BARRAGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_LeafBladedBattleaxe::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_LEAF_BLADED_BATTLEAXE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_LeafBladedSpear::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_LEAF_BLADED_SPEAR
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_LeafBladedSword::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_LEAF_BLADED_SWORD
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_MagicShortbow::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_MAGIC_SHORTBOW
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Piety::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_PIETY
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ProtectFromMagic::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_PROTECT_FROM_MAGIC
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ProtectFromMelee::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_PROTECT_FROM_MELEE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ProtectFromMissiles::
+	setvar VAR_0x8008, 60
+	setvar VAR_0x8005, MOVE_PROTECT_FROM_MISSILES
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_Rigour::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_RIGOUR
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ShadowBarrage::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_SHADOW_BARRAGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_SlayersStaff::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_SLAYERS_STAFF
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_SmokeBarrage::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_SMOKE_BARRAGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ToxicBlowpipe::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_TOXIC_BLOWPIPE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_TwistedBow::
+	setvar VAR_0x8008, 96
+	setvar VAR_0x8005, MOVE_TWISTED_BOW
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_WaterSurge::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_WATER_SURGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_WindSurge::
+	setvar VAR_0x8008, 72
+	setvar VAR_0x8005, MOVE_WIND_SURGE
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
+
+KourendCatacombs1_EventScript_ZamorakianHasta::
+	setvar VAR_0x8008, 84
+	setvar VAR_0x8005, MOVE_ZAMORAKIAN_HASTA
+	goto KourendCatacombs1_EventScript_ConfirmMoveSelection
+	end
 
 KourendCatacombs1_EventScript_ConfirmMoveSelection::
 	specialvar VAR_TEMP_1, GetFrontierBattlePoints

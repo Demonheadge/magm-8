@@ -3313,4 +3313,33 @@ extern const u8 gText_Crunch24SP[];
 extern const u8 gText_Tailwind24SP[];
 extern const u8 gText_LavaPlume36SP[];
 
+extern const u8 gText_SlayersStaff72SP[];
+extern const u8 gText_LeafBladedSword84SP[];
+extern const u8 gText_LeafBladedSpear84SP[];
+extern const u8 gText_LeafBladedBattleaxe84SP[];
+extern const u8 gText_AbyssalWhip72SP[];
+extern const u8 gText_ProtectFromMagic60SP[];
+extern const u8 gText_ProtectFromMelee60SP[];
+extern const u8 gText_ProtectFromMissiles60SP[];
+extern const u8 gText_AncientStaff72SP[];
+extern const u8 gText_ToxicBlowpipe72SP[];
+extern const u8 gText_MagicShortbow72SP[];
+extern const u8 gText_Piety72SP[];
+extern const u8 gText_Rigour72SP[];
+extern const u8 gText_Augury72SP[];
+extern const u8 gText_IbansStaff84SP[];
+extern const u8 gText_WaterSurge72SP[];
+extern const u8 gText_FireSurge72SP[];
+extern const u8 gText_WindSurge72SP[];
+extern const u8 gText_EarthSurge72SP[];
+extern const u8 gText_SmokeBarrage84SP[];
+extern const u8 gText_ShadowBarrage84SP[];
+extern const u8 gText_IceBarrage84SP[];
+extern const u8 gText_BloodBarrage84SP[];
+extern const u8 gText_AbyssalDagger72SP[];
+extern const u8 gText_DragonScimitar60SP[];
+extern const u8 gText_ZamorakianHasta84SP[];
+extern const u8 gText_TwistedBow96SP[];
+extern const u8 gText_DragonCrossbow60SP[];
+
 #endif // GUARD_STRINGS_H

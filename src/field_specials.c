@@ -2436,7 +2436,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_SLAYER_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 14;
+        task->tNumItems = 42;
         task->tLeft = 15;
         task->tTop = 1;
         task->tWidth = 14;
@@ -2654,6 +2654,34 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_SLAYER_TUTOR] =
     {
+        gText_AbyssalDagger72SP,
+        gText_AbyssalWhip72SP,
+        gText_AncientStaff72SP,
+        gText_Augury72SP,
+        gText_BloodBarrage84SP,
+        gText_DragonCrossbow60SP,
+        gText_DragonScimitar60SP,
+        gText_EarthSurge72SP,
+        gText_FireSurge72SP,
+        gText_IbansStaff84SP,
+        gText_IceBarrage84SP,
+        gText_LeafBladedBattleaxe84SP,
+        gText_LeafBladedSpear84SP,
+        gText_LeafBladedSword84SP,
+        gText_MagicShortbow72SP,
+        gText_Piety72SP,
+        gText_ProtectFromMagic60SP,
+        gText_ProtectFromMelee60SP,
+        gText_ProtectFromMissiles60SP,
+        gText_Rigour72SP,
+        gText_ShadowBarrage84SP,
+        gText_SlayersStaff72SP,
+        gText_SmokeBarrage84SP,
+        gText_ToxicBlowpipe72SP,
+        gText_TwistedBow96SP,
+        gText_WaterSurge72SP,
+        gText_WindSurge72SP,
+        gText_ZamorakianHasta84SP,
         gText_Crunch24SP,
         gText_DarkPulse36SP,
         gText_EnergyBall36SP,
@@ -3210,11 +3238,11 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
 
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
-        if (gSpecialVar_0x8006 == 0)
+        /* if (gSpecialVar_0x8006 == 0)
         {
             sTutorMoveAndElevatorWindowId = AddWindow(&sBattleFrontierTutor_WindowTemplate);
             SetStandardWindowBorderStyle(sTutorMoveAndElevatorWindowId, FALSE);
-        }
+        } */
         ShowBattleFrontierTutorMoveDescription(menu, selection);
     }
 }
@@ -3253,31 +3281,60 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
     
     static const u8 *const sKourendCatacombs1_TutorMoveDescriptions1[] =
     {
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
         gText_Exit,
     };
 
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
-        FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
+        if (menu != SCROLL_SLAYER_TUTOR) FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
+        else FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
         else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
         else
-            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sKourendCatacombs1_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sKourendCatacombs1_TutorMoveDescriptions1[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     }
 }
 
