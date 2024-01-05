@@ -88,19 +88,18 @@ KourendCatacombs1_SlayerTutor::
     case 26, KourendCatacombs1_EventScript_WindSurge
     case 27, KourendCatacombs1_EventScript_ZamorakianHasta
     case 28, KourendCatacombs1_EventScript_Crunch
-    case 29, KourendCatacombs1_EventScript_Crunch
-    case 30, KourendCatacombs1_EventScript_DarkPulse
-    case 31, KourendCatacombs1_EventScript_EnergyBall
-    case 32, KourendCatacombs1_EventScript_Hex
-    case 33, KourendCatacombs1_EventScript_Hurricane
-    case 34, KourendCatacombs1_EventScript_LavaPlume
-    case 35, KourendCatacombs1_EventScript_LeechLife
-    case 36, KourendCatacombs1_EventScript_PsychoCut
-    case 37, KourendCatacombs1_EventScript_RazorShell
-    case 38, KourendCatacombs1_EventScript_SteelWing
-    case 39, KourendCatacombs1_EventScript_SwordsDance
-    case 40, KourendCatacombs1_EventScript_Tailwind
-    case 41, KourendCatacombs1_EventScript_UTurn
+    case 29, KourendCatacombs1_EventScript_DarkPulse
+    case 30, KourendCatacombs1_EventScript_EnergyBall
+    case 31, KourendCatacombs1_EventScript_Hex
+    case 32, KourendCatacombs1_EventScript_Hurricane
+    case 33, KourendCatacombs1_EventScript_LavaPlume
+    case 34, KourendCatacombs1_EventScript_LeechLife
+    case 35, KourendCatacombs1_EventScript_PsychoCut
+    case 36, KourendCatacombs1_EventScript_RazorShell
+    case 37, KourendCatacombs1_EventScript_SteelWing
+    case 38, KourendCatacombs1_EventScript_SwordsDance
+    case 39, KourendCatacombs1_EventScript_Tailwind
+    case 40, KourendCatacombs1_EventScript_UTurn
 	case MULTI_B_PRESSED, KourendCatacombs1_EventScript_ExitTutorMoveSelect
 	end
 
