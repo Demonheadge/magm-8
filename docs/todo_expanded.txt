@@ -3,7 +3,6 @@ Room scripting
 Slayer tasks
 -New method
 GE
--Map
 -Script
 TGV
 -Map
@@ -31,11 +30,10 @@ Wild Pokemon spawns (regular and clusters)
 OSRS weapon/spell/magic/prayer moves
 -Code in
 Day tracking (Slayer tasks completed / one dark totem piece acquired)
--Flags
+-Vars
 -Code in
 Friends list and recruitment
 -Caco
--BSBob
 Item spawns depending on day
 -Set/unset flags depending on day flag
 Drop tables
@@ -57,3 +55,6 @@ Abby Spectre
 -PokeScape
 Slayer points
 -Tweak Battle Frontier UI
+Skotizo
+-Map
+-Script
