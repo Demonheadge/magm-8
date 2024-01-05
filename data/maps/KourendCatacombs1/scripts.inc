@@ -42,6 +42,14 @@ KourendCatacombs1_Text_RightTutorIntro:
 	.string "How about paying for the moves I teach\l"
 	.string "with a wee bit of Battle Points?$"
 
+KourendCatacombs1_SlayerCounter::
+    lock
+    faceplayer
+    buffernumberstring STR_VAR_1, VAR_SLAYER_COUNTER
+    msgbox KourendCatacombs1_Text_SlayerCounter, MSGBOX_DEFAULT
+    release
+    end
+
 KourendCatacombs1_SlayerTutor::
     lock
     faceplayer
@@ -1151,6 +1159,9 @@ KourendCatacombs1_GiveSlayerPointsDustDevils::
     questmenu QUEST_MENU_COMPLETE_QUEST QUEST_16
     release
     end
+
+KourendCatacombs1_Text_SlayerCounter::
+	.string "You have completed {STR_VAR_1} Slayer task(s).$"
 
 KourendCatacombs1_Text_ObtainedXSlayerPoints::
 	.string "{PLAYER} obtained {STR_VAR_1} Slayer Point(s).$"

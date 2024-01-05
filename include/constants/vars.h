@@ -109,7 +109,7 @@
 #define VAR_CATAS_1_GHOST_1                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_CATAS_1_GHOST_2                           0x405B // Unused Var
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
+#define VAR_SLAYER_COUNTER                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 #define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var

@@ -10631,6 +10631,9 @@ static void Cmd_various(void)
         }
 
         VarSet(VAR_SLAYER_LEFT_TO_DEFEAT,leftToDefeat);
+        if (leftToDefeat <= 0) {
+            VarSet(VAR_SLAYER_COUNTER, VarGet(VAR_SLAYER_COUNTER) + 1);
+        }
         gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;
         return;
     }
