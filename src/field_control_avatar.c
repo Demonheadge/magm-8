@@ -567,7 +567,7 @@ void IncrementClearedFlagStepCounters(void)
     
     for (i = 0; i < CATAS_OVERWORLD_ENCOUNTER_COUNT; i++)
     {
-        u8 var = VarGet(vars[i]);
+        u16 var = VarGet(vars[i]);
         if (FlagGet(flags[i]))
         {
             var++;
