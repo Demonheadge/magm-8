@@ -1478,3 +1478,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/KourendCatacombs7/scripts.inc"
 	.include "data/maps/KourendCatacombs7/text.inc"
+
+	.include "data/maps/GrandExchangeIndoors/scripts.inc"
+	.include "data/maps/GrandExchangeIndoors/text.inc"

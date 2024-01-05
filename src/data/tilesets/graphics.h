@@ -2913,3 +2913,41 @@ const u16 gTilesetPalettes_KourendCatacombs[][16] =
 };
 
 const u32 gTilesetTiles_KourendCatacombs[] = INCBIN_U32("data/tilesets/secondary/kourend_catacombs/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_GrandExchange[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/grand_exchange/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_GrandExchange[] = INCBIN_U32("data/tilesets/secondary/grand_exchange/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PokeScapeIndoors[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/poke_scape_indoors/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PokeScapeIndoors[] = INCBIN_U32("data/tilesets/primary/poke_scape_indoors/tiles.4bpp.lz");

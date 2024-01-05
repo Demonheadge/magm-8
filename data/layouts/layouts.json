@@ -8496,6 +8496,18 @@
       "secondary_tileset": "gTileset_KourendCatacombs",
       "border_filepath": "data/layouts/KourendCatacombs7/border.bin",
       "blockdata_filepath": "data/layouts/KourendCatacombs7/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRAND_EXCHANGE_INDOORS",
+      "name": "GrandExchangeIndoors_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_GrandExchange",
+      "border_filepath": "data/layouts/GrandExchangeIndoors/border.bin",
+      "blockdata_filepath": "data/layouts/GrandExchangeIndoors/map.bin"
     }
   ]
 }

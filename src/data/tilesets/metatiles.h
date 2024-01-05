@@ -387,3 +387,9 @@ const u32 gMetatileAttributes_CatasSecondary[] = INCBIN_U32("data/tilesets/secon
 
 const u16 gMetatiles_KourendCatacombs[] = INCBIN_U16("data/tilesets/secondary/kourend_catacombs/metatiles.bin");
 const u32 gMetatileAttributes_KourendCatacombs[] = INCBIN_U32("data/tilesets/secondary/kourend_catacombs/metatile_attributes.bin");
+
+const u16 gMetatiles_GrandExchange[] = INCBIN_U16("data/tilesets/secondary/grand_exchange/metatiles.bin");
+const u32 gMetatileAttributes_GrandExchange[] = INCBIN_U32("data/tilesets/secondary/grand_exchange/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeScapeIndoors[] = INCBIN_U16("data/tilesets/primary/poke_scape_indoors/metatiles.bin");
+const u32 gMetatileAttributes_PokeScapeIndoors[] = INCBIN_U32("data/tilesets/primary/poke_scape_indoors/metatile_attributes.bin");

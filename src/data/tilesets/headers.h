@@ -1547,3 +1547,25 @@ const struct Tileset gTileset_KourendCatacombs =
     .metatileAttributes = gMetatileAttributes_KourendCatacombs,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_GrandExchange =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GrandExchange,
+    .palettes = gTilesetPalettes_GrandExchange,
+    .metatiles = gMetatiles_GrandExchange,
+    .metatileAttributes = gMetatileAttributes_GrandExchange,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeScapeIndoors =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PokeScapeIndoors,
+    .palettes = gTilesetPalettes_PokeScapeIndoors,
+    .metatiles = gMetatiles_PokeScapeIndoors,
+    .metatileAttributes = gMetatileAttributes_PokeScapeIndoors,
+    .callback = NULL,
+};
