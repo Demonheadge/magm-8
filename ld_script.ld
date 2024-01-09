@@ -343,6 +343,8 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
+        src/quests.o(.text);
+
     } > ROM =0
 
     script_data :
@@ -710,6 +712,7 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
+        src/quests.o(.rodata);
     } > ROM =0
 
     song_data :
@@ -1245,6 +1248,7 @@ SECTIONS {
         sound/songs/midi/ph_nurse_blend.o(.rodata);
         sound/songs/midi/ph_nurse_held.o(.rodata);
         sound/songs/midi/ph_nurse_solo.o(.rodata);
+        sound/songs/midi/MUS_PS_KOUREND_CATACOMBS.o(.rodata);
     } > ROM =0
 
     lib_rodata :
@@ -1306,6 +1310,12 @@ SECTIONS {
         data/multiboot_ereader.o(.rodata);
         data/multiboot_berry_glitch_fix.o(.rodata);
         data/multiboot_pokemon_colosseum.o(.rodata);
+    } > ROM =0
+
+    anim_mon_front_pic_data :
+    ALIGN(4)
+    {
+        src/anim_mon_front_pics.o(.rodata);
     } > ROM =0
 
     gfx_data :

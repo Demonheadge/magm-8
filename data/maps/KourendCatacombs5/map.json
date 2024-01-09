@@ -1,0 +1,186 @@
+{
+  "id": "MAP_KOUREND_CATACOMBS5",
+  "name": "KourendCatacombs5",
+  "layout": "LAYOUT_KOUREND_CATACOMBS5",
+  "music": "MUS_PS_KOUREND_CATACOMBS",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_KOUREND_CATACOMBS4",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS1",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS2",
+      "offset": -26,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS6",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_623",
+      "x": 14,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_Spectre",
+      "flag": "FLAG_HIDE_CATAS_5_SPECTRE_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_442",
+      "x": 11,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_Shade",
+      "flag": "FLAG_HIDE_CATAS_5_SHADE_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_442",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_Shade",
+      "flag": "FLAG_HIDE_CATAS_5_SHADE_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_002",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_SteelDragon",
+      "flag": "FLAG_HIDE_CATAS_5_STEEL_DRAGON_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_002",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_SteelDragon",
+      "flag": "FLAG_HIDE_CATAS_5_STEEL_DRAGON_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_442",
+      "x": 5,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs5_Shade",
+      "flag": "FLAG_HIDE_CATAS_5_SHADE_3"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS4",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS5",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS5",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    }
+  ]
+}

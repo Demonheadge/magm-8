@@ -1,0 +1,539 @@
+{
+  "id": "MAP_KOUREND_CATACOMBS2",
+  "name": "KourendCatacombs2",
+  "layout": "LAYOUT_KOUREND_CATACOMBS2",
+  "music": "MUS_PS_KOUREND_CATACOMBS",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_KOUREND_CATACOMBS1",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS3",
+      "offset": 35,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS5",
+      "offset": 26,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS6",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_KOUREND_CATACOMBS7",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 14,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_227",
+      "x": 20,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_IronDragon",
+      "flag": "FLAG_HIDE_CATAS_1_IRON_DRAGON_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_715",
+      "x": 16,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_BronzeDragon",
+      "flag": "FLAG_HIDE_CATAS_1_BRONZE_DRAGON_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_715",
+      "x": 19,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_BronzeDragon",
+      "flag": "FLAG_HIDE_CATAS_1_BRONZE_DRAGON_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
+      "x": 21,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_1_HILL_GIANT_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_675",
+      "x": 23,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_HillGiant",
+      "flag": "FLAG_HIDE_CATAS_1_HILL_GIANT_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_596",
+      "x": 27,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_3"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 46,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 46,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "x": 33,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_1_MUTATED_BLOODVELD_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_227",
+      "x": 22,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_IronDragon",
+      "flag": "FLAG_HIDE_CATAS_1_IRON_DRAGON_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 7,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 6,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_596",
+      "x": 29,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_AbyssalDemon",
+      "flag": "FLAG_HIDE_CATAS_1_ABBY_DEMON_4"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
+      "x": 37,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_3"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
+      "x": 39,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_4"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
+      "x": 46,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_5"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_108",
+      "x": 36,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_MutatedBloodveld",
+      "flag": "FLAG_HIDE_CATAS_1_MUTATED_BLOODVELD_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_463",
+      "x": 46,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterNechrayael",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_463",
+      "x": 44,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterNechrayael",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_NECHRAYAEL_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
+      "x": 33,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_461",
+      "x": 37,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_GreaterDemon",
+      "flag": "FLAG_HIDE_CATAS_1_GREATER_DEMON_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_Hellhound",
+      "flag": "FLAG_HIDE_CATAS_1_HELLHOUND_2"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_229",
+      "x": 7,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KourendCatacombs2_Hellhound",
+      "flag": "FLAG_HIDE_CATAS_1_HELLHOUND_1"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 6,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS1",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 38,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 43,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 31,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 36,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 40,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 45,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS2",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS6",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 16,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 48,
+      "y": 22,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 20,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1",
+      "quantity": 0,
+      "underfoot": false
+    }
+  ]
+}

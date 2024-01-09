@@ -24,6 +24,13 @@ struct WildPokemonHeader
     const struct WildPokemonInfo *waterMonsInfo;
     const struct WildPokemonInfo *rockSmashMonsInfo;
     const struct WildPokemonInfo *fishingMonsInfo;
+    const struct WildPokemonInfo *landMons2Info;
+    const struct WildPokemonInfo *landMons3Info;
+    const struct WildPokemonInfo *landMons4Info;
+    const struct WildPokemonInfo *landMons5Info;
+    const struct WildPokemonInfo *landMons6Info;
+    const struct WildPokemonInfo *landMons7Info;
+    const struct WildPokemonInfo *landMons8Info;
 };
 
 extern const struct WildPokemonHeader gWildMonHeaders[];
@@ -32,7 +39,7 @@ extern bool8 gIsSurfingEncounter;
 
 void DisableWildEncounters(bool8 disabled);
 u8 PickWildMonNature(void);
-bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior);
+bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetaTileBehavior);
 bool8 SweetScentWildEncounter(void);
 bool8 DoesCurrentMapHaveFishingMons(void);
 void FishingWildEncounter(u8 rod);

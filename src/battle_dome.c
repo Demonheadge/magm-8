@@ -3928,12 +3928,12 @@ static u8 Task_GetInfoCardInput(u8 taskId)
 
 #undef tUsingAlternateSlot
 
-static bool32 IsDomeHealingMove(u32 move)
+static bool32 IsDomeHealingMoveEffect(u32 effect)
 {
-    if (IsHealingMove(move))
+    if (IsHealingMoveEffect(effect))
         return TRUE;
     // Check extra effects not considered plain healing by AI
-    switch (gBattleMoves[move].effect)
+    switch(effect)
     {
         case EFFECT_INGRAIN:
         case EFFECT_REFRESH:
@@ -4343,7 +4343,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                     move = gSaveBlock2Ptr->frontier.domePlayerPartyData[i].moves[j];
                 else
                     move = gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].moves[j];
-
+                
                 switch (k)
                 {
                 case MOVE_POINTS_COMBO:
@@ -4359,7 +4359,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                     allocatedArray[k] = IsDomeRareMove(move) ? 1 : 0;
                     break;
                 case MOVE_POINTS_HEAL:
-                    allocatedArray[k] = IsDomeHealingMove(move) ? 1 : 0;
+                    allocatedArray[k] = IsDomeHealingMoveEffect(gBattleMoves[move].effect) ? 1 : 0;
                     break;
                 case MOVE_POINTS_RISKY:
                     allocatedArray[k] = IsDomeRiskyMoveEffect(gBattleMoves[move].effect) ? 1 : 0;

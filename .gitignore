@@ -37,5 +37,5 @@ prefabs.json
 *.sna
 *.diff
 *.sym
-*.js
 src/data/map_group_count.h
+docs/Sprite_Converter/pokescape_monsters

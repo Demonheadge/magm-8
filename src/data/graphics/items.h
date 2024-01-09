@@ -1758,6 +1758,20 @@ const u32 gItemIconPalette_ExpCharm[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIcon_GlimmeringCharm[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
 const u32 gItemIconPalette_GlimmeringCharm[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
 
+//PokeScape
+const u32 gItemIcon_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
+const u32 gItemIconPalette_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM[] = INCBIN_U32("graphics/items/icons/glimmering_charm.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM[] = INCBIN_U32("graphics/items/icon_palettes/glimmering_charm.gbapal.lz");
+const u32 gItemIcon_Xeric[] = INCBIN_U32("graphics/items/icons/xeric.4bpp.lz");
+const u32 gItemIconPalette_Xeric[] = INCBIN_U32("graphics/items/icon_palettes/xeric.gbapal.lz");
+
 // Form-changing Key Items
 
 const u32 gItemIcon_RotomCatalog[] = INCBIN_U32("graphics/items/icons/rotom_catalog.4bpp.lz");

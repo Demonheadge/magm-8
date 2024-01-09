@@ -1,0 +1,31 @@
+#!/bin/bash
+
+SPECIES_INDEX=0
+ITEM_INDEX=0
+
+while [ $SPECIES_INDEX -lt 6 ]
+do
+    while [ $ITEM_INDEX -lt 5 ]
+    do
+      echo "    case VARIOUS_GIVE_DROPPED_ITEMS_SPECIES_"$((SPECIES_INDEX+1))"_ITEM_"$((ITEM_INDEX+1))":
+    {
+        if (species2["$SPECIES_INDEX"] != SPECIES_NONE && items["$SPECIES_INDEX"]["$ITEM_INDEX"] != ITEM_NONE)
+        {
+            StringCopy(gStringVar1, GetSpeciesName(species2["$SPECIES_INDEX"]));
+            CopyItemName(items["$SPECIES_INDEX"]["$ITEM_INDEX"], gStringVar2);
+            if(AddBagItem(items["$SPECIES_INDEX"]["$ITEM_INDEX"], 1))
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
+            BattleScriptPush(gBattlescriptCurrInstr + 3);
+            gBattlescriptCurrInstr = BattleScript_ItemDropped;
+            items["$SPECIES_INDEX"]["$ITEM_INDEX"] = ITEM_NONE;
+            return;
+        }
+        break;
+    }"
+      let "ITEM_INDEX+=1" 
+    done
+    let "ITEM_INDEX=0"
+    let "SPECIES_INDEX+=1"
+done

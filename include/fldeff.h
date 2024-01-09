@@ -6,8 +6,8 @@ bool8 SetUpFieldMove_Cut(void);
 bool8 FldEff_UseCutOnGrass(void);
 bool8 FldEff_UseCutOnTree(void);
 bool8 FldEff_CutGrass(void);
-void FixLongGrassMetatilesWindowTop(s16 x, s16 y);
-void FixLongGrassMetatilesWindowBottom(s16 x, s16 y);
+void FixLongGrassMetatilesWindowTop(s32 x, s32 y);
+void FixLongGrassMetatilesWindowBottom(s32 x, s32 y);
 
 extern const struct SpritePalette gSpritePalette_CutGrass;
 extern struct MapPosition gPlayerFacingPosition;
@@ -46,7 +46,7 @@ bool8 SetUpFieldMove_Dig(void);
 bool8 FldEff_UseDig(void);
 
 // rock smash
-bool8 CheckObjectGraphicsInFrontOfPlayer(u8 graphicsId);
+bool8 CheckObjectGraphicsInFrontOfPlayer(u16 graphicsId);
 u8 CreateFieldMoveTask(void);
 bool8 SetUpFieldMove_RockSmash(void);
 bool8 FldEff_UseRockSmash(void);

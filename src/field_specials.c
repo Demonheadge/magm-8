@@ -68,6 +68,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "tilesets.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -102,12 +103,12 @@ void SetPlayerGotFirstFans(void);
 u16 GetNumFansOfPlayerInTrainerFanClub(void);
 
 static void RecordCyclingRoadResults(u32, u8);
-static void LoadLinkPartnerObjectEventSpritePalette(u8, u8, u8);
+static void LoadLinkPartnerObjectEventSpritePalette(u16, u8, u8);
 static void Task_PetalburgGymSlideOpenRoomDoors(u8);
 static void PetalburgGymSetDoorMetatiles(u8, u16);
 static void Task_PCTurnOnEffect(u8);
 static void PCTurnOnEffect(struct Task *);
-static void PCTurnOnEffect_SetMetatile(s16, s8, s8);
+static void PCTurnOnEffect_SetMetatile(u32, s8, s8);
 static void PCTurnOffEffect(void);
 static void Task_LotteryCornerComputerEffect(u8);
 static void LotteryCornerComputerEffect(struct Task *);
@@ -140,6 +141,26 @@ static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
+
+static const struct MetatileMapping sPCMetatileMapping[] =
+{
+    {
+        .tileset = &gTileset_Building,
+        .metatileIds =
+        {
+            METATILE_Building_PC_On,
+            METATILE_Building_PC_Off
+        },
+    },
+    {
+        .tileset = &gTileset_RG_Building,
+        .metatileIds =
+        {
+            METATILE_RG_Building_PC_On,
+            METATILE_RG_Building_PC_Off
+        },
+    },
+};
 
 void Special_ShowDiploma(void)
 {
@@ -514,7 +535,7 @@ void SpawnLinkPartnerObjectEvent(void)
     };
     u8 myLinkPlayerNumber;
     u8 playerFacingDirection;
-    u8 linkSpriteId;
+    u16 linkSpriteId;
     u8 i;
 
     myLinkPlayerNumber = GetMultiplayerId();
@@ -575,7 +596,7 @@ void SpawnLinkPartnerObjectEvent(void)
     }
 }
 
-static void LoadLinkPartnerObjectEventSpritePalette(u8 graphicsId, u8 localEventId, u8 paletteNum)
+static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEventId, u8 paletteNum)
 {
     u8 adjustedPaletteNum;
     // Note: This temp var is necessary; paletteNum += 6 doesn't match.
@@ -1048,15 +1069,30 @@ static void PCTurnOnEffect(struct Task *task)
     task->tTimer++;
 }
 
-static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
+static u32 GetPCMetatile(u32 isScreenOn)
 {
-    u16 metatileId = 0;
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sPCMetatileMapping); i++)
+    {
+        const struct MetatileMapping *PCMetatileMapping = &sPCMetatileMapping[i];
+        if (gMapHeader.mapLayout->primaryTileset == PCMetatileMapping->tileset)
+            return PCMetatileMapping->metatileIds[isScreenOn];
+    }
+    return 0;
+}
+
+static void PCTurnOnEffect_SetMetatile(u32 isScreenOn, s8 dx, s8 dy)
+{
+    u32 metatileId = 0;
+
+    if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
+        metatileId = GetPCMetatile(isScreenOn);
+
     if (isScreenOn)
     {
         // Screen is on, set it off
-        if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-            metatileId = METATILE_Building_PC_Off;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
+        if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
@@ -1064,9 +1100,7 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
     else
     {
         // Screen is off, set it on
-        if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-            metatileId = METATILE_Building_PC_On;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
+        if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_On;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_On;
@@ -1108,7 +1142,7 @@ static void PCTurnOffEffect(void)
     }
 
     if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-        metatileId = METATILE_Building_PC_Off;
+        metatileId = GetPCMetatile(TRUE);
     else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
         metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
@@ -2390,6 +2424,26 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_SLAYER_SHOP:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 44;
+        task->tLeft = 10;
+        task->tTop = 1;
+        task->tWidth = 19;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_SLAYER_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 42;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2550,7 +2604,99 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_SLAYER_SHOP] =
+    {
+        gText_AntifirePotion24SP,
+        gText_AntiDragonShield36SP,
+        gText_BlackMask48SP,
+        gText_BlessedSet72SP,
+        gText_BroadArrows24SP,
+        gText_BroadBolts24SP,
+        gText_EternalBoots36SP,
+        gText_FireCape60SP,
+        gText_GodCape60SP,
+        gText_InfernalCape72SP,
+        gText_MirrorShield24SP,
+        gText_MythicalCape48SP,
+        gText_ObsidianSet84SP,
+        gText_SalveAmulet60SP,
+        gText_SlayerHelmet72SP,
+        gText_AssaultVest60SP,
+        gText_ChoiceBand84SP,
+        gText_ChoiceScarf84SP,
+        gText_ChoiceSpecs84SP,
+        gText_Eviolite60SP,
+        gText_ExpertBelt48SP,
+        gText_FocusSash48SP,
+        gText_HeavyDutyBoots36SP,
+        gText_Leftovers84SP,
+        gText_LifeOrb72SP,
+        gText_LumBerry48SP,
+        gText_RockyHelmet48SP,
+        gText_SalacBerry36SP,
+        gText_AirBalloon12SP,
+        gText_DampRock12SP,
+        gText_ElectricSeed12SP,
+        gText_GrassySeed12SP,
+        gText_HeatRock12SP,
+        gText_IcyRock12SP,
+        gText_LiechiBerry24SP,
+        gText_LightClay24SP,
+        gText_MistySeed12SP,
+        gText_PetayaBerry24SP,
+        gText_PsychicSeed12SP,
+        gText_SmoothRock12SP,
+        gText_TerrainExtender24SP,
+        gText_ThroatSpray12SP,
+        gText_WhiteHerb24SP,
+        gText_Exit
+    },
+    [SCROLL_SLAYER_TUTOR] =
+    {
+        gText_AbyssalDagger72SP,
+        gText_AbyssalWhip72SP,
+        gText_AncientStaff72SP,
+        gText_Augury72SP,
+        gText_BloodBarrage84SP,
+        gText_DragonCrossbow60SP,
+        gText_DragonScimitar60SP,
+        gText_EarthSurge72SP,
+        gText_FireSurge72SP,
+        gText_IbansStaff84SP,
+        gText_IceBarrage84SP,
+        gText_LeafBladedBattleaxe84SP,
+        gText_LeafBladedSpear84SP,
+        gText_LeafBladedSword84SP,
+        gText_MagicShortbow72SP,
+        gText_Piety72SP,
+        gText_ProtectFromMagic60SP,
+        gText_ProtectFromMelee60SP,
+        gText_ProtectFromMissiles60SP,
+        gText_Rigour72SP,
+        gText_ShadowBarrage84SP,
+        gText_SlayersStaff72SP,
+        gText_SmokeBarrage84SP,
+        gText_ToxicBlowpipe72SP,
+        gText_TwistedBow96SP,
+        gText_WaterSurge72SP,
+        gText_WindSurge72SP,
+        gText_ZamorakianHasta84SP,
+        gText_Crunch24SP,
+        gText_DarkPulse36SP,
+        gText_EnergyBall36SP,
+        gText_Hex24SP,
+        gText_Hurricane60SP,
+        gText_LavaPlume36SP,
+        gText_LeechLife12SP,
+        gText_PsychoCut36SP,
+        gText_RazorShell24SP,
+        gText_SteelWing24SP,
+        gText_SwordsDance72SP,
+        gText_Tailwind24SP,
+        gText_UTurn24SP,
+        gText_Exit
+    },
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -2588,7 +2734,8 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
             task->tLeft = adjustedLeft;
     }
 
-    template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth, task->tHeight, 0xF, 0x64);
+    if (task->tScrollMultiId == SCROLL_SLAYER_SHOP) template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth + 1, task->tHeight, 0xF, 0x64);
+    else template = CreateWindowTemplate(0, task->tLeft, task->tTop, task->tWidth, task->tHeight, 0xF, 0x64);
     windowId = AddWindow(&template);
     task->tWindowId = windowId;
     SetStandardWindowBorderStyle(windowId, FALSE);
@@ -2992,7 +3139,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
 {
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    if ((menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR) || menu == SCROLL_SLAYER_SHOP)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
@@ -3031,6 +3178,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
+        case SCROLL_SLAYER_SHOP:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sSlayerShopItemDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sSlayerShopItems[selection]);
+            break;
         }
     }
 }
@@ -3059,6 +3210,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_SLAYER_SHOP:
             DestroySpriteAndFreeResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
         }
@@ -3084,13 +3236,13 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
     {
-        if (gSpecialVar_0x8006 == 0)
+        /* if (gSpecialVar_0x8006 == 0)
         {
             sTutorMoveAndElevatorWindowId = AddWindow(&sBattleFrontierTutor_WindowTemplate);
             SetStandardWindowBorderStyle(sTutorMoveAndElevatorWindowId, FALSE);
-        }
+        } */
         ShowBattleFrontierTutorMoveDescription(menu, selection);
     }
 }
@@ -3126,14 +3278,63 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_FirePunchDesc,
         gText_Exit,
     };
-
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    
+    static const u8 *const sKourendCatacombs1_TutorMoveDescriptions1[] =
     {
-        FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        KourendCatacombs1_Text_LeftoversDesc,
+        gText_Exit,
+    };
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_SLAYER_TUTOR)
+    {
+        if (menu != SCROLL_SLAYER_TUTOR) FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
+        else FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        else
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+        else
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sKourendCatacombs1_TutorMoveDescriptions1[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     }
 }
 
@@ -3280,7 +3481,7 @@ static void Task_DeoxysRockInteraction(u8 taskId)
 static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
     u8 objectEventId;
-    LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(ROCK_PAL_ID), PLTT_SIZEOF(4));
+    LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE)), PLTT_SIZEOF(4));
     TryGetObjectEventIdByLocalIdAndMap(LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
 
     if (rockLevel == 0)
@@ -3329,8 +3530,9 @@ void IncrementBirthIslandRockStepCount(void)
 
 void SetDeoxysRockPalette(void)
 {
-    LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], OBJ_PLTT_ID(ROCK_PAL_ID), PLTT_SIZEOF(4));
-    BlendPalettes(1 << (ROCK_PAL_ID + 16), 16, 0);
+    u8 paletteSlot = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
+    LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], OBJ_PLTT_ID(paletteSlot), PLTT_SIZEOF(4));
+    BlendPalettes(1 << (paletteSlot + 16), 16, 0);
 }
 
 void SetPCBoxToSendMon(u8 boxId)

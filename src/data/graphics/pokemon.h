@@ -10906,6 +10906,84 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     // const u32 gMonShinyPalette_OgerponCornerstoneMaskTera[] = INCBIN_U32("graphics/pokemon/ogerpon/cornerstone/tera/shiny.gbapal.lz");
 #endif //P_FAMILY_OGERPON
 
+    const u32 gMonFrontPic_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/front.4bpp.lz");
+    const u32 gMonPalette_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Bloodveld_Mutated_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Mutated_Special_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Bloodveld_Mutated_Special_Form[] = INCBIN_U8("graphics/pokemon/Bloodveld_Mutated_Special_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Demon_Lesser_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Lesser_OSRS_Form/front.4bpp.lz");
+    const u32 gMonPalette_Demon_Lesser_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Lesser_OSRS_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Demon_Lesser_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Lesser_OSRS_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Demon_Lesser_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Lesser_OSRS_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Demon_Lesser_OSRS_Form[] = INCBIN_U8("graphics/pokemon/Demon_Lesser_OSRS_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Abyssal_Minion_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Minion_Form/front.4bpp.lz");
+    const u32 gMonPalette_Abyssal_Minion_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Minion_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Abyssal_Minion_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Minion_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Abyssal_Minion_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Minion_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Abyssal_Minion_Form[] = INCBIN_U8("graphics/pokemon/Abyssal_Minion_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Giant_Rat_Crypt_Form[] = INCBIN_U32("graphics/pokemon/Giant_Rat_Crypt_Form/front.4bpp.lz");
+    const u32 gMonPalette_Giant_Rat_Crypt_Form[] = INCBIN_U32("graphics/pokemon/Giant_Rat_Crypt_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Giant_Rat_Crypt_Form[] = INCBIN_U32("graphics/pokemon/Giant_Rat_Crypt_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Giant_Rat_Crypt_Form[] = INCBIN_U32("graphics/pokemon/Giant_Rat_Crypt_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Giant_Rat_Crypt_Form[] = INCBIN_U8("graphics/pokemon/Giant_Rat_Crypt_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Hellhound[] = INCBIN_U32("graphics/pokemon/Hellhound/front.4bpp.lz");
+    const u32 gMonPalette_Hellhound[] = INCBIN_U32("graphics/pokemon/Hellhound/normal.gbapal.lz");
+    const u32 gMonBackPic_Hellhound[] = INCBIN_U32("graphics/pokemon/Hellhound/back.4bpp.lz");
+    const u32 gMonShinyPalette_Hellhound[] = INCBIN_U32("graphics/pokemon/Hellhound/shiny.gbapal.lz");
+    const u8 gMonIcon_Hellhound[] = INCBIN_U8("graphics/pokemon/Hellhound/icon.4bpp");
+    
+    const u32 gMonFrontPic_Bloodveld_Insatiable_Physical_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Physical_Form/front.4bpp.lz");
+    const u32 gMonPalette_Bloodveld_Insatiable_Physical_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Physical_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Bloodveld_Insatiable_Physical_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Physical_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Bloodveld_Insatiable_Physical_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Physical_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Bloodveld_Insatiable_Physical_Form[] = INCBIN_U8("graphics/pokemon/Bloodveld_Insatiable_Physical_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Bloodveld_Insatiable_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Special_Form/front.4bpp.lz");
+    const u32 gMonPalette_Bloodveld_Insatiable_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Special_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Bloodveld_Insatiable_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Special_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Bloodveld_Insatiable_Special_Form[] = INCBIN_U32("graphics/pokemon/Bloodveld_Insatiable_Special_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Bloodveld_Insatiable_Special_Form[] = INCBIN_U8("graphics/pokemon/Bloodveld_Insatiable_Special_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Demon_Greater_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_OSRS_Form/front.4bpp.lz");
+    const u32 gMonPalette_Demon_Greater_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_OSRS_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Demon_Greater_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_OSRS_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Demon_Greater_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_OSRS_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Demon_Greater_OSRS_Form[] = INCBIN_U8("graphics/pokemon/Demon_Greater_OSRS_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Abyssal_Demon_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Demon_Form/front.4bpp.lz");
+    const u32 gMonPalette_Abyssal_Demon_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Demon_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Abyssal_Demon_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Demon_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Abyssal_Demon_Form[] = INCBIN_U32("graphics/pokemon/Abyssal_Demon_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Abyssal_Demon_Form[] = INCBIN_U8("graphics/pokemon/Abyssal_Demon_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/front.4bpp.lz");
+    const u32 gMonPalette_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Basilisk_OSRS_Form[] = INCBIN_U32("graphics/pokemon/Basilisk_OSRS_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Basilisk_OSRS_Form[] = INCBIN_U8("graphics/pokemon/Basilisk_OSRS_Form/icon.4bpp");
+
+    const u32 gMonFrontPic_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/front.4bpp.lz");
+    const u32 gMonPalette_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Demon_Greater_Black_Form[] = INCBIN_U32("graphics/pokemon/Demon_Greater_Black_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Demon_Greater_Black_Form[] = INCBIN_U8("graphics/pokemon/Demon_Greater_Black_Form/icon.4bpp");
+    
+    const u32 gMonFrontPic_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/front.4bpp.lz");
+    const u32 gMonPalette_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/normal.gbapal.lz");
+    const u32 gMonBackPic_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/back.4bpp.lz");
+    const u32 gMonShinyPalette_Cockatrice[] = INCBIN_U32("graphics/pokemon/Cockatrice/shiny.gbapal.lz");
+    const u8 gMonIcon_Cockatrice[] = INCBIN_U8("graphics/pokemon/Cockatrice/icon.4bpp");
+    
+    const u32 gMonFrontPic_Jelly_Normal_Form[] = INCBIN_U32("graphics/pokemon/Jelly_Normal_Form/front.4bpp.lz");
+    const u32 gMonPalette_Jelly_Normal_Form[] = INCBIN_U32("graphics/pokemon/Jelly_Normal_Form/normal.gbapal.lz");
+    const u32 gMonBackPic_Jelly_Normal_Form[] = INCBIN_U32("graphics/pokemon/Jelly_Normal_Form/back.4bpp.lz");
+    const u32 gMonShinyPalette_Jelly_Normal_Form[] = INCBIN_U32("graphics/pokemon/Jelly_Normal_Form/shiny.gbapal.lz");
+    const u8 gMonIcon_Jelly_Normal_Form[] = INCBIN_U8("graphics/pokemon/Jelly_Normal_Form/icon.4bpp");
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

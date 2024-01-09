@@ -5194,84 +5194,38 @@ void SetMonPreventsSwitchingString(void)
     BattleStringExpandPlaceholders(gText_PkmnsXPreventsSwitching, gStringVar4);
 }
 
-static s32 GetWildMonTableIdInAlteringCave(u16 species)
+void SetWildMonHeldItemToPartySlot(u32 partySlot, u32 chanceNoItem, u32 chanceNotRare)
 {
-    s32 i;
-    for (i = 0; i < (s32) ARRAY_COUNT(sAlteringCaveWildMonHeldItems); i++)
-        if (sAlteringCaveWildMonHeldItems[i].species == species)
-            return i;
-    return 0;
-}
-
-static inline bool32 CanFirstMonBoostHeldItemRarity(void)
-{
-    if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
-        return FALSE;
-    else if ((OW_COMPOUND_EYES < GEN_9) && GetMonAbility(&gPlayerParty[0]) == ABILITY_COMPOUND_EYES)
-        return TRUE;
-    else if ((OW_SUPER_LUCK == GEN_8) && GetMonAbility(&gPlayerParty[0]) == ABILITY_SUPER_LUCK)
-        return TRUE;
-    return FALSE;
-}
-
-void SetWildMonHeldItem(void)
-{
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
+    struct Pokemon *enemyParty = &gEnemyParty[partySlot];
+    u32 species = GetMonData(enemyParty, MON_DATA_SPECIES, 0);
+    u32 itemCommon = gSpeciesInfo[species].itemCommon;
+    u16 itemRare = gSpeciesInfo[species].itemRare;
+    u16 rnd = Random() % 100;
+    if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE || gMapHeader.mapLayoutId == LAYOUT_RG_SIX_ISLAND_ALTERING_CAVE)
     {
-        u16 rnd;
-        u16 species;
-        u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
-        u16 i;
-        bool32 itemHeldBoost = CanFirstMonBoostHeldItemRarity();
-        u16 chanceNoItem = itemHeldBoost ? 20 : 45;
-        u16 chanceNotRare = itemHeldBoost ? 80 : 95;
-
-        for (i = 0; i < count; i++)
+        u32 alteringCaveId = VarGet(VAR_ALTERING_CAVE_WILD_SET);
+        if (alteringCaveId != 0 && alteringCaveId < ARRAY_COUNT(sAlteringCaveWildMonHeldItems))
         {
-            if (GetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, NULL) != ITEM_NONE)
-                continue; // prevent overwriting previously set item
-
-            rnd = Random() % 100;
-            species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, 0);
-            if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE)
-            {
-                s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
-                if (alteringCaveId != 0)
-                {
-                    // In active Altering Cave, use special item list
-                    if (rnd < chanceNotRare)
-                        continue;
-                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &sAlteringCaveWildMonHeldItems[alteringCaveId].item);
-                }
-                else
-                {
-                    // In inactive Altering Cave, use normal items
-                    if (rnd < chanceNoItem)
-                        continue;
-                    if (rnd < chanceNotRare)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                    else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
-                }
-            }
-            else
-            {
-                if (gSpeciesInfo[species].itemCommon == gSpeciesInfo[species].itemRare && gSpeciesInfo[species].itemCommon != ITEM_NONE)
-                {
-                    // Both held items are the same, 100% chance to hold item
-                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                }
-                else
-                {
-                    if (rnd < chanceNoItem)
-                        continue;
-                    if (rnd < chanceNotRare)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                    else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
-                }
-            }
+            // In active Altering Cave, use special item list
+            if (rnd < chanceNotRare)
+                return;
+            SetMonData(enemyParty, MON_DATA_HELD_ITEM, &sAlteringCaveWildMonHeldItems[alteringCaveId]);
         }
+    }
+    else if (itemCommon == itemRare && itemCommon != ITEM_NONE)
+    {
+        // Both held items are the same, 100% chance to hold item
+        SetMonData(enemyParty, MON_DATA_HELD_ITEM, &itemCommon);
+    }
+    else
+    {
+        // In inactive Altering Cave, use normal items
+        if (rnd < chanceNoItem)
+            return;
+        if (rnd < chanceNotRare)
+            SetMonData(enemyParty, MON_DATA_HELD_ITEM, &itemCommon);
+        else
+            SetMonData(enemyParty, MON_DATA_HELD_ITEM, &itemRare);
     }
 }
 

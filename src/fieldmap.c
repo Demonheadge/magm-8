@@ -55,6 +55,30 @@ static inline u16 GetBorderBlockAt(int x, int y)
     return gMapHeader.mapLayout->border[i] | MAPGRID_COLLISION_MASK;
 }
 
+// Masks/shifts for metatile attributes
+// This is the format of the data stored in each data/tilesets/*/*/metatile_attributes.bin file
+static const u32 sMetatileAttrMasks[METATILE_ATTRIBUTE_COUNT] = {
+    [METATILE_ATTRIBUTE_BEHAVIOR]       = 0x000001ff, // Bits 0-8
+    [METATILE_ATTRIBUTE_TERRAIN]        = 0x00003e00, // Bits 9-13
+    [METATILE_ATTRIBUTE_2]              = 0x0003c000, // Bits 14-17
+    [METATILE_ATTRIBUTE_3]              = 0x00fc0000, // Bits 18-23
+    [METATILE_ATTRIBUTE_ENCOUNTER_TYPE] = 0x07000000, // Bits 24-26
+    [METATILE_ATTRIBUTE_5]              = 0x18000000, // Bits 27-28
+    [METATILE_ATTRIBUTE_LAYER_TYPE]     = 0x60000000, // Bits 29-30
+    [METATILE_ATTRIBUTE_7]              = 0x80000000  // Bit  31
+};
+
+static const u8 sMetatileAttrShifts[METATILE_ATTRIBUTE_COUNT] = {
+    [METATILE_ATTRIBUTE_BEHAVIOR]       = 0,
+    [METATILE_ATTRIBUTE_TERRAIN]        = 9,
+    [METATILE_ATTRIBUTE_2]              = 14,
+    [METATILE_ATTRIBUTE_3]              = 18,
+    [METATILE_ATTRIBUTE_ENCOUNTER_TYPE] = 24,
+    [METATILE_ATTRIBUTE_5]              = 27,
+    [METATILE_ATTRIBUTE_LAYER_TYPE]     = 29,
+    [METATILE_ATTRIBUTE_7]              = 31
+};
+
 #define AreCoordsWithinMapGridBounds(x, y) (x >= 0 && x < gBackupMapLayout.width && y >= 0 && y < gBackupMapLayout.height)
 
 #define GetMapGridBlockAt(x, y) (AreCoordsWithinMapGridBounds(x, y) ? gBackupMapLayout.map[x + gBackupMapLayout.width * y] : GetBorderBlockAt(x, y))
@@ -368,16 +392,28 @@ u32 MapGridGetMetatileIdAt(int x, int y)
     return block & MAPGRID_METATILE_ID_MASK;
 }
 
+u32 ExtractMetatileAttribute(u32 attributes, u8 attributeType)
+{
+    if (attributeType >= METATILE_ATTRIBUTE_COUNT) // Check for METATILE_ATTRIBUTES_ALL
+        return attributes;
+
+    return (attributes & sMetatileAttrMasks[attributeType]) >> sMetatileAttrShifts[attributeType];
+}
+
+u32 MapGridGetMetatileAttributeAt(int x, int y, u8 attributeType)
+{
+    u16 metatileId = MapGridGetMetatileIdAt(x, y);
+    return GetMetatileAttributesById(metatileId, attributeType);
+}
+
 u32 MapGridGetMetatileBehaviorAt(int x, int y)
 {
-    u16 metatile = MapGridGetMetatileIdAt(x, y);
-    return GetMetatileAttributesById(metatile) & METATILE_ATTR_BEHAVIOR_MASK;
+    return MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_BEHAVIOR);
 }
 
 u8 MapGridGetMetatileLayerTypeAt(int x, int y)
 {
-    u16 metatile = MapGridGetMetatileIdAt(x, y);
-    return (GetMetatileAttributesById(metatile) & METATILE_ATTR_LAYER_MASK) >> METATILE_ATTR_LAYER_SHIFT;
+    return MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_LAYER_TYPE);
 }
 
 void MapGridSetMetatileIdAt(int x, int y, u16 metatile)
@@ -400,18 +436,19 @@ void MapGridSetMetatileEntryAt(int x, int y, u16 metatile)
     }
 }
 
-u16 GetMetatileAttributesById(u16 metatile)
+u32 GetMetatileAttributesById(u16 metatile, u8 attributeType)
 {
-    const u16 *attributes;
-    if (metatile < NUM_METATILES_IN_PRIMARY)
+    const u32 *attributes;
+    u32 numPrimaryMetatiles = gMapHeader.mapLayout->primaryTileset->numTiles;
+    if (metatile < numPrimaryMetatiles)
     {
         attributes = gMapHeader.mapLayout->primaryTileset->metatileAttributes;
-        return attributes[metatile];
+        return ExtractMetatileAttribute(attributes[metatile], attributeType);
     }
     else if (metatile < NUM_METATILES_TOTAL)
     {
         attributes = gMapHeader.mapLayout->secondaryTileset->metatileAttributes;
-        return attributes[metatile - NUM_METATILES_IN_PRIMARY];
+        return ExtractMetatileAttribute(attributes[metatile - numPrimaryMetatiles], attributeType);
     }
     else
     {
@@ -891,7 +928,8 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
         }
         else if (tileset->isSecondary == TRUE)
         {
-            LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+            u32 numPrimaryPals = NUM_PALS_IN_PRIMARY_EMERALD + tileset->dontUsePal7;
+            LoadPalette(tileset->palettes[numPrimaryPals], destOffset, size);
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
         else
@@ -904,35 +942,41 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
 
 void CopyPrimaryTilesetToVram(struct MapLayout const *mapLayout)
 {
-    CopyTilesetToVram(mapLayout->primaryTileset, NUM_TILES_IN_PRIMARY, 0);
+    u32 numPrimaryTiles = mapLayout->primaryTileset->numTiles;
+    CopyTilesetToVram(mapLayout->primaryTileset, numPrimaryTiles, 0);
 }
 
 void CopySecondaryTilesetToVram(struct MapLayout const *mapLayout)
 {
-    CopyTilesetToVram(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
+    u32 numPrimaryTiles = mapLayout->primaryTileset->numTiles;
+    CopyTilesetToVram(mapLayout->secondaryTileset, NUM_TILES_TOTAL - numPrimaryTiles, numPrimaryTiles);
 }
 
 void CopySecondaryTilesetToVramUsingHeap(struct MapLayout const *mapLayout)
 {
-    CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
+    u32 numPrimaryTiles = mapLayout->primaryTileset->numTiles;
+    CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - numPrimaryTiles, numPrimaryTiles);
 }
 
 static void LoadPrimaryTilesetPalette(struct MapLayout const *mapLayout)
 {
-    LoadTilesetPalette(mapLayout->primaryTileset, BG_PLTT_ID(0), NUM_PALS_IN_PRIMARY * PLTT_SIZE_4BPP);
+    u32 numPrimaryPals = NUM_PALS_IN_PRIMARY_EMERALD + mapLayout->secondaryTileset->dontUsePal7;
+    LoadTilesetPalette(mapLayout->primaryTileset, BG_PLTT_ID(0), numPrimaryPals * PLTT_SIZE_4BPP);
 }
 
 void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout)
 {
-    LoadTilesetPalette(mapLayout->secondaryTileset, BG_PLTT_ID(NUM_PALS_IN_PRIMARY), (NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY) * PLTT_SIZE_4BPP);
+    u32 numPrimaryPals = NUM_PALS_IN_PRIMARY_EMERALD + mapLayout->secondaryTileset->dontUsePal7;
+    LoadTilesetPalette(mapLayout->secondaryTileset, BG_PLTT_ID(numPrimaryPals), (NUM_PALS_TOTAL - numPrimaryPals) * PLTT_SIZE_4BPP);
 }
 
 void CopyMapTilesetsToVram(struct MapLayout const *mapLayout)
 {
     if (mapLayout)
     {
-        CopyTilesetToVramUsingHeap(mapLayout->primaryTileset, NUM_TILES_IN_PRIMARY, 0);
-        CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
+        u32 numPrimaryTiles = mapLayout->primaryTileset->numTiles;
+        CopyTilesetToVramUsingHeap(mapLayout->primaryTileset, numPrimaryTiles, 0);
+        CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - numPrimaryTiles, numPrimaryTiles);
     }
 }
 

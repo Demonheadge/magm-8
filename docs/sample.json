@@ -1,0 +1,13 @@
+    "Caterpie": [
+        [1, "TACKLE"],
+        [1, "STRING_SHOT"],
+        [9, "BUG BITE"]
+    ],
+    "TROUT_NORMAL_FORM": [
+        ["TM02", "RAIN_DANCE"],
+        ["TM13", "BRINE"],
+        ["TM17", "AERIAL_ACE"],
+        ["TM24", "U_TURN"],
+        ["TM54", "MUD_BOMB"],
+        ["TM62", "DEFOG"],
+    ]

@@ -13,13 +13,6 @@
 // An undefined map grid block has all metatile id bits set and nothing else
 #define MAPGRID_UNDEFINED   MAPGRID_METATILE_ID_MASK
 
-// Masks/shifts for metatile attributes
-// Metatile attributes consist of an 8 bit behavior value, 4 unused bits, and a 4 bit layer type value
-// This is the data stored in each data/tilesets/*/*/metatile_attributes.bin file
-#define METATILE_ATTR_BEHAVIOR_MASK 0x00FF // Bits 0-7
-#define METATILE_ATTR_LAYER_MASK    0xF000 // Bits 12-15
-#define METATILE_ATTR_LAYER_SHIFT   12
-
 enum {
     METATILE_LAYER_TYPE_NORMAL,  // Metatile uses middle and top bg layers
     METATILE_LAYER_TYPE_COVERED, // Metatile uses bottom and middle bg layers
@@ -28,21 +21,61 @@ enum {
 
 #define METATILE_ID(tileset, name) (METATILE_##tileset##_##name)
 
+enum
+{
+    METATILE_ATTRIBUTE_BEHAVIOR,
+    METATILE_ATTRIBUTE_TERRAIN,
+    METATILE_ATTRIBUTE_2,
+    METATILE_ATTRIBUTE_3,
+    METATILE_ATTRIBUTE_ENCOUNTER_TYPE,
+    METATILE_ATTRIBUTE_5,
+    METATILE_ATTRIBUTE_LAYER_TYPE,
+    METATILE_ATTRIBUTE_7,
+    METATILE_ATTRIBUTE_COUNT,
+    METATILE_ATTRIBUTES_ALL = 255  // Special id to get the full attributes value
+};
+
+enum
+{
+    TILE_ENCOUNTER_NONE,
+    TILE_ENCOUNTER_LAND,
+    TILE_ENCOUNTER_WATER,
+    TILE_ENCOUNTER_LAND_2,
+    TILE_ENCOUNTER_LAND_3,
+    TILE_ENCOUNTER_LAND_4,
+    TILE_ENCOUNTER_LAND_5,
+    TILE_ENCOUNTER_LAND_6,
+    TILE_ENCOUNTER_LAND_7,
+    TILE_ENCOUNTER_LAND_8,
+};
+
+enum
+{
+    TILE_TERRAIN_NORMAL,
+    TILE_TERRAIN_GRASS,
+    TILE_TERRAIN_WATER,
+    TILE_TERRAIN_WATERFALL,
+};
+
 // Rows of metatiles do not actually have a strict width.
 // This constant is used for calculations for finding the next row of metatiles
 // for constructing large tiles, such as the Battle Pike's curtain tile.
 #define METATILE_ROW_WIDTH 8
 
+// For the secondary tileset, this field is used for swapping where the game
+// loads palette 7 from (if TRUE, the palette is loaded from the primary)
+#define dontUsePal7 numTiles
 typedef void (*TilesetCB)(void);
 
 struct Tileset
 {
-    /*0x00*/ bool8 isCompressed;
-    /*0x01*/ bool8 isSecondary;
+    /*0x00*/ bool16 isCompressed:1;
+             bool16 isSecondary:1;
+             u16 numTiles:14;
     /*0x04*/ const u32 *tiles;
     /*0x08*/ const u16 (*palettes)[16];
     /*0x0C*/ const u16 *metatiles;
-    /*0x10*/ const u16 *metatileAttributes;
+    /*0x10*/ const u32 *metatileAttributes;
     /*0x14*/ TilesetCB callback;
 };
 
@@ -66,9 +99,8 @@ struct BackupMapLayout
 struct ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
-    /*0x01*/ u8 graphicsId;
-    /*0x02*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
-    /*0x03*/ //u8 padding1;
+    /*0x01*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
+    /*0x02*/ u16 graphicsId;
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
@@ -196,8 +228,7 @@ struct ObjectEvent
              u32 fixedPriority:1;
              u32 hideReflection:1;
              //u32 padding:4;
-    /*0x04*/ u8 spriteId;
-    /*0x05*/ u8 graphicsId;
+    /*0x04*/ u16 graphicsId;
     /*0x06*/ u8 movementType;
     /*0x07*/ u8 trainerType;
     /*0x08*/ u8 localId;
@@ -221,7 +252,7 @@ struct ObjectEvent
     /*0x20*/ u8 previousMovementDirection;
     /*0x21*/ u8 directionSequenceIndex;
     /*0x22*/ u8 playerCopyableMovement; // COPY_MOVE_*
-    /*0x23*/ //u8 padding2;
+    /*0x23*/ u8 spriteId;
     /*size = 0x24*/
 };
 

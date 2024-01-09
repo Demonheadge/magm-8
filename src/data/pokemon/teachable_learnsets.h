@@ -39114,3 +39114,131 @@ static const u16 sOgerponTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_OGERPON
+
+static const u16 sBloodveld_Mutated_Special_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Lesser_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sAbyssal_Minion_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sGiant_Rat_Crypt_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHellhoundTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBloodveld_Insatiable_Physical_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBloodveld_Insatiable_Special_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Greater_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sAbyssal_Demon_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBasilisk_OSRS_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCockatriceTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Normal_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sRock_Crab_Giant_Normal_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sRock_Crab_Giant_Sand_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sPet_RockTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSlagilithTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sRock_Strange_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Lesser_Tongue_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDust_DevilTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Lesser_Black_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDagannoth_Normal_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Warped_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Greater_Tongue_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sKuraskTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sTurothTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sExoraxeTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSpookaxeTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDeathwingTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDragon_Brutal_Red_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDragon_Brutal_Blue_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDragon_Brutal_Black_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDemon_Greater_Black_FormTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
