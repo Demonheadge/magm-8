@@ -1596,9 +1596,11 @@ static bool32 AccuracyCalcHelper(u16 move)
 
     if (WEATHER_HAS_EFFECT)
     {
-        if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_RAIN) && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE)))
+        if (IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_RAIN) &&
+            (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE ||
+            move == MOVE_BLEAKWIND_STORM || move == MOVE_WILDBOLT_STORM || move == MOVE_SANDSEAR_STORM))
         {
-            // thunder/hurricane ignore acc checks in rain unless target is holding utility umbrella
+            // thunder/hurricane/genie moves ignore acc checks in rain unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
@@ -1868,13 +1870,9 @@ static void Cmd_ppreduce(void)
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
         gProtectStructs[gBattlerAttacker].notFirstStrike = TRUE;
+
         // For item Metronome, echoed voice
-        if (gCurrentMove == gLastResultingMoves[gBattlerAttacker]
-            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-            && !WasUnableToUseMove(gBattlerAttacker)
-            && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT) // Don't increment counter on first hit
-                gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
-        else
+        if (gCurrentMove != gLastResultingMoves[gBattlerAttacker] || WasUnableToUseMove(gBattlerAttacker))
             gBattleStruct->sameMoveTurns[gBattlerAttacker] = 0;
 
         if (gBattleMons[gBattlerAttacker].pp[gCurrMovePos] > ppToDeduct)
@@ -3140,20 +3138,26 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_FLINCH:
-                if (battlerAbility == ABILITY_INNER_FOCUS
-                    && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
+                if (battlerAbility == ABILITY_INNER_FOCUS)
                 {
-                    gLastUsedAbility = ABILITY_INNER_FOCUS;
-                    gBattlerAbility = gEffectBattler;
-                    RecordAbilityBattle(gEffectBattler, ABILITY_INNER_FOCUS);
-                    gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
+                    if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
+                    {
+                        gLastUsedAbility = ABILITY_INNER_FOCUS;
+                        gBattlerAbility = gEffectBattler;
+                        RecordAbilityBattle(gEffectBattler, ABILITY_INNER_FOCUS);
+                        gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
+                    }
+                    else
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
                 }
                 else if (GetBattlerTurnOrderNum(gEffectBattler) > gCurrentTurnActionNumber
-                         && !IsDynamaxed(gEffectBattler))
+                        && !IsDynamaxed(gEffectBattler))
                 {
                     gBattleMons[gEffectBattler].status2 |= sStatusFlagsForMoveEffects[gBattleScripting.moveEffect];
+                    gBattlescriptCurrInstr++;
                 }
-                gBattlescriptCurrInstr++;
                 break;
             case MOVE_EFFECT_UPROAR:
                 if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR))
@@ -3690,6 +3694,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     gStatuses4[gEffectBattler] |= STATUS4_SYRUP_BOMB;
                     gDisableStructs[gEffectBattler].syrupBombTimer = 3;
                     gDisableStructs[gEffectBattler].syrupBombIsShiny = IsMonShiny(&party[gBattlerPartyIndexes[gBattlerAttacker]]);
+                    gBattleStruct->stickySyrupdBy[gEffectBattler] = gBattlerAttacker;
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_SyrupBombActivates;
                 }
@@ -6089,6 +6094,13 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_SAME_MOVE_TURNS:
+            if (gCurrentMove != gLastResultingMoves[gBattlerAttacker] || gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                gBattleStruct->sameMoveTurns[gBattlerAttacker] = 0;
+            else if (gCurrentMove == gLastResultingMoves[gBattlerAttacker] && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT)
+                gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_CLEAR_BITS: // Clear/Set bits for things like using a move for all targets and all hits.
             if (gSpecialStatuses[gBattlerAttacker].instructedChosenTarget)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
@@ -6118,6 +6130,7 @@ static void Cmd_moveend(void)
             gBattleStruct->zmove.effect = EFFECT_HIT;
             gBattleStruct->hitSwitchTargetFailed = FALSE;
             gBattleStruct->isAtkCancelerForCalledMove = FALSE;
+            gBattleStruct->swapDamageCategory = FALSE;
             gBattleStruct->enduredDamage = 0;
             gBattleScripting.moveendState++;
             break;
@@ -10224,12 +10237,6 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         return;
     }
-    case VARIOUS_PHOTON_GEYSER_CHECK:
-    {
-        VARIOUS_ARGS();
-        gBattleStruct->swapDamageCategory = (GetSplitBasedOnStats(battler) == SPLIT_SPECIAL);
-        break;
-    }
     case VARIOUS_SHELL_SIDE_ARM_CHECK: // 0% chance GameFreak actually checks this way according to DaWobblefet, but this is the only functional explanation at the moment
     {
         VARIOUS_ARGS();
@@ -13365,10 +13372,8 @@ static void Cmd_copymovepermanently(void)
     gChosenMove = MOVE_UNAVAILABLE;
 
     if (!(gBattleMons[gBattlerAttacker].status2 & STATUS2_TRANSFORMED)
-        && gLastPrintedMoves[gBattlerTarget] != MOVE_STRUGGLE
-        && gLastPrintedMoves[gBattlerTarget] != MOVE_NONE
         && gLastPrintedMoves[gBattlerTarget] != MOVE_UNAVAILABLE
-        && gLastPrintedMoves[gBattlerTarget] != MOVE_SKETCH)
+        && !gBattleMoves[gLastPrintedMoves[gBattlerTarget]].sketchBanned)
     {
         s32 i;
 
@@ -15677,7 +15682,7 @@ static void Cmd_handleballthrow(void)
         if (gBattleResults.catchAttempts[gLastUsedItem - FIRST_BALL] < 255)
             gBattleResults.catchAttempts[gLastUsedItem - FIRST_BALL]++;
 
-        if (odds >= 255) // mon caught
+        if (odds > 254) // mon caught
         {
             BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_3_SHAKES_SUCCESS);
             MarkBattlerForControllerExec(gBattlerAttacker);
@@ -15722,16 +15727,8 @@ static void Cmd_handleballthrow(void)
             }
             else
             {
-                if (P_CATCH_CURVE >= GEN_6)
-                {
-                    odds = (255 * 255 * 255) / (odds * odds * odds);
-                    odds = 65536 / Sqrt(Sqrt(Sqrt(Sqrt(odds))));
-                }
-                else
-                {
-                    odds = Sqrt(Sqrt(16711680 / odds));
-                    odds = 1048560 / odds;
-                }
+                odds = Sqrt(Sqrt(16711680 / odds));
+                odds = 1048560 / odds;
                 for (shakes = 0; shakes < maxShakes && Random() < odds; shakes++);
             }
 
@@ -17216,5 +17213,12 @@ void BS_TryTriggerStatusForm(void)
         gBattlescriptCurrInstr = BattleScript_TargetFormChangeWithStringNoPopup;
         return;
     }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_SetPhotonGeyserCategory(void)
+{
+    NATIVE_ARGS();
+    gBattleStruct->swapDamageCategory = (GetSplitBasedOnStats(gBattlerAttacker) == SPLIT_PHYSICAL);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
