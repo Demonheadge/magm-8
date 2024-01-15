@@ -8,16 +8,16 @@ KourendCatacombs1_OnTransition:
 
 KourendCatacombs1_Start:
     givemon SPECIES_AEGISLASH, 50, ITEM_LEFTOVERS
-    givemon SPECIES_BLAZIKEN, 50, ITEM_LEFTOVERS
+    // givemon SPECIES_BLAZIKEN, 50, ITEM_LEFTOVERS
     givemon SPECIES_GARGANACL, 50, ITEM_LEFTOVERS
     givemon SPECIES_DECIDUEYE, 50, ITEM_LEFTOVERS
-    givemon SPECIES_BLISSEY, 50, ITEM_LEFTOVERS
+    // givemon SPECIES_BLISSEY, 50, ITEM_LEFTOVERS
     // givemon SPECIES_HATTERENE, 50, ITEM_LEFTOVERS
     setflag FLAG_SYS_POKEMON_GET
     setflag FLAG_SYS_POKEDEX_GET
     special EnableNationalPokedex
     setflag FLAG_SYS_FRONTIER_PASS
-    additem ITEM_MASTER_BALL
+    additem ITEM_ULTRA_BALL, 10
     setflag FLAG_SYS_B_DASH
     setflag FLAG_SYS_QUEST_MENU_GET
     setrespawn HEAL_LOCATION_CATACOMBS_OF_KOUREND

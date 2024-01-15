@@ -432,62 +432,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "KourendCatacombs2_FireGiant",
       "flag": "FLAG_HIDE_CATAS_2_FIRE_GIANT_2"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 20,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs1_Nieve",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 22,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs1_SlayerShop",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 18,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs1_SlayerTutor",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 24,
-      "y": 9,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "KourendCatacombs1_SlayerCounter",
-      "flag": "0"
     }
   ],
   "warp_events": [
